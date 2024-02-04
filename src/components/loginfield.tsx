@@ -6,6 +6,7 @@ import { RootState } from "../store/store";
 import {login} from '../features/userSlice/userSlice'
 import { sendRequest } from '../utils/sendRequest'
 import { Navigate } from 'react-router-dom';
+import { hashPassword } from '../utils/hashPassword';
 
 import './loginfield.css'
 
@@ -66,7 +67,7 @@ function Loginfield  (props: any)  {
         type="password"
         placeholder={props.password}
         className="input loginfield-textinput"
-        onChange={(e) => setMdp(e.target.value)}
+        onChange={async (e) => setMdp(await hashPassword(e.target.value))}
       />
       <button
         type="button"

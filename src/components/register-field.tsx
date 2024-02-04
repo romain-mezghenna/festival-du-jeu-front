@@ -25,7 +25,7 @@ function RegisterField (props : any) {
   const [navigate, setNavigate] = React.useState(false);
 
   const handleRegister = async () => {
-    if(pseudo === '' || mdp === '' || nom === '' || prenom === '' || mail === '' ||  teeshirt === '' || association === '' || mdpConfirm === ''){
+    if(pseudo === '' || mdp === '' || nom === '' || prenom === '' || mail === '' ||  teeshirt === '' || mdpConfirm === ''){
       alert('Veuillez remplir tous les champs')
     }
     else{
