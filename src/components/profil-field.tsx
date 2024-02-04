@@ -18,6 +18,7 @@ function ProfilField (props : any) {
   const [vege , setVege] = React.useState(false);
   const [hebergement , setHebergement] = React.useState(false);
   const [teeshirt , setTeeshirt] = React.useState('');
+  const [tel , setTel] = React.useState('');
   // avant que le component se charge on recupere les infos de l'utilisateur pour les afficher dans les champs
   React.useEffect(() => {
     if (user.token === null) {
@@ -43,6 +44,7 @@ function ProfilField (props : any) {
           setVege(res.vege);
           setHebergement(res.hebergement);
           setTeeshirt(res.teeshirt);
+          setTel(res.tel);
         }
       }
     )
@@ -61,6 +63,10 @@ function ProfilField (props : any) {
       prenom,
       mail,
       association,
+      teeshirt,
+      vege,
+      hebergement,
+      tel,
       user.token
     );
     }
@@ -68,7 +74,7 @@ function ProfilField (props : any) {
       sendRequest(
         'users/'+ user.pseudo,
         'PUT',
-        { mdp: mdp, nom: nom, prenom: prenom, mail: mail, association: association, vege: vege, hebergement: hebergement, teeshirt: teeshirt},
+        { mdp: mdp, nom: nom, prenom: prenom, mail: mail, association: association, vege: vege, hebergement: hebergement, teeshirt: teeshirt, tel: tel},
         user.token,
         (err, res) => {
           if (err) {
@@ -110,7 +116,7 @@ function ProfilField (props : any) {
       />
       <h3 className="profil-field-text03">{props.mail}</h3>
       <input
-        type="mail"
+        type="text"
         placeholder={props.textinputPlaceholder2}
         className="input profil-field-textinput3"
         value = {mail}
@@ -129,8 +135,8 @@ function ProfilField (props : any) {
       </select>
       <h3 className="profil-field-text05">{props.hebergement}</h3>
       <select className="profil-field-select1" 
-      value = {hebergement.toString() == null ? hebergement.toString() : 'false'}
-      onChange={(e) => setHebergement(Boolean(e.target.value))}>
+      onChange={(e) => setHebergement(Boolean(e.target.value))}
+      value = {hebergement.toString()}>
         <option value= "false" className="">
           Recherche
         </option>
@@ -166,8 +172,16 @@ function ProfilField (props : any) {
         type="text"
         placeholder={props.textinputPlaceholder3}
         className="input profil-field-textinput4"
-        value = {association == null ? association : ''}
         onChange={(e) => setAssociation(e.target.value)}
+        value = {association}
+      />
+      <h3 className="profil-field-text08">{props.tel}</h3>
+      <input
+        type="number"
+        placeholder={props.textinputPlaceholder4}
+        className="input profil-field-textinput5"
+        value = {tel}
+        onChange={(e) => setTel(e.target.value)}
       />
       <h3 className="profil-field-text09">{props.passwordConfirm}</h3>
       <input
@@ -203,6 +217,7 @@ ProfilField.defaultProps = {
   register: 'Enregistrer les modifications',
   textinputPlaceholder1: 'Nouveau prénom',
   textinputPlaceholder: 'Nouveau nom',
+  tel : 'numéro de téléphone',
 }
 
 ProfilField.propTypes = {
