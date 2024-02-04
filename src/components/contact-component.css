@@ -1,0 +1,126 @@
+.contact-component-container {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: var(--dl-space-space-fourunits);
+  position: relative;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 25px;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-component-text {
+  font-size: 4em;
+  align-self: flex-start;
+  font-family: "KGLifeisMessy";
+}
+.contact-component-text01 {
+  align-self: flex-start;
+  margin-top: var(--dl-space-space-twounits);
+  line-height: 2;
+}
+.contact-component-text02 {
+  font-size: 24px;
+  font-family: "OlivessansPimiento";
+}
+.contact-component-text03 {
+  font-size: 24px;
+  font-family: "OlivessansPimiento";
+}
+.contact-component-text04 {
+  font-size: 24px;
+  font-family: "OlivessansPimiento";
+}
+.contact-component-text05 {
+  font-size: 24px;
+  font-family: "OlivessansPimiento";
+}
+.contact-component-text06 {
+  font-size: 24px;
+  font-family: "OlivessansPimiento";
+}
+.contact-component-text07 {
+  font-size: 24px;
+  font-family: "OlivessansPimiento";
+}
+.contact-component-text08 {
+  font-size: 24px;
+  font-family: "OlivessansPimiento";
+}
+.contact-component-root-class-name {
+  width: 80%;
+  height: auto;
+  background-color: rgba(157, 171, 226, 0.52);
+}
+@media(max-width: 1600px) {
+  .contact-component-container {
+    flex: 0;
+    width: 100%;
+    height: auto;
+    padding: var(--dl-space-space-twounits);
+    border-color: var(--dl-color-gray-black);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: var(--dl-radius-radius-radius4);
+    margin-bottom: 0px;
+    flex-direction: column;
+  }
+  .contact-component-text {
+    font-size: 48px;
+    font-family: Helvetica;
+  }
+  .contact-component-text01 {
+    font-size: 48px;
+    font-style: normal;
+    margin-top: var(--dl-space-space-threeunits);
+    font-family: Helvetica;
+    font-weight: 400;
+  }
+  .contact-component-text02 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  .contact-component-text03 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  .contact-component-text04 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  .contact-component-text05 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  .contact-component-text06 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  .contact-component-text07 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  .contact-component-text08 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  .contact-component-root-class-name {
+    flex: 0;
+    width: auto;
+    background-color: rgba(157, 171, 226, 0.31);
+  }
+}
+@media(max-width: 767px) {
+  .contact-component-text01 {
+    width: 100%;
+  }
+}
+@media(max-width: 479px) {
+  .contact-component-text01 {
+    height: auto;
+  }
+}

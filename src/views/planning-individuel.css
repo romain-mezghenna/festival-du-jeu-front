@@ -1,0 +1,19 @@
+.planning-individuel-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media(max-width: 1600px) {
+  .planning-individuel-container {
+    justify-content: space-between;
+  }
+}
+@media(max-width: 1200px) {
+  .planning-individuel-container {
+    justify-content: space-between;
+  }
+}

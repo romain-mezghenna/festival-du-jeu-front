@@ -1,0 +1,128 @@
+.gestion-zones-component-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.gestion-zones-component-container1 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gestion-zones-component-text {
+  font-family: "KGLifeisMessy";
+}
+.gestion-zones-component-container2 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.gestion-zones-component-text1 {
+  font-family: "OlivessansPimiento";
+}
+.gestion-zones-component-select {
+  border-color: var(--dl-color-gray-black);
+  border-width: 2px;
+  border-radius: var(--dl-radius-radius-radius4);
+}
+.gestion-zones-component-container3 {
+  gap: var(--dl-space-space-sixunits);
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gestion-zones-component-container4 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.gestion-zones-component-container5 {
+  flex: 0 0 auto;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.gestion-zones-component-text2 {
+  align-self: center;
+  font-family: "OlivessansPimiento";
+}
+.gestion-zones-component-textinput {
+  margin-top: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.gestion-zones-component-button {
+  font-family: "KGLifeisMessy";
+}
+.gestion-zones-component-container6 {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  flex-direction: column;
+}
+.gestion-zones-component-text3 {
+  font-family: "OlivessansPimiento";
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.gestion-zones-component-select1 {
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.gestion-zones-component-textinput1 {
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.gestion-zones-component-button1 {
+  font-family: "KGLifeisMessy";
+}
+.gestion-zones-component-container7 {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.gestion-zones-component-text4 {
+  font-family: "OlivessansPimiento";
+  padding-bottom: var(--dl-space-space-halfunit);
+}
+.gestion-zones-component-select2 {
+  border-color: var(--dl-color-gray-black);
+  border-width: 2px;
+  border-radius: var(--dl-radius-radius-radius4);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.gestion-zones-component-button2 {
+  font-family: "KGLifeisMessy";
+}
+
+@media(max-width: 1600px) {
+  .gestion-zones-component-container4 {
+    gap: var(--dl-space-space-unit);
+  }
+  .gestion-zones-component-container7 {
+    gap: var(--dl-space-space-unit);
+    height: 114px;
+  }
+}
+@media(max-width: 767px) {
+  .gestion-zones-component-container3 {
+    flex-direction: column;
+  }
+}

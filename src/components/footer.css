@@ -1,0 +1,131 @@
+.footer-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer-footer {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-twounits);
+  max-width: auto;
+  align-self: center;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: space-between;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+}
+.footer-image {
+  height: auto;
+  object-fit: cover;
+}
+.footer-navlink {
+  font-style: normal;
+  font-family: "KGLifeisMessy";
+  font-weight: 400;
+  text-decoration: none;
+}
+.footer-navlink1 {
+  font-family: "KGLifeisMessy";
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1600px) {
+  .footer-container {
+    height: 100%;
+  }
+  .footer-footer {
+    width: 100%;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    border-top-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+  }
+  .footer-image {
+    width: auto;
+    height: auto;
+  }
+  .footer-root-class-name13 {
+    margin-top: var(--dl-space-space-threeunits);
+  }
+}
+@media(max-width: 1200px) {
+  .footer-container {
+    height: auto;
+  }
+}
+@media(max-width: 991px) {
+  .footer-container {
+    height: auto;
+  }
+}
+@media(max-width: 767px) {
+  .footer-footer {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .footer-text {
+    text-align: center;
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+  .footer-root-class-name22 {
+    height: auto;
+  }
+}
+@media(max-width: 479px) {
+  .footer-container {
+    height: auto;
+  }
+  .footer-footer {
+    width: 100%;
+    height: auto;
+    padding: var(--dl-space-space-unit);
+    flex-direction: column;
+  }
+  .footer-image {
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .footer-text {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .footer-root-class-name21 {
+    height: auto;
+  }
+}

@@ -1,0 +1,52 @@
+.news-post-card-blog-post-card {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  max-width: var(--dl-size-size-maxwidth);
+  box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+  transition: 0.3s;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: center;
+}
+.news-post-card-blog-post-card:hover {
+  transform: scale(1.02);
+}
+.news-post-card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.news-post-card-container {
+  display: flex;
+  padding: var(--dl-space-space-twounits);
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.news-post-card-text {
+  font-size: 1.5rem;
+  font-family: "KGLifeisMessy";
+  font-weight: 300;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.news-post-card-text1 {
+  color: var(--dl-color-gray-500);
+  font-family: "OlivessansPimiento";
+  font-weight: 400;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+
+
+
+
+
+@media(max-width: 991px) {
+  .news-post-card-image {
+    height: 350px;
+  }
+}

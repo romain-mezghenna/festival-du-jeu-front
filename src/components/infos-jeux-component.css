@@ -1,0 +1,152 @@
+.infos-jeux-component-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  padding: var(--dl-space-space-fourunits);
+  position: relative;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.infos-jeux-component-container01 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infos-jeux-component-text {
+  font-family: "KGLifeisMessy";
+}
+.infos-jeux-component-container02 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.infos-jeux-component-container03 {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.infos-jeux-component-text1 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-container04 {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infos-jeux-component-text2 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-container05 {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infos-jeux-component-text3 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-container06 {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infos-jeux-component-text4 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-container07 {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infos-jeux-component-text5 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-container08 {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infos-jeux-component-text6 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-container09 {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infos-jeux-component-text7 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-container10 {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infos-jeux-component-text8 {
+  font-family: "OlivessansPimiento";
+}
+.infos-jeux-component-root-class-name {
+  background-color: rgba(157, 171, 226, 0.43);
+}
+@media(max-width: 1600px) {
+  .infos-jeux-component-container02 {
+    gap: var(--dl-space-space-threeunits);
+    height: auto;
+    justify-content: flex-start;
+  }
+  .infos-jeux-component-container03 {
+    width: var(--dl-size-size-small);
+  }
+  .infos-jeux-component-container04 {
+    width: var(--dl-size-size-small);
+  }
+  .infos-jeux-component-container05 {
+    width: var(--dl-size-size-small);
+  }
+  .infos-jeux-component-container06 {
+    width: var(--dl-size-size-small);
+  }
+  .infos-jeux-component-container07 {
+    width: var(--dl-size-size-small);
+  }
+  .infos-jeux-component-container08 {
+    width: var(--dl-size-size-small);
+  }
+  .infos-jeux-component-container09 {
+    width: var(--dl-size-size-small);
+  }
+  .infos-jeux-component-container10 {
+    width: var(--dl-size-size-small);
+  }
+}
+@media(max-width: 991px) {
+  .infos-jeux-component-container02 {
+    flex-direction: column;
+  }
+}

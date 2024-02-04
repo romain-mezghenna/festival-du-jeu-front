@@ -1,0 +1,164 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.home-hero {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  position: relative;
+  min-height: 80vh;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: linear-gradient(90deg, rgb(241, 242, 181) 0.00%,rgba(19, 80, 88, 0.14) 100.00%),url('https://images.unsplash.com/photo-1518245078939-75312b6f72c6?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDExfHx0YWJsZSUyMGdhbWV8ZW58MHx8fHwxNzA2OTE5MjQ5fDA&ixlib=rb-4.0.3&w=1500');
+}
+.home-text {
+  color: var(--dl-color-gray-white);
+  font-size: 3rem;
+}
+.home-text01 {
+  font-family: "OlivessansPimiento";
+}
+.home-text02 {
+  font-family: "OlivessansPimiento";
+}
+.home-text03 {
+  font-size: 2rem;
+  font-style: normal;
+  font-family: "OlivessansPimiento";
+  font-weight: 100;
+}
+.home-text05 {
+  color: var(--dl-color-gray-white);
+  margin-top: var(--dl-space-space-twounits);
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.home-btn-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.home-navlink {
+  font-size: 0.75rem;
+  transition: 0.3s;
+  font-family: "OlivessansPimiento";
+  padding-top: var(--dl-space-space-unit);
+  border-width: 0px;
+  padding-left: var(--dl-space-space-twounits);
+  padding-right: var(--dl-space-space-twounits);
+  padding-bottom: var(--dl-space-space-unit);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.home-navlink:hover {
+  transform: scale(1.02);
+}
+.home-navlink1 {
+  color: var(--dl-color-gray-white);
+  font-size: 0.75rem;
+  transition: 0.3s;
+  font-family: "OlivessansPimiento";
+  margin-left: var(--dl-space-space-unit);
+  padding-top: var(--dl-space-space-unit);
+  border-color: var(--dl-color-gray-white);
+  padding-left: var(--dl-space-space-twounits);
+  padding-right: var(--dl-space-space-twounits);
+  padding-bottom: var(--dl-space-space-unit);
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+}
+.home-navlink1:hover {
+  transform: scale(1.02);
+}
+@media(max-width: 1600px) {
+  .home-hero {
+    margin-right: 0px;
+    background-size: cover;
+    background-image: linear-gradient(90deg, rgb(241, 242, 181) 0.00%,rgba(19, 80, 88, 0.47) 46.00%),url('https://images.unsplash.com/photo-1603198132334-5478a1ec5bc1?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE1fHx0YWJsZSUyMGdhbWV8ZW58MHx8fHwxNzA2NjU5OTk2fDA&ixlib=rb-4.0.3&w=1500');
+    background-repeat: repeat,no-repeat;
+    background-position: top left,center;
+  }
+  .home-text {
+    color: var(--dl-color-gray-white);
+    height: 91px;
+    font-size: 3rem;
+  }
+  .home-text01 {
+    font-family: OlivessansPimiento;
+  }
+  .home-text02 {
+    font-family: OlivessansPimiento;
+  }
+  .home-text03 {
+    font-size: 2rem;
+    font-style: normal;
+    font-family: OlivessansPimiento;
+    font-weight: 100;
+  }
+  .home-navlink {
+    font-size: 0.75rem;
+    font-family: OlivessansPimiento;
+    text-transform: uppercase;
+  }
+  .home-navlink1 {
+    color: var(--dl-color-gray-white);
+    font-size: 0.75rem;
+    font-family: OlivessansPimiento;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+}
+@media(max-width: 991px) {
+  .home-hero {
+    flex-direction: column;
+  }
+  .home-text {
+    color: var(--dl-color-gray-white);
+    font-size: 3rem;
+    text-align: center;
+  }
+  .home-text01 {
+    font-family: OlivessansPimiento;
+  }
+  .home-text02 {
+    font-family: OlivessansPimiento;
+  }
+  .home-text03 {
+    font-size: 2rem;
+    font-style: normal;
+    font-family: OlivessansPimiento;
+    font-weight: 100;
+  }
+  .home-text05 {
+    text-align: center;
+  }
+}
+@media(max-width: 767px) {
+  .home-hero {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+}
+@media(max-width: 479px) {
+  .home-hero {
+    width: 100%;
+    padding: var(--dl-space-space-twounits);
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+  }
+  .home-btn-group {
+    margin-top: var(--dl-space-space-sixunits);
+    flex-direction: column;
+  }
+  .home-navlink1 {
+    margin-top: var(--dl-space-space-unit);
+    margin-left: 0px;
+  }
+}

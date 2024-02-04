@@ -1,0 +1,253 @@
+.home-benevole-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home-benevole-features {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  flex-direction: column;
+}
+.home-benevole-text {
+  font-size: 3rem;
+  font-family: "KGLifeisMessy";
+  margin-bottom: var(--dl-space-space-threeunits);
+}
+.home-benevole-text01 {
+  font-family: "KGLifeisMessy";
+}
+.home-benevole-container1 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: grid;
+  grid-gap: var(--dl-space-space-twounits);
+  align-items: flex-start;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.home-benevole-feature-card {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  max-width: var(--dl-size-size-maxwidth);
+  box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+  transition: 0.3s;
+  align-items: flex-start;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.home-benevole-feature-card:hover {
+  transform: scale(1.02);
+}
+.home-benevole-text03 {
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.home-benevole-text04 {
+  font-family: "OlivessansPimiento";
+}
+.home-benevole-icon {
+  width: var(--dl-size-size-large);
+  height: var(--dl-size-size-large);
+}
+.home-benevole-feature-card1 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  max-width: var(--dl-size-size-maxwidth);
+  box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+  transition: 0.3s;
+  align-items: flex-start;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.home-benevole-feature-card1:hover {
+  transform: scale(1.02);
+}
+.home-benevole-text07 {
+  width: 300px;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.home-benevole-text08 {
+  font-family: "OlivessansPimiento";
+}
+.home-benevole-text09 {
+  font-family: "OlivessansPimiento";
+}
+.home-benevole-icon02 {
+  width: var(--dl-size-size-large);
+  height: var(--dl-size-size-large);
+}
+.home-benevole-feature-card2 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  max-width: var(--dl-size-size-maxwidth);
+  box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+  transition: 0.3s;
+  align-items: flex-start;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.home-benevole-feature-card2:hover {
+  transform: scale(1.02);
+}
+.home-benevole-text11 {
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.home-benevole-text12 {
+  font-family: "OlivessansPimiento";
+}
+.home-benevole-text13 {
+  font-family: "OlivessansPimiento";
+}
+.home-benevole-icon04 {
+  width: var(--dl-size-size-large);
+  height: var(--dl-size-size-large);
+}
+.home-benevole-feature-card3 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  max-width: var(--dl-size-size-maxwidth);
+  box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+  transition: 0.3s;
+  align-items: flex-start;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.home-benevole-feature-card3:hover {
+  transform: scale(1.02);
+}
+.home-benevole-text15 {
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.home-benevole-text16 {
+  font-family: "OlivessansPimiento";
+}
+.home-benevole-text17 {
+  font-family: "OlivessansPimiento";
+}
+.home-benevole-icon06 {
+  width: var(--dl-size-size-large);
+  height: var(--dl-size-size-large);
+}
+.home-benevole-feature-card4 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  max-width: var(--dl-size-size-maxwidth);
+  box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+  transition: 0.3s;
+  align-items: flex-start;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.home-benevole-feature-card4:hover {
+  transform: scale(1.02);
+}
+.home-benevole-text19 {
+  font-family: "OlivessansPimiento";
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.home-benevole-icon08 {
+  width: var(--dl-size-size-large);
+  height: var(--dl-size-size-large);
+}
+@media(max-width: 1600px) {
+  .home-benevole-container {
+    justify-content: space-between;
+  }
+  .home-benevole-text {
+    font-size: 3rem;
+  }
+  .home-benevole-feature-card {
+    padding-top: 16px;
+  }
+}
+@media(max-width: 991px) {
+  .home-benevole-text {
+    align-self: center;
+  }
+  .home-benevole-text01 {
+    align-self: center;
+  }
+  .home-benevole-container1 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width: 767px) {
+  .home-benevole-features {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+}
+@media(max-width: 479px) {
+  .home-benevole-features {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .home-benevole-container1 {
+    grid-gap: var(--dl-space-space-halfunit);
+  }
+  .home-benevole-feature-card {
+    max-width: auto;
+  }
+  .home-benevole-icon {
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
+  }
+  .home-benevole-feature-card1 {
+    max-width: auto;
+  }
+  .home-benevole-icon02 {
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
+  }
+  .home-benevole-feature-card2 {
+    max-width: auto;
+  }
+  .home-benevole-icon04 {
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
+  }
+  .home-benevole-feature-card3 {
+    max-width: auto;
+  }
+  .home-benevole-icon06 {
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
+  }
+  .home-benevole-feature-card4 {
+    max-width: auto;
+  }
+  .home-benevole-icon08 {
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
+  }
+}

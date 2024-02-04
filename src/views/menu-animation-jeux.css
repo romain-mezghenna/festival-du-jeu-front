@@ -1,0 +1,13 @@
+.menu-animation-jeux-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media(max-width: 1600px) {
+  .menu-animation-jeux-container {
+    justify-content: space-between;
+  }
+}

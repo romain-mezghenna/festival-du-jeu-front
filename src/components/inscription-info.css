@@ -1,0 +1,157 @@
+.inscription-info-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: var(--dl-space-space-fourunits);
+  position: relative;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: row;
+  justify-content: center;
+}
+.inscription-info-container1 {
+  gap: var(--dl-space-space-twounits);
+  flex: 0 0 auto;
+  width: 200px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+.inscription-info-text {
+  font-family: "KGLifeisMessy";
+}
+.inscription-info-button {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-button1 {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-button2 {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-button3 {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-button4 {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-button5 {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-container2 {
+  gap: var(--dl-space-space-unit);
+  flex: 0 0 auto;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.inscription-info-button6 {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-button7 {
+  font-family: "OlivessansPimiento";
+}
+.inscription-info-root-class-name {
+  width: 80%;
+  background-color: rgba(157, 171, 226, 0.37);
+}
+@media(max-width: 1600px) {
+  .inscription-info-container {
+    gap: var(--dl-space-space-sixunits);
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .inscription-info-container1 {
+    gap: var(--dl-space-space-halfunit);
+    align-self: flex-start;
+    align-items: stretch;
+    margin-left: var(--dl-space-space-threeunits);
+  }
+  .inscription-info-container2 {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .inscription-info-button6 {
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+  .inscription-info-button7 {
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+  .inscription-info-root-class-name {
+    width: 80%;
+  }
+}
+@media(max-width: 1200px) {
+  .inscription-info-container1 {
+    width: auto;
+    height: auto;
+    margin-left: var(--dl-space-space-oneandhalfunits);
+  }
+  .inscription-info-text {
+    align-self: center;
+    margin-bottom: var(--dl-space-space-halfunit);
+  }
+  .inscription-info-button {
+    width: 100%;
+    align-self: center;
+    margin-top: var(--dl-space-space-halfunit);
+    margin-bottom: var(--dl-space-space-halfunit);
+  }
+  .inscription-info-button1 {
+    width: 100%;
+    align-self: center;
+    margin-top: var(--dl-space-space-halfunit);
+    margin-bottom: var(--dl-space-space-halfunit);
+  }
+  .inscription-info-button2 {
+    width: 100%;
+    align-self: center;
+    margin-top: var(--dl-space-space-halfunit);
+    margin-bottom: var(--dl-space-space-halfunit);
+  }
+  .inscription-info-button3 {
+    width: 100%;
+    height: auto;
+    align-self: center;
+    margin-top: var(--dl-space-space-halfunit);
+    margin-bottom: var(--dl-space-space-halfunit);
+  }
+  .inscription-info-button4 {
+    width: 100%;
+    height: auto;
+    align-self: center;
+    margin-top: var(--dl-space-space-halfunit);
+    margin-bottom: var(--dl-space-space-halfunit);
+  }
+  .inscription-info-button5 {
+    width: 100%;
+    align-self: center;
+    margin-top: var(--dl-space-space-halfunit);
+    margin-bottom: var(--dl-space-space-halfunit);
+  }
+  .inscription-info-root-class-name {
+    margin-top: var(--dl-space-space-halfunit);
+    margin-bottom: var(--dl-space-space-fourunits);
+  }
+}
+@media(max-width: 991px) {
+  .inscription-info-root-class-name {
+    margin-top: var(--dl-space-space-sixunits);
+    margin-bottom: var(--dl-space-space-sixunits);
+  }
+}
+@media(max-width: 479px) {
+  .inscription-info-container {
+    flex-direction: column;
+  }
+}

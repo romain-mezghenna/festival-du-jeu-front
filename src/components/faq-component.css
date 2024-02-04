@@ -1,0 +1,73 @@
+.faq-component-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.faq-component-container1 {
+  gap: var(--dl-space-space-threeunits);
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.faq-component-text {
+  font-size: 4em;
+  font-family: "KGLifeisMessy";
+}
+.faq-component-select {
+  width: 40%;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+}
+.faq-component-text1 {
+  font-size: 4em;
+  text-align: center;
+  font-family: "KGLifeisMessy";
+}
+.faq-component-text2 {
+  font-size: 2em;
+  font-family: "OlivessansPimiento";
+}
+
+
+@media(max-width: 1600px) {
+  .faq-component-container {
+    gap: var(--dl-space-space-twounits);
+    height: auto;
+  }
+  .faq-component-container1 {
+    gap: var(--dl-space-space-oneandhalfunits);
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .faq-component-text {
+    font-size: 24px;
+    font-family: Helvetica;
+  }
+  .faq-component-select {
+    width: auto;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    border-radius: var(--dl-radius-radius-radius4);
+  }
+  .faq-component-text1 {
+    font-size: 24px;
+    font-family: Helvetica;
+  }
+  .faq-component-text2 {
+    font-family: Helvetica;
+  }
+  .faq-component-root-class-name1 {
+    height: auto;
+  }
+}

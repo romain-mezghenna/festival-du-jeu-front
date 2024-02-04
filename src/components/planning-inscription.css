@@ -1,0 +1,1131 @@
+.planning-inscription-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 25px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.planning-inscription-container01 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.planning-inscription-container02 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.planning-inscription-text {
+  font-family: "KGLifeisMessy";
+  margin-bottom: var(--dl-space-space-unit);
+}
+.planning-inscription-container03 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-fourunits);
+  margin-top: var(--dl-space-space-twounits);
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 0px;
+  justify-content: center;
+  border-top-width: 0px;
+}
+.planning-inscription-container04 {
+  flex: 0 0 auto;
+  height: 497px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.planning-inscription-container05 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text01 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container06 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text02 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container07 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text03 {
+  height: auto;
+  font-family: "DryBrush";
+}
+.planning-inscription-container08 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text04 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container09 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text05 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container10 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text06 {
+  height: auto;
+  font-family: "DryBrush";
+}
+.planning-inscription-container11 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.planning-inscription-container12 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: var(--dl-size-size-small);
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text07 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container13 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  margin-left: var(--dl-space-space-oneandhalfunits);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  margin-right: var(--dl-space-space-oneandhalfunits);
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container14 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image01 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container15 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image02 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container16 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image03 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container17 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image04 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container18 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image05 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container19 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.planning-inscription-container20 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: var(--dl-size-size-small);
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text08 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container21 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  margin-left: var(--dl-space-space-oneandhalfunits);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  margin-right: var(--dl-space-space-oneandhalfunits);
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image06 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container22 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image07 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container23 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image08 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container24 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image09 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container25 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image10 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container26 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image11 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container27 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.planning-inscription-container28 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: var(--dl-size-size-small);
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text09 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container29 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  margin-left: var(--dl-space-space-oneandhalfunits);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  margin-right: var(--dl-space-space-oneandhalfunits);
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image12 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container30 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image13 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container31 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image14 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container32 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image15 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container33 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image16 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container34 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image17 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container35 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.planning-inscription-container36 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: var(--dl-size-size-small);
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text10 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container37 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  margin-left: var(--dl-space-space-oneandhalfunits);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  margin-right: var(--dl-space-space-oneandhalfunits);
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image18 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container38 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image19 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container39 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image20 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container40 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image21 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container41 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image22 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container42 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image23 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container43 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.planning-inscription-container44 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: var(--dl-size-size-small);
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-text11 {
+  font-family: "DryBrush";
+}
+.planning-inscription-container45 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  margin-left: var(--dl-space-space-oneandhalfunits);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  margin-right: var(--dl-space-space-oneandhalfunits);
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image24 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container46 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image25 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container47 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image26 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container48 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image27 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container49 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image28 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-container50 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.planning-inscription-image29 {
+  width: auto;
+  object-fit: cover;
+}
+.planning-inscription-root-class-name {
+  width: 80%;
+  height: auto;
+  margin-top: var(--dl-space-space-threeunits);
+  margin-bottom: var(--dl-space-space-threeunits);
+  background-color: rgba(157, 171, 226, 0.32);
+}
+@media(max-width: 1600px) {
+  .planning-inscription-container {
+    width: 100%;
+    height: auto;
+    padding: var(--dl-space-space-fourunits);
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: var(--dl-radius-radius-radius4);
+  }
+  .planning-inscription-container02 {
+    gap: var(--dl-space-space-halfunit);
+  }
+  .planning-inscription-text {
+    align-self: center;
+  }
+  .planning-inscription-select {
+    align-self: flex-start;
+  }
+  .planning-inscription-container03 {
+    width: 100%;
+    height: auto;
+    margin-top: var(--dl-space-space-twounits);
+  }
+  .planning-inscription-container04 {
+    gap: 0;
+    height: auto;
+    padding-top: 21px;
+  }
+  .planning-inscription-container05 {
+    gap: var(--dl-space-space-unit);
+    height: 75px;
+    margin-top: 27px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: center;
+  }
+  .planning-inscription-container06 {
+    gap: var(--dl-space-space-unit);
+    height: 75px;
+    align-self: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: center;
+  }
+  .planning-inscription-text02 {
+    align-self: center;
+  }
+  .planning-inscription-container07 {
+    gap: var(--dl-space-space-unit);
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: flex-end;
+  }
+  .planning-inscription-text03 {
+    height: auto;
+  }
+  .planning-inscription-container08 {
+    gap: var(--dl-space-space-unit);
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: center;
+  }
+  .planning-inscription-container09 {
+    gap: var(--dl-space-space-unit);
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: center;
+  }
+  .planning-inscription-container10 {
+    gap: var(--dl-space-space-unit);
+    height: 77px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: flex-end;
+  }
+  .planning-inscription-text06 {
+    height: auto;
+  }
+  .planning-inscription-container11 {
+    width: var(--dl-size-size-large);
+    height: auto;
+  }
+  .planning-inscription-container12 {
+    height: var(--dl-size-size-small);
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .planning-inscription-container13 {
+    height: 75px;
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .planning-inscription-image {
+    width: auto;
+  }
+  .planning-inscription-container14 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image01 {
+    width: auto;
+  }
+  .planning-inscription-container15 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image02 {
+    width: auto;
+  }
+  .planning-inscription-container16 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image03 {
+    width: auto;
+  }
+  .planning-inscription-container17 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image04 {
+    width: auto;
+  }
+  .planning-inscription-container18 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image05 {
+    width: auto;
+  }
+  .planning-inscription-container19 {
+    width: var(--dl-size-size-large);
+    height: auto;
+  }
+  .planning-inscription-container20 {
+    height: var(--dl-size-size-small);
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .planning-inscription-container21 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image06 {
+    width: auto;
+  }
+  .planning-inscription-container22 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image07 {
+    width: auto;
+  }
+  .planning-inscription-container23 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image08 {
+    width: auto;
+  }
+  .planning-inscription-container24 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image09 {
+    width: auto;
+  }
+  .planning-inscription-container25 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image10 {
+    width: auto;
+  }
+  .planning-inscription-container26 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image11 {
+    width: auto;
+  }
+  .planning-inscription-container27 {
+    width: var(--dl-size-size-large);
+    height: auto;
+  }
+  .planning-inscription-container28 {
+    height: var(--dl-size-size-small);
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .planning-inscription-container29 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image12 {
+    width: auto;
+  }
+  .planning-inscription-container30 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image13 {
+    width: auto;
+  }
+  .planning-inscription-container31 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image14 {
+    width: auto;
+  }
+  .planning-inscription-container32 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image15 {
+    width: auto;
+  }
+  .planning-inscription-container33 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image16 {
+    width: auto;
+  }
+  .planning-inscription-container34 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image17 {
+    width: auto;
+  }
+  .planning-inscription-container35 {
+    width: var(--dl-size-size-large);
+    height: auto;
+  }
+  .planning-inscription-container36 {
+    height: var(--dl-size-size-small);
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .planning-inscription-container37 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image18 {
+    width: auto;
+  }
+  .planning-inscription-container38 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image19 {
+    width: auto;
+  }
+  .planning-inscription-container39 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image20 {
+    width: auto;
+  }
+  .planning-inscription-container40 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image21 {
+    width: auto;
+  }
+  .planning-inscription-container41 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image22 {
+    width: auto;
+  }
+  .planning-inscription-container42 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image23 {
+    width: auto;
+  }
+  .planning-inscription-container43 {
+    width: var(--dl-size-size-large);
+    height: auto;
+  }
+  .planning-inscription-container44 {
+    height: var(--dl-size-size-small);
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .planning-inscription-text11 {
+    border-color: var(--dl-color-gray-black);
+    border-width: 0px;
+  }
+  .planning-inscription-container45 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image24 {
+    width: auto;
+  }
+  .planning-inscription-container46 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image25 {
+    width: auto;
+  }
+  .planning-inscription-container47 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image26 {
+    width: auto;
+  }
+  .planning-inscription-container48 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image27 {
+    width: auto;
+  }
+  .planning-inscription-container49 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image28 {
+    width: auto;
+  }
+  .planning-inscription-container50 {
+    height: 75px;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
+  .planning-inscription-image29 {
+    width: auto;
+  }
+  .planning-inscription-root-class-name {
+    width: 80%;
+    margin-top: var(--dl-space-space-twounits);
+    margin-bottom: var(--dl-space-space-twounits);
+    background-color: rgba(157, 171, 226, 0.32);
+  }
+}
+@media(max-width: 991px) {
+  .planning-inscription-container02 {
+    gap: var(--dl-space-space-halfunit);
+  }
+}

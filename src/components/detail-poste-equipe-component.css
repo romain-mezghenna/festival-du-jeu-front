@@ -1,0 +1,26 @@
+.detail-poste-equipe-component-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.detail-poste-equipe-component-container1 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detail-poste-equipe-component-text {
+  font-family: "KGLifeisMessy";
+}
+@media(max-width: 1600px) {
+  .detail-poste-equipe-component-container1 {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

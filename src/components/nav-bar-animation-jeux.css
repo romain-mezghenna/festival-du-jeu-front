@@ -1,0 +1,60 @@
+.nav-bar-animation-jeux-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.nav-bar-animation-jeux-header {
+  width: 100%;
+  display: flex;
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: center;
+}
+.nav-bar-animation-jeux-container1 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.nav-bar-animation-jeux-nav {
+  display: flex;
+  align-items: center;
+  padding-left: var(--dl-space-space-twounits);
+  flex-direction: row;
+}
+.nav-bar-animation-jeux-root-class-name {
+  height: auto;
+}
+
+@media(max-width: 1600px) {
+  .nav-bar-animation-jeux-container {
+    height: auto;
+  }
+  .nav-bar-animation-jeux-header {
+    gap: var(--dl-space-space-twounits);
+    align-self: center;
+    justify-content: center;
+  }
+}
+@media(max-width: 767px) {
+  .nav-bar-animation-jeux-header {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .nav-bar-animation-jeux-nav {
+    display: none;
+  }
+}
+@media(max-width: 479px) {
+  .nav-bar-animation-jeux-header {
+    padding: var(--dl-space-space-unit);
+  }
+}

@@ -1,0 +1,138 @@
+.cration-festival-component-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.cration-festival-component-container1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.cration-festival-component-container2 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cration-festival-component-text {
+  font-family: "KGLifeisMessy";
+}
+.cration-festival-component-container3 {
+  gap: var(--dl-space-space-sixunits);
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cration-festival-component-container4 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.cration-festival-component-container5 {
+  gap: var(--dl-space-space-unit);
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: var(--dl-space-space-twounits);
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 25px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(157, 171, 226, 0.29);
+}
+.cration-festival-component-text1 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-text2 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-text3 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-text4 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-text5 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-button {
+  font-family: "KGLifeisMessy";
+}
+.cration-festival-component-container6 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.cration-festival-component-container7 {
+  gap: var(--dl-space-space-unit);
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  padding: var(--dl-space-space-twounits);
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 2px;
+  border-radius: 25px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(157, 171, 226, 0.39);
+}
+.cration-festival-component-text6 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-text7 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-button1 {
+  font-family: "KGLifeisMessy";
+}
+.cration-festival-component-text8 {
+  font-family: "DryBrush";
+}
+.cration-festival-component-button2 {
+  font-family: "KGLifeisMessy";
+}
+.cration-festival-component-button3 {
+  align-self: center;
+  margin-top: var(--dl-space-space-twounits);
+  font-family: "KGLifeisMessy";
+}
+.cration-festival-component-root-class-name {
+  margin-top: var(--dl-space-space-threeunits);
+  margin-bottom: var(--dl-space-space-threeunits);
+}
+@media(max-width: 1200px) {
+  .cration-festival-component-root-class-name {
+    margin-top: var(--dl-space-space-fourunits);
+    margin-bottom: var(--dl-space-space-fourunits);
+  }
+}
+@media(max-width: 767px) {
+  .cration-festival-component-container3 {
+    flex-direction: column;
+  }
+}
