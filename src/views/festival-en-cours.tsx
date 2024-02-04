@@ -1,13 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import './festival-en-cours.css'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 
 const FestivalEnCours = (props:any) => {
+  const user = useSelector((state: RootState) => state.user);
+  
+  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté et qu'il a le rôle d'admin
+  if (!user.isLoggedIn || user.role !== 4) {
+    alert('Vous n\'êtes pas autorisé à accéder à cette page');
+    return <Navigate to="/" />;
+  }
   return (
     <div className="festival-en-cours-container">
       <Helmet>

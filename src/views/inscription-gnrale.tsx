@@ -7,8 +7,18 @@ import NavbarInscription from '../components/navbar-inscription'
 import PlanningInscription from '../components/planning-inscription'
 import Footer from '../components/footer'
 import './inscription-gnrale.css'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import { RootState } from '../store/store'
 
 const InscriptionGnrale = (props:any) => {
+  const user = useSelector((state: RootState) => state.user);
+  
+  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté
+  if (!user.isLoggedIn) {
+    alert('Vous n\'êtes pas autorisé à accéder à cette page');
+    return <Navigate to="/" />;
+  }
   return (
     <div className="inscription-gnrale-container">
       <Helmet>

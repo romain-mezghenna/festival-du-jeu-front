@@ -1,13 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import './home-benevole.css'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 
 const HomeBenevole = (props:any) => {
+  const user = useSelector((state: RootState) => state.user);
+  
+  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté
+  if (!user.isLoggedIn) {
+    alert('Vous n\'êtes pas autorisé à accéder à cette page');
+    return <Navigate to="/" />;
+  }
   return (
     <div className="home-benevole-container">
       <Helmet>
