@@ -12,12 +12,12 @@ function ProfilField (props : any) {
   const [pseudo , setPseudo] = React.useState('');
   const [nom , setNom] = React.useState('');
   const [prenom , setPrenom] = React.useState('');
-  const [mail , setMail] = React.useState('');
+  const [email , setEmail] = React.useState('');
   const [mdp , setMdp] = React.useState('');
-  const [association , setAssociation] = React.useState('');
-  const [vege , setVege] = React.useState(false);
-  const [hebergement , setHebergement] = React.useState(false);
-  const [teeshirt , setTeeshirt] = React.useState('');
+  const [associations , setAssociations] = React.useState('');
+  const [vegetarien , setVegetarien] = React.useState(0);
+  const [hebergement , setHebergement] = React.useState(0);
+  const [tailleTshirt , setTailleTshirt] = React.useState('');
   const [tel , setTel] = React.useState('');
   // avant que le component se charge on recupere les infos de l'utilisateur pour les afficher dans les champs
   React.useEffect(() => {
@@ -39,13 +39,23 @@ function ProfilField (props : any) {
           setPseudo(res.pseudo);
           setNom(res.nom);
           setPrenom(res.prenom);
-          setMail(res.mail);
-          setAssociation(res.association);
-          setVege(res.vege);
-          setHebergement(res.hebergement);
-          setTeeshirt(res.teeshirt);
+          setEmail(res.email);
+          setAssociations(res.associations);
+          setTailleTshirt(res.tailleTshirt);
           setTel(res.tel);
+          if (res.vegetarien === true) {
+            setVegetarien(1);
+          }else{
+            setVegetarien(0);
+          }
+          if (res.hebergement === true) {
+            setHebergement(1);
+          }else{
+            setHebergement(0);
+          }
+          
         }
+        
       }
     )
   }, [])
@@ -54,17 +64,17 @@ function ProfilField (props : any) {
       alert('Vous devez être connecté pour modifier votre profil');
       return;
     }
-    if ( mdp === '' || nom === '' || prenom === '' || mail === '' || association === ''){
+    if ( mdp === '' || nom === '' || prenom === '' || email === '' ){
     //  alert('Veuillez remplir tous les champs');
     console.log(
 
       mdp,
       nom,
       prenom,
-      mail,
-      association,
-      teeshirt,
-      vege,
+      email,
+      associations,
+      tailleTshirt,
+      vegetarien,
       hebergement,
       tel,
       user.token
@@ -74,7 +84,7 @@ function ProfilField (props : any) {
       sendRequest(
         'users/'+ user.pseudo,
         'PUT',
-        { mdp: mdp, nom: nom, prenom: prenom, mail: mail, association: association, vege: vege, hebergement: hebergement, teeshirt: teeshirt, tel: tel},
+        { mdp: mdp, nom: nom, prenom: prenom, mail: email, associations: associations, vegetarien: vegetarien, hebergement: hebergement, tailleTshirt: tailleTshirt, tel: tel},
         user.token,
         (err, res) => {
           if (err) {
@@ -114,43 +124,43 @@ function ProfilField (props : any) {
         value = {user.pseudo ?? ''} disabled
 
       />
-      <h3 className="profil-field-text03">{props.mail}</h3>
+      <h3 className="profil-field-text03">{props.email}</h3>
       <input
         type="text"
         placeholder={props.textinputPlaceholder2}
         className="input profil-field-textinput3"
-        value = {mail}
-        onChange={(e) => setMail(e.target.value)}
+        value = {email}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <h3 className="profil-field-text04">{props.vege}</h3>
       <select className="profil-field-select" 
-      //value = {vege.toString() == null ? vege.toString() : 'false'}
-      onChange={(e) => setVege(Boolean(e.target.value))}>
-        <option value="true" className="">
+      value = {vegetarien.toString()}
+      onChange={(e) => setVegetarien(Number(e.target.value))}>
+        <option value="1" className="">
           Oui
         </option>
-        <option value="false" className="">
+        <option value="0" className="">
           non
         </option>
       </select>
       <h3 className="profil-field-text05">{props.hebergement}</h3>
       <select className="profil-field-select1" 
-      onChange={(e) => setHebergement(Boolean(e.target.value))}
-      value = {hebergement.toString()}>
-        <option value= "false" className="">
+      value = {hebergement.toString()}
+        onChange={(e) => setHebergement(Number(e.target.value))}>
+        <option value= "0" className="">
           Recherche
         </option>
-        <option value="true" className="">
+        <option value="1" className="">
           Propose
         </option>
-        <option value="false" className="">
+        <option value="0" className="">
           Aucun des deux
         </option>
       </select>
-      <h3 className="profil-field-text06">{props.teeshirt}</h3>
+      <h3 className="profil-field-text06">{props.tailleTshirt}</h3>
       <select className="profil-field-select2" defaultValue={'XS'}
-      value = {teeshirt} 
-      onChange={(e) => setTeeshirt(e.target.value)}>
+      value = {tailleTshirt} 
+      onChange={(e) => setTailleTshirt(e.target.value)}>
         <option value="XS" className="">
           XS
         </option>
@@ -172,8 +182,8 @@ function ProfilField (props : any) {
         type="text"
         placeholder={props.textinputPlaceholder3}
         className="input profil-field-textinput4"
-        onChange={(e) => setAssociation(e.target.value)}
-        value = {association}
+        onChange={(e) => setAssociations(e.target.value)}
+        value = {associations}
       />
       <h3 className="profil-field-text08">{props.tel}</h3>
       <input
@@ -188,7 +198,6 @@ function ProfilField (props : any) {
         type="password"
         placeholder={props.textinputPlaceholder5}
         className="input profil-field-textinput6"
-        value = {mdp}
         onChange={(e) => setMdp(hashPassword(e.target.value))}
       />
       <button className="profil-field-navlink button" onClick={handleModif}>
@@ -202,11 +211,11 @@ ProfilField.defaultProps = {
   textinputPlaceholder5: 'Nouveau mot de passe',
   surname: 'Nom actuel',
   textinputPlaceholder2: 'Nouveau e-mail',
-  mail: 'Email actuel',
+  email: 'Email actuel',
   hebergement: 'Hébergement?',
   textinputPlaceholder3: 'Nouvelle association',
   pseudo: 'Pseudo actuel',
-  teeshirt: 'Taille tee-shirt?',
+  tailleTshirt: 'Taille tee-shirt?',
   password: 'Mot de passe actuel',
   passwordConfirm: 'Nouveau mot de passe',
   vege: 'Végétarien?',
