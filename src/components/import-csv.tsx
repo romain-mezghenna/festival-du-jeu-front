@@ -8,7 +8,7 @@ import { Navigate } from "react-router-dom";
 import "./import-csv.css";
 
 function ImportCsv(props: any) {
-    return ();
+    return (<></>);
 }
 
 ImportCsv.defaultProps = {};
