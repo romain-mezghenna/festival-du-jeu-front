@@ -38,7 +38,6 @@ function Loginfield  (props: any)  {
                   role: res.role,
                 })
               );
-              return <Navigate to="/register" />;
           }
         }
       );
