@@ -7,7 +7,7 @@ import AttributionPostesComponent from '../components/attribution-postes-compone
 import Footer from '../components/footer'
 import './attribution-postes.css'
 
-const AttributionPostes = (props) => {
+const AttributionPostes = (props:any) => {
   return (
     <div className="attribution-postes-container">
       <Helmet>

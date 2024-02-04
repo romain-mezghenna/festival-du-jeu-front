@@ -8,7 +8,7 @@ import InfosAnimJeux from '../components/infos-anim-jeux'
 import Footer from '../components/footer'
 import './menu-animation-jeux.css'
 
-const MenuAnimationJeux = (props) => {
+const MenuAnimationJeux = (props:any) => {
   return (
     <div className="menu-animation-jeux-container">
       <Helmet>

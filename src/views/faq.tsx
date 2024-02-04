@@ -7,7 +7,7 @@ import FAQComponent from '../components/faq-component'
 import Footer from '../components/footer'
 import './faq.css'
 
-const FAQ = (props) => {
+const FAQ = (props:any) => {
   return (
     <div className="faq-container">
       <Helmet>

@@ -7,7 +7,7 @@ import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import './festival-en-cours.css'
 
-const FestivalEnCours = (props) => {
+const FestivalEnCours = (props:any) => {
   return (
     <div className="festival-en-cours-container">
       <Helmet>

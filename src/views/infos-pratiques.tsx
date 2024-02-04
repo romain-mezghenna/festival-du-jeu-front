@@ -6,7 +6,7 @@ import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import './infos-pratiques.css'
 
-const InfosPratiques = (props) => {
+const InfosPratiques = (props:any) => {
   return (
     <div className="infos-pratiques-container">
       <Helmet>

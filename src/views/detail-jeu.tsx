@@ -7,7 +7,7 @@ import DetailJeuComponent from '../components/detail-jeu-component'
 import Footer from '../components/footer'
 import './detail-jeu.css'
 
-const DetailJeu = (props) => {
+const DetailJeu = (props:any) => {
   return (
     <div className="detail-jeu-container">
       <Helmet>

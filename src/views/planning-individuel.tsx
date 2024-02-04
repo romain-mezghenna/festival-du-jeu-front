@@ -8,7 +8,7 @@ import PlanningIndividuelComponent from '../components/planning-individuel-compo
 import Footer from '../components/footer'
 import './planning-individuel.css'
 
-function PlanningIndividuel(props){
+function PlanningIndividuel(props : any){
   return (
     <div className="planning-individuel-container">
       <Helmet>

@@ -7,7 +7,7 @@ import FAQAdminComponent from '../components/faq-admin-component'
 import Footer from '../components/footer'
 import './faq-admin.css'
 
-const FAQAdmin = (props) => {
+const FAQAdmin = (props:any) => {
   return (
     <div className="faq-admin-container">
       <Helmet>

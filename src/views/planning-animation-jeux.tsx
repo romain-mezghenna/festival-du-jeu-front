@@ -8,7 +8,7 @@ import AnimationJeux from '../components/animation-jeux'
 import Footer from '../components/footer'
 import './planning-animation-jeux.css'
 
-const PlanningAnimationJeux = (props) => {
+const PlanningAnimationJeux = (props:any) => {
   return (
     <div className="planning-animation-jeux-container">
       <Helmet>

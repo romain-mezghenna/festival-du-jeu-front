@@ -7,7 +7,7 @@ import ContactComponent from '../components/contact-component'
 import Footer from '../components/footer'
 import './contact.css'
 
-const Contact = (props) => {
+const Contact = (props:any) => {
   return (
     <div className="contact-container">
       <Helmet>
