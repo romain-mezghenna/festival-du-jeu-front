@@ -6,6 +6,7 @@ import {login} from '../features/userSlice/userSlice'
 import { sendRequest } from '../utils/sendRequest'
 
 import './loginfield.css'
+import { Navigate } from 'react-router-dom';
 
 function Loginfield  (props: any)  {
   const [pseudo , setPseudo] = React.useState('')
@@ -37,6 +38,7 @@ function Loginfield  (props: any)  {
                   role: res.role,
                 })
               );
+              return <Navigate to="/register" />;
           }
         }
       );
