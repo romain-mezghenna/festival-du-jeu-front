@@ -37,7 +37,7 @@ function RegisterField (props : any) {
         sendRequest(
           "users",
           "POST",
-          { pseudo: pseudo,nom:nom,prenom:prenom,mdp:mdp,tailleTshirt:teeshirt,vegetarien: vege,hebergement:hebergement,email:mail,tel:tel },
+          { pseudo: pseudo,nom:nom,prenom:prenom,mdp:mdp,tailleTshirt:teeshirt,vegetarien: vege,hebergement:hebergement,email:mail,tel:tel,associations:association },
           "",
           (err, res) => {
             if (err) {
