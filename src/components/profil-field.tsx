@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import { RootState } from '../store/store';
 
 import './profil-field.css';
@@ -14,36 +12,62 @@ function ProfilField (props : any) {
   const [nom , setNom] = React.useState('');
   const [prenom , setPrenom] = React.useState('');
   const [mail , setMail] = React.useState('');
-  const [newmdp , setNewmdp] = React.useState('');
+  const [mdp , setMdp] = React.useState('');
   const [association , setAssociation] = React.useState('');
   const [vege , setVege] = React.useState(false);
   const [hebergement , setHebergement] = React.useState(false);
   const [teeshirt , setTeeshirt] = React.useState('');
+  // avant que le component se charge on recupere les infos de l'utilisateur pour les afficher dans les champs
+  React.useEffect(() => {
+    if (user.token === null) {
+      alert('Vous devez être connecté pour modifier votre profil');
+      return;
+    }
+    sendRequest(
+      'users/'+ user.pseudo,
+      'GET',
+      {},
+      user.token,
+      (err, res) => {
+        if (err) {
+          alert('Erreur lors de la récupération des informations');
+          console.log(err);
+        } else {
+          console.log(res);
+          setPseudo(res.pseudo);
+          setNom(res.nom);
+          setPrenom(res.prenom);
+          setMail(res.mail);
+          setAssociation(res.association);
+          setVege(res.vege);
+          setHebergement(res.hebergement);
+          setTeeshirt(res.teeshirt);
+        }
+      }
+    )
+  }, [])
   const handleModif = () => {
     if (user.token === null) {
       alert('Vous devez être connecté pour modifier votre profil');
       return;
     }
-    if (pseudo === '' || newmdp === '' || nom === '' || prenom === '' || mail === '' || association === '' || teeshirt === ''){
+    if ( mdp === '' || nom === '' || prenom === '' || mail === '' || association === ''){
     //  alert('Veuillez remplir tous les champs');
     console.log(
-      pseudo,
-      newmdp,
+
+      mdp,
       nom,
       prenom,
       mail,
       association,
-      vege,
-      hebergement,
-      teeshirt,
       user.token
     );
     }
     else{
       sendRequest(
-        'users/:pseudo',
+        'users/'+ user.pseudo,
         'PUT',
-        { pseudo: pseudo, newmdp: newmdp, nom: nom, prenom: prenom, mail: mail, association: association, vege: vege, hebergement: hebergement, teeshirt: teeshirt},
+        { mdp: mdp, nom: nom, prenom: prenom, mail: mail, association: association, vege: vege, hebergement: hebergement, teeshirt: teeshirt},
         user.token,
         (err, res) => {
           if (err) {
@@ -64,6 +88,7 @@ function ProfilField (props : any) {
         type="text"
         placeholder={props.textinputPlaceholder}
         className="input profil-field-textinput"
+        value = {nom}
         onChange={(e) => setNom(e.target.value)}
       />
       <h3 className="profil-field-text01">{props.name}</h3>
@@ -71,6 +96,7 @@ function ProfilField (props : any) {
         type="text"
         placeholder={props.textinputPlaceholder1}
         className="input profil-field-textinput1"
+        value = {prenom}
         onChange={(e) => setPrenom(e.target.value)}
       />
       <h3 className="profil-field-text02">{props.pseudo}</h3>
@@ -78,38 +104,46 @@ function ProfilField (props : any) {
         type="text"
         placeholder={props.textinputPlaceholder6}
         className="input profil-field-textinput2"
-        onChange={(e) => setPseudo(e.target.value)}
+        value = {user.pseudo ?? ''} disabled
+
       />
       <h3 className="profil-field-text03">{props.mail}</h3>
       <input
-        type="email"
+        type="mail"
         placeholder={props.textinputPlaceholder2}
         className="input profil-field-textinput3"
+        value = {mail}
         onChange={(e) => setMail(e.target.value)}
       />
       <h3 className="profil-field-text04">{props.vege}</h3>
-      <select className="profil-field-select" onChange={(e) => setVege(Boolean(e.target.value))}>
-        <option value="oui" className="">
+      <select className="profil-field-select" 
+      //value = {vege.toString() == null ? vege.toString() : 'false'}
+      onChange={(e) => setVege(Boolean(e.target.value))}>
+        <option value="true" className="">
           Oui
         </option>
-        <option value="non" className="">
+        <option value="false" className="">
           non
         </option>
       </select>
       <h3 className="profil-field-text05">{props.hebergement}</h3>
-      <select className="profil-field-select1" onChange={(e) => setHebergement(Boolean(e.target.value))}>
-        <option value="Recherche" className="">
+      <select className="profil-field-select1" 
+      value = {hebergement.toString() == null ? hebergement.toString() : 'false'}
+      onChange={(e) => setHebergement(Boolean(e.target.value))}>
+        <option value= "false" className="">
           Recherche
         </option>
-        <option value="Propose" className="">
+        <option value="true" className="">
           Propose
         </option>
-        <option value="Aucun" className="">
+        <option value="false" className="">
           Aucun des deux
         </option>
       </select>
       <h3 className="profil-field-text06">{props.teeshirt}</h3>
-      <select className="profil-field-select2" defaultValue={'XS'} onChange={(e) => setTeeshirt(e.target.value)}>
+      <select className="profil-field-select2" defaultValue={'XS'}
+      value = {teeshirt} 
+      onChange={(e) => setTeeshirt(e.target.value)}>
         <option value="XS" className="">
           XS
         </option>
@@ -131,20 +165,16 @@ function ProfilField (props : any) {
         type="text"
         placeholder={props.textinputPlaceholder3}
         className="input profil-field-textinput4"
+        value = {association == null ? association : ''}
         onChange={(e) => setAssociation(e.target.value)}
-      />
-      <h3 className="profil-field-text08">{props.password}</h3>
-      <input
-        type="password"
-        placeholder={props.textinputPlaceholder4}
-        className="input profil-field-textinput5"
       />
       <h3 className="profil-field-text09">{props.passwordConfirm}</h3>
       <input
         type="password"
         placeholder={props.textinputPlaceholder5}
         className="input profil-field-textinput6"
-        onChange={(e) => setNewmdp(e.target.value)}
+        value = {mdp}
+        onChange={(e) => setMdp(e.target.value)}
       />
       <button className="profil-field-navlink button" onClick={handleModif}>
         {props.register}
@@ -155,7 +185,6 @@ function ProfilField (props : any) {
 
 ProfilField.defaultProps = {
   textinputPlaceholder5: 'Nouveau mot de passe',
-  textinputPlaceholder4: 'motdepasse',
   surname: 'Nom actuel',
   textinputPlaceholder2: 'Nouveau e-mail',
   mail: 'Email actuel',
