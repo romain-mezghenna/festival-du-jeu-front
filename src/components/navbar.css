@@ -6,6 +6,13 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+  border-color: var(--dl-color-gray-black);
+  border-style: solid;
+  border-width: 1px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  padding-bottom: 20px;
 }
 .navbar-navbar-interactive {
   width: 100%;
@@ -13,17 +20,9 @@
   position: relative;
   align-self: center;
   align-items: center;
-  padding-top: var(--dl-space-space-twounits);
-  border-color: var(--dl-color-gray-black);
-  border-style: solid;
-  border-width: 1px;
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
-  padding-bottom: var(--dl-space-space-twounits);
+  margin-top: var(--dl-space-space-twounits);
+  margin-bottom: var(--dl-space-space-twounits);
   justify-content: space-between;
-  border-top-width: 0px;
-  border-left-width: 0px;
-  border-right-width: 0px;
 }
 .navbar-image {
   height: 4rem;
@@ -161,6 +160,7 @@
   display: flex;
   position: relative;
   align-self: center;
+  margin-right: 3%;
   flex-direction: row;
   justify-content: flex-end;
 }
@@ -172,6 +172,7 @@
 }
 .navbar-register1 {
   font-family: "KGLifeisMessy";
+  margin-right: 10px;
 }
 .navbar-navlink4 {
   text-decoration: none;

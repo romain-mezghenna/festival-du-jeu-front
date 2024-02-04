@@ -1,16 +1,21 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
+import { RootState } from "../store/store";
 import {login} from '../features/userSlice/userSlice'
 import { sendRequest } from '../utils/sendRequest'
+import { Navigate } from 'react-router-dom';
 
 import './loginfield.css'
+import { Navigate } from 'react-router-dom';
 
 function Loginfield  (props: any)  {
   const [pseudo , setPseudo] = React.useState('')
   const [mdp , setMdp] = React.useState('')
   const dispatch = useDispatch();
+  // routeur
+  const [navigate, setNavigate] = React.useState(false);
   
 
   const handleLogin = () => {
@@ -28,8 +33,10 @@ function Loginfield  (props: any)  {
             alert("Erreur lors de la connexion");
             console.log(err);
           } else {
+            if(res.error){
+              alert(res.error)
+            } else {
               alert("Connexion réussie");
-              console.log(res);
               dispatch(
                 login({
                   pseudo: res.pseudo,
@@ -37,6 +44,8 @@ function Loginfield  (props: any)  {
                   role: res.role,
                 })
               );
+              setNavigate(true);
+            }
           }
         }
       );
@@ -46,25 +55,31 @@ function Loginfield  (props: any)  {
 
   return (
     <div className={`loginfield-container ${props.rootClassName} `}>
-      <h3 className="loginfield-text">{props.mail}</h3>
+      <h3 className="loginfield-text">{props.pseudo}</h3>
       <input
-        type="email"
-        placeholder={props.textinputPlaceholder}
+        type="Pseudo"
+        placeholder={props.pseudo}
         className="input loginfield-input"
         onChange={(e) => setPseudo(e.target.value)}
       />
       <h3 className="loginfield-text1">{props.password}</h3>
       <input
         type="password"
-        placeholder={props.textinputPlaceholder1}
+        placeholder={props.password}
         className="input loginfield-textinput"
         onChange={(e) => setMdp(e.target.value)}
       />
-      <button type="button" className="loginfield-button button" onClick={handleLogin}>
+      <button
+        type="button"
+        className="loginfield-button button"
+        onClick={handleLogin}
+        style={{ cursor: "pointer" }}
+      >
         {props.login}
       </button>
+      {navigate && <Navigate to="/" />}
     </div>
-  )
+  );
 }
 
 Loginfield.defaultProps = {
@@ -72,7 +87,7 @@ Loginfield.defaultProps = {
   password: 'Mot de passe',
   mailarea: 'Inscrivez votre email',
   textinputPlaceholder1: 'placeholder',
-  mail: 'Email',
+  pseudo: 'Pseudo',
   login: 'Se connecter',
   rootClassName: '',
 }

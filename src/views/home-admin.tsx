@@ -4,15 +4,29 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/navbar'
+import { Navigate } from 'react-router-dom'
+import { sendRequest } from '../utils/sendRequest'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 import Footer from '../components/footer'
 import './home-admin.css'
 
 const HomeAdmin = (props:any) => {
+
+  const user = useSelector((state: RootState) => state.user);
+  
+  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté et qu'il a le rôle d'admin
+  if (!user.isLoggedIn || user.role !== 4) {
+    alert('Vous n\'êtes pas autorisé à accéder à cette page');
+    return <Navigate to="/" />;
+  }
+
+
   return (
     <div className="home-admin-container">
       <Helmet>
-        <title>HomeAdmin - Funny Key Herring</title>
-        <meta property="og:title" content="HomeAdmin - Funny Key Herring" />
+        <title>HomeAdmin</title>
+        <meta property="og:title" content="HomeAdmin" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name18"></Navbar>
       <div className="home-admin-features">

@@ -9,12 +9,22 @@ interface UserState {
   token: string | null;
 }
 
-const initialState: UserState = {
+let initialState: UserState = {
   isLoggedIn: false,
   pseudo: null,
   role: null,
-  token: null,
+  token :null
 };
+
+
+
+// Si un jeton est stocké dans le stockage local, on le récupère
+if (localStorage.getItem('token')) {
+  // Si un jeton est stocké dans le stockage local, on le récupère
+  initialState.token = localStorage.getItem('token');
+}
+
+
 
 export const userSlice = createSlice({
   name: 'user',
@@ -26,10 +36,13 @@ export const userSlice = createSlice({
       state.pseudo = action.payload.pseudo;
       state.role = action.payload.role;
       state.token = action.payload.token;
+      // Stocker le jeton dans le stockage local pour le garder après un rafraîchissement de la page
+      localStorage.setItem('token', action.payload.token);
     },
     // Action pour se déconnecter qui réinitialise l'état
     logout: (state) => {
       state.isLoggedIn = false;
+      localStorage.removeItem('token');
       state.pseudo = null;
       state.role = null;
       state.token = null;

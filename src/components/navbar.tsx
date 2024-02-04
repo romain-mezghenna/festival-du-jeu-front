@@ -1,23 +1,55 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import { Link,Navigate } from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store/store";
+import { logout } from "../features/userSlice/userSlice";
 import PropTypes from 'prop-types'
 
 import './navbar.css'
 
 function Navbar (props : any) {
+  const user = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    alert("Vous êtes déconnecté");
+    return <Navigate to="/" />;
+  }
+
   return (
     <div className={`navbar-container ${props.rootClassName} `}>
       <header data-thq="thq-navbar" className="navbar-navbar-interactive">
         <img
           src="/external/logofjm-couleur-1500h.png"
           className="navbar-image"
+          alt="logo"
         />
         <div className="navbar-container1">
           <nav className="navbar-links">
-            <Link to="/" className="navbar-navlink">
-              Accueil
-            </Link>
+            {user.isLoggedIn ? (
+              user.role === 2 ? (
+                <Link to="/home-benevole" className="navbar-navlink">
+                  Accueil Bénévole
+                </Link>
+              ) : user.role === 3 ? (
+                <Link to="/home-referent" className="navbar-navlink">
+                  Accueil Admin
+                </Link>
+              ) : user.role === 4 ? (
+                <Link to="/home-admin" className="navbar-navlink">
+                  Accueil Admin
+                </Link>
+              ) : (
+                <Link to="/" className="navbar-navlink">
+                  Accueil
+                </Link>
+              )
+            ) : (
+              <Link to="/" className="navbar-navlink">
+                Accueil
+              </Link>
+            )}
             <Link to="/news" className="navbar-navlink">
               {props.news}
             </Link>
@@ -38,7 +70,7 @@ function Navbar (props : any) {
           <div className="navbar-nav">
             <div className="navbar-top">
               <img
-                alt="image"
+                alt="image2"
                 src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
                 className="navbar-logo"
               />
@@ -85,15 +117,26 @@ function Navbar (props : any) {
           </div>
         </div>
         <div className="navbar-buttons1">
-          <Link to="/login" className="navbar-login1 button">
-            se connecter
-          </Link>
-          <button className="navbar-register1 button">
-            <Link to="/register" className="navbar-navlink4">
-              <span className="">s&apos;inscrire</span>
-              <br className=""></br>
-            </Link>
-          </button>
+          {user.isLoggedIn ? (
+            <button className="navbar-register1 button" onClick={handleLogout}>
+              <span className="">Se déconnecter</span>
+            </button>
+          ) : (
+            <>
+              <button className="navbar-register1 button">
+                <Link to="/login" className="navbar-navlink4">
+                  <span className="">Se connecter</span>
+                  <br className=""></br>
+                </Link>
+              </button>
+              <button className="navbar-register1 button">
+                <Link to="/register" className="navbar-navlink4">
+                  <span className="">s&apos;inscrire</span>
+                  <br className=""></br>
+                </Link>
+              </button>
+            </>
+          )}
         </div>
       </header>
     </div>
