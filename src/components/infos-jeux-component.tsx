@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import LigneInfosJeuComponent from './ligne-infos-jeu-component'
 import './infos-jeux-component.css'
 
-const InfosJeuxComponent = (props) => {
+function InfosJeuxComponent (props : any) {
   return (
     <div className={`infos-jeux-component-container ${props.rootClassName} `}>
       <div className="infos-jeux-component-container01">
@@ -37,7 +37,7 @@ const InfosJeuxComponent = (props) => {
           <span className="infos-jeux-component-text8">{props.text8}</span>
         </div>
       </div>
-      <LigneInfosJeuComponent className=""></LigneInfosJeuComponent>
+      <LigneInfosJeuComponent></LigneInfosJeuComponent>
     </div>
   )
 }

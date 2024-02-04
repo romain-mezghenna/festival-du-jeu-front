@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import './profil-field.css'
 
-const ProfilField = (props) => {
+function ProfilField (props : any) {
   return (
     <div className={`profil-field-container ${props.rootClassName} `}>
       <h3 className="profil-field-text">{props.surname}</h3>

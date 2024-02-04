@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import InfosEquipe from './infos-equipe'
 import './detail-poste-equipe-component.css'
 
-const DetailPosteEquipeComponent = (props) => {
+function DetailPosteEquipeComponent(props : any){
   return (
     <div className="detail-poste-equipe-component-container">
       <div className="detail-poste-equipe-component-container1">

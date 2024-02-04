@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './ligne-infos-jeu-component.css'
 
-const LigneInfosJeuComponent = (props) => {
+function LigneInfosJeuComponent  (props : any) {
   return (
     <div className="ligne-infos-jeu-component-container">
       <div className="ligne-infos-jeu-component-container01">

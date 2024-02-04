@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './feature-card1.css'
 
-const FeatureCard1 = (props) => {
+function FeatureCard1 (props : any) {
   return (
     <div className={`feature-card1-feature-card ${props.rootClassName} `}>
       <h2 className="feature-card1-text">{props.title}</h2>

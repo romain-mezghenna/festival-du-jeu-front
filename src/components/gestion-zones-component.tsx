@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './gestion-zones-component.css'
 
-const GestionZonesComponent = (props) => {
+function GestionZonesComponent (props : any) {
   return (
     <div
       className={`gestion-zones-component-container ${props.rootClassName} `}

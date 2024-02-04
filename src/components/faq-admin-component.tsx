@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import FAQComponent from './faq-component'
 import './faq-admin-component.css'
 
-const FAQAdminComponent = (props) => {
+function FAQAdminComponent (props : any)  {
   return (
     <div className={`faq-admin-component-container ${props.rootClassName} `}>
       <div className="faq-admin-component-container1">
@@ -49,7 +49,6 @@ const FAQAdminComponent = (props) => {
         <h1 className="faq-admin-component-text5">{props.heading3}</h1>
         <FAQComponent
           rootClassName="faq-component-root-class-name1"
-          className=""
         ></FAQComponent>
       </div>
     </div>

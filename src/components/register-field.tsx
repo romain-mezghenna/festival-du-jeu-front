@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './register-field.css'
 
-const RegisterField = (props) => {
+function RegisterField (props : any) {
   return (
     <div className={`register-field-container ${props.rootClassName} `}>
       <h3 className="register-field-text">{props.surname}</h3>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './news-post-card.css'
 
-const NewsPostCard = (props) => {
+function NewsPostCard (props : any) {
   return (
     <div className={`news-post-card-blog-post-card ${props.rootClassName} `}>
       <img

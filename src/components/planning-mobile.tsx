@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './planning-mobile.css'
 
-const PlanningMobile = (props) => {
+function PlanningMobile (props : any)  {
   return (
     <div className="planning-mobile-container">
       <span className="planning-mobile-text">{props.text}</span>

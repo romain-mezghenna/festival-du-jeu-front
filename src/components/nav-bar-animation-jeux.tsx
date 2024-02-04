@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import NavigationLinks from './navigation-links'
 import './nav-bar-animation-jeux.css'
 
-const NavBarAnimationJeux = (props) => {
+function NavBarAnimationJeux (props : any)  {
   return (
     <div className={`nav-bar-animation-jeux-container ${props.rootClassName} `}>
       <header data-role="Header" className="nav-bar-animation-jeux-header">
@@ -13,7 +13,6 @@ const NavBarAnimationJeux = (props) => {
           <div className="nav-bar-animation-jeux-nav">
             <NavigationLinks
               rootClassName="rootClassName12"
-              className=""
             ></NavigationLinks>
           </div>
         </div>

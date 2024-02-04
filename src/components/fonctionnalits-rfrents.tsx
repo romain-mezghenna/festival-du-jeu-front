@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './fonctionnalits-rfrents.css'
 
-const FonctionnalitsRfrents = (props) => {
+function FonctionnalitsRfrents (props : any) {
   return (
     <div className="fonctionnalits-rfrents-container">
       <div className="fonctionnalits-rfrents-container1">

@@ -3,70 +3,70 @@
   font-style: normal;
   font-format: truetype;
   font-weight: 400;
-  src: url("/fonts/helvetica-light-587ebe5a59211.ttf") ;
+  src: url("/public/fonts/helvetica-light-587ebe5a59211.ttf") ;
 }
 @font-face {
   font-family: "HelveticaRounded-Bold";
   font-style: normal;
   font-format: opentype;
   font-weight: 700;
-  src: url("/fonts/helvetica-rounded-bold-5871d05ead8de.otf") ;
+  src: url("/public/fonts/helvetica-rounded-bold-5871d05ead8de.otf") ;
 }
 @font-face {
   font-family: "Helvetica";
   font-style: normal;
   font-format: truetype;
   font-weight: 400;
-  src: url("/fonts/helvetica.ttf") ;
+  src: url("/public/fonts/helvetica.ttf") ;
 }
 @font-face {
   font-family: "Helvetica-Bold";
   font-style: normal;
   font-format: truetype;
   font-weight: 700;
-  src: url("/fonts/helvetica-bold.ttf") ;
+  src: url("/public/fonts/helvetica-bold.ttf") ;
 }
 @font-face {
   font-family: "OlivessansPimiento";
   font-style: normal;
   font-format: truetype;
   font-weight: 500;
-  src: url("/fonts/olivessanspimiento.ttf") ;
+  src: url("/public/fonts/olivessanspimiento.ttf") ;
 }
 @font-face {
   font-family: "KGLifeisMessy";
   font-style: normal;
   font-format: truetype;
   font-weight: 400;
-  src: url("/fonts/kglifeismessy.ttf") ;
+  src: url("/public/fonts/kglifeismessy.ttf") ;
 }
 @font-face {
   font-family: "Helvetica-BoldOblique";
   font-style: italic;
   font-format: truetype;
   font-weight: 700;
-  src: url("/fonts/helvetica-boldoblique.ttf") ;
+  src: url("/public/fonts/helvetica-boldoblique.ttf") ;
 }
 @font-face {
   font-family: "Helvetica-Oblique";
   font-style: italic;
   font-format: truetype;
   font-weight: 400;
-  src: url("/fonts/helvetica-oblique.ttf") ;
+  src: url("/public/fonts/helvetica-oblique.ttf") ;
 }
 @font-face {
   font-family: "DryBrush";
   font-style: normal;
   font-format: truetype;
   font-weight: 400;
-  src: url("/fonts/dry brush.ttf") ;
+  src: url("/public/fonts/dry brush.ttf") ;
 }
 @font-face {
   font-family: "Helvetica-Compressed";
   font-style: normal;
   font-format: opentype;
   font-weight: 500;
-  src: url("/fonts/helvetica-compressed-5871d14b6903a.otf") ;
+  src: url("/public/fonts/helvetica-compressed-5871d14b6903a.otf") ;
 }
 :root {
   --dl-color-gray-500: #595959;

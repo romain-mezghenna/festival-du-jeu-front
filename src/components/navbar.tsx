@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import './navbar.css'
 
-const Navbar = (props) => {
+function Navbar (props : any) {
   return (
     <div className={`navbar-container ${props.rootClassName} `}>
       <header data-thq="thq-navbar" className="navbar-navbar-interactive">

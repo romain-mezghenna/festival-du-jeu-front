@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import InfosHebergement from './infos-hebergement'
 import './hebergement-component.css'
 
-const HebergementComponent = (props) => {
+function HebergementComponent (props : any)  {
   return (
     <div className={`hebergement-component-container ${props.rootClassName} `}>
       <div className="hebergement-component-container1">
@@ -13,7 +13,6 @@ const HebergementComponent = (props) => {
       </div>
       <InfosHebergement
         rootClassName="infos-hebergement-root-class-name"
-        className=""
       ></InfosHebergement>
     </div>
   )

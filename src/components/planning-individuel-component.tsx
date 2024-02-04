@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './planning-individuel-component.css'
 
-const PlanningIndividuelComponent = (props) => {
+function PlanningIndividuelComponent (props : any) {
   return (
     <div
       className={`planning-individuel-component-container ${props.rootClassName} `}

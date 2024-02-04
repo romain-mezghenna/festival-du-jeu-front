@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './detail-jeu-component.css'
 
-const DetailJeuComponent = (props : any) => {
+function DetailJeuComponent(props : any){
   return (
     <div className={`detail-jeu-component-container ${props.rootClassName} `}>
       <div className="detail-jeu-component-container1">

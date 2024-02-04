@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import './navbar-inscription.css'
 
-const NavbarInscription = (props) => {
+function NavbarInscription (props : any) {
   return (
     <div className={`navbar-inscription-container ${props.rootClassName} `}>
       <header

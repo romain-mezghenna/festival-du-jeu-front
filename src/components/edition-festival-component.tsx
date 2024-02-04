@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './edition-festival-component.css'
 
-const EditionFestivalComponent = (props) => {
+function EditionFestivalComponent (props : any) {
   return (
     <div
       className={`edition-festival-component-container ${props.rootClassName} `}

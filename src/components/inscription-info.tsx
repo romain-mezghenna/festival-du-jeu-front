@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './inscription-info.css'
 
-const InscriptionInfo = (props) => {
+function InscriptionInfo (props : any) {
   return (
     <div className={`inscription-info-container ${props.rootClassName} `}>
       <div className="inscription-info-container1">

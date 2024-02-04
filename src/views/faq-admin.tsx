@@ -3,7 +3,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/navbar'
-import FAQAdminComponent from '../components/faq-admin-component'
+import FAQAdminComponent from '../components/faq-admin-component.tsx'
 import Footer from '../components/footer'
 import './faq-admin.css'
 

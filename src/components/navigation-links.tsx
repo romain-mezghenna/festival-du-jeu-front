@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import './navigation-links.css'
 
-const NavigationLinks = (props) => {
+function NavigationLinks (props : any) {
   return (
     <nav className={`navigation-links-nav ${props.rootClassName} `}>
       <Link to="/menu-animation-jeux" className="navigation-links-navlink">

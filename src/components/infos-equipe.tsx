@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './infos-equipe.css'
 
-const InfosEquipe = (props) => {
+function InfosEquipe (props : any) {
   return (
     <div className={`infos-equipe-container ${props.rootClassName} `}>
       <div className="infos-equipe-container1">

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import './footer.css'
 
-const Footer = (props) => {
+function Footer  (props : any) {
   return (
     <div className={`footer-container ${props.rootClassName} `}>
       <footer className="footer-footer">
