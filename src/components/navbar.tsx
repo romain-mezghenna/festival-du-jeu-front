@@ -2,7 +2,7 @@ import React from 'react'
 import { Link,Navigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
-import { logout } from "../features/userSlice/userSlice";
+import {logout } from "../features/userSlice/userSlice";
 import PropTypes from 'prop-types'
 
 import './navbar.css'
@@ -11,10 +11,13 @@ function Navbar (props : any) {
   const user = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
+  const [navigate, setNavigate] = React.useState(false);
+
+
   const handleLogout = () => {
     dispatch(logout());
     alert("Vous êtes déconnecté");
-    return <Navigate to="/" />;
+    setNavigate(true);
   }
 
   return (
@@ -139,6 +142,7 @@ function Navbar (props : any) {
           )}
         </div>
       </header>
+      {navigate && <Navigate to="/" />}
     </div>
   );
 }
