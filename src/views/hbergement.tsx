@@ -7,7 +7,7 @@ import HebergementComponent from '../components/hebergement-component'
 import Footer from '../components/footer'
 import './hbergement.css'
 
-const Hbergement = (props) => {
+const Hbergement = (props:any) => {
   return (
     <div className="hbergement-container">
       <Helmet>

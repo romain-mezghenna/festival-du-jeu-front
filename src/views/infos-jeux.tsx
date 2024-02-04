@@ -7,7 +7,7 @@ import InfosJeuxComponent from '../components/infos-jeux-component'
 import Footer from '../components/footer'
 import './infos-jeux.css'
 
-const InfosJeux = (props) => {
+const InfosJeux = (props:any) => {
   return (
     <div className="infos-jeux-container">
       <Helmet>

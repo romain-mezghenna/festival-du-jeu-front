@@ -7,7 +7,7 @@ import Loginfield from '../components/loginfield'
 import Footer from '../components/footer'
 import './login.css'
 
-const Login = (props) => {
+const Login = (props:any) => {
   return (
     <div className="login-container">
       <Helmet>

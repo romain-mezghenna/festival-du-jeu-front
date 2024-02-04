@@ -8,7 +8,7 @@ import InscriptionInfo from '../components/inscription-info'
 import Footer from '../components/footer'
 import './menu-inscription.css'
 
-const MenuInscription = (props) => {
+const MenuInscription = (props:any) => {
   return (
     <div className="menu-inscription-container">
       <Helmet>

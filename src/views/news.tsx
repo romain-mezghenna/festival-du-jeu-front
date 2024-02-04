@@ -7,7 +7,7 @@ import NewsSection from '../components/news-section'
 import Footer from '../components/footer'
 import './news.css'
 
-const News = (props) => {
+const News = (props:any) => {
   return (
     <div className="news-container">
       <Helmet>

@@ -7,7 +7,7 @@ import GestionZonesComponent from '../components/gestion-zones-component'
 import Footer from '../components/footer'
 import './gestion-zones.css'
 
-const GestionZones = (props) => {
+const GestionZones = (props:any) => {
   return (
     <div className="gestion-zones-container">
       <Helmet>

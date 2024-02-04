@@ -8,7 +8,7 @@ import PlanningInscription from '../components/planning-inscription'
 import Footer from '../components/footer'
 import './inscription-gnrale.css'
 
-const InscriptionGnrale = (props) => {
+const InscriptionGnrale = (props:any) => {
   return (
     <div className="inscription-gnrale-container">
       <Helmet>

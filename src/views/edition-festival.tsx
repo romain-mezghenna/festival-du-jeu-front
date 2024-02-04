@@ -7,7 +7,7 @@ import EditionFestivalComponent from '../components/edition-festival-component'
 import Footer from '../components/footer'
 import './edition-festival.css'
 
-const EditionFestival = (props) => {
+const EditionFestival = (props:any) => {
   return (
     <div className="edition-festival-container">
       <Helmet>

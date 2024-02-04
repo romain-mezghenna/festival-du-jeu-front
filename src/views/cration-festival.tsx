@@ -7,7 +7,7 @@ import CrationFestivalComponent from '../components/cration-festival-component'
 import Footer from '../components/footer'
 import './cration-festival.css'
 
-const CrationFestival = (props) => {
+const CrationFestival = (props:any) => {
   return (
     <div className="cration-festival-container">
       <Helmet>

@@ -7,7 +7,7 @@ import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import './home-admin.css'
 
-const HomeAdmin = (props) => {
+const HomeAdmin = (props:any) => {
   return (
     <div className="home-admin-container">
       <Helmet>
