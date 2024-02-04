@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './contact-component.css'
 
-const ContactComponent = (props) => {
+ function ContactComponent (props : any) {
   return (
     <div className={`contact-component-container ${props.rootClassName} `}>
       <h1 className="contact-component-text">{props.heading}</h1>

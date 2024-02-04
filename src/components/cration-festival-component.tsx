@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './cration-festival-component.css'
 
-const CrationFestivalComponent = (props) => {
+function CrationFestivalComponent (props : any){
   return (
     <div
       className={`cration-festival-component-container ${props.rootClassName} `}
