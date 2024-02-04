@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from "react-dom/client";
-import { store } from "./store/store";
-import { Provider } from "react-redux";
+import { RootState, store } from "./store/store";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
@@ -42,6 +42,7 @@ const root = ReactDOM.createRoot(
 );
 
 const App = () => {
+
   return (
     <React.StrictMode>
     <Provider store={store}>
