@@ -15,7 +15,9 @@ function Navbar (props : any) {
         />
         <div className="navbar-container1">
           <nav className="navbar-links">
-            <span className="navbar-text">Accueil</span>
+            <Link to="/" className="navbar-navlink">
+              Accueil
+            </Link>
             <Link to="/news" className="navbar-navlink">
               {props.news}
             </Link>
@@ -95,7 +97,7 @@ function Navbar (props : any) {
         </div>
       </header>
     </div>
-  )
+  );
 }
 
 Navbar.defaultProps = {
