@@ -24,7 +24,7 @@ function RegisterField (props : any) {
   const [tel , setTel] = React.useState('')
   const [navigate, setNavigate] = React.useState(false);
 
-  const handleRegister = async () => {
+  const handleRegister =() => {
     if(pseudo === '' || mdp === '' || nom === '' || prenom === '' || mail === '' ||  teeshirt === '' || mdpConfirm === ''){
       alert('Veuillez remplir tous les champs')
     }
@@ -33,20 +33,30 @@ function RegisterField (props : any) {
         alert('Les mots de passe ne correspondent pas')
       }
       else{
-        setMdp(await hashPassword(mdp));
         sendRequest(
           "users",
           "POST",
-          { pseudo: pseudo,nom:nom,prenom:prenom,mdp:mdp,tailleTshirt:teeshirt,vegetarien: vege,hebergement:hebergement,email:mail,tel:tel,associations:association },
+          {
+            pseudo: pseudo,
+            nom: nom,
+            prenom: prenom,
+            mdp: hashPassword(mdp),
+            tailleTshirt: teeshirt,
+            vegetarien: vege,
+            hebergement: hebergement,
+            email: mail,
+            tel: tel,
+            associations: association,
+          },
           "",
           (err, res) => {
             if (err) {
               alert("Erreur lors de l'inscription");
               console.log(err);
             } else {
-                alert("Inscription réussie");
-                console.log(res);
-                setNavigate(true);
+              alert("Inscription réussie");
+              console.log(res);
+              setNavigate(true);
             }
           }
         );

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { useSelector} from 'react-redux';
 import { RootState } from '../store/store';
+import { hashPassword } from '../utils/hashPassword';
 
 import './profil-field.css';
 import { sendRequest } from '../utils/sendRequest';
@@ -174,7 +175,7 @@ function ProfilField (props : any) {
         placeholder={props.textinputPlaceholder5}
         className="input profil-field-textinput6"
         value = {mdp}
-        onChange={(e) => setMdp(e.target.value)}
+        onChange={(e) => setMdp(hashPassword(e.target.value))}
       />
       <button className="profil-field-navlink button" onClick={handleModif}>
         {props.register}

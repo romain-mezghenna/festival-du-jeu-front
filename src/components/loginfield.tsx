@@ -18,24 +18,25 @@ function Loginfield  (props: any)  {
   const [navigate, setNavigate] = React.useState(false);
   
 
-  const handleLogin = async () => {
+  const handleLogin =() => {
     if(pseudo === '' || mdp === ''){
       alert('Veuillez remplir tous les champs')
     }
     else{
-      setMdp(await hashPassword(mdp));
       sendRequest(
         "users/login",
         "POST",
-        { pseudo: pseudo, mdp: mdp },
+        { pseudo: pseudo, mdp: hashPassword(mdp) },
         "",
         (err, res) => {
           if (err) {
             console.log(err);
             alert("Erreur lors de la connexion");
           } else {
-            if(res.error){
-              alert(res.error)
+            if (res.error) {
+              alert(res.error);
+              setMdp("");
+              setPseudo("");
             } else {
               alert("Connexion réussie");
               dispatch(
@@ -62,6 +63,7 @@ function Loginfield  (props: any)  {
         placeholder={props.pseudo}
         className="input loginfield-input"
         onChange={(e) => setPseudo(e.target.value)}
+        value={pseudo}
       />
       <h3 className="loginfield-text1">{props.password}</h3>
       <input
@@ -69,6 +71,7 @@ function Loginfield  (props: any)  {
         placeholder={props.password}
         className="input loginfield-textinput"
         onChange={(e) => setMdp(e.target.value)}
+        value={mdp}
       />
       <button
         type="button"

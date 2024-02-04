@@ -1,12 +1,8 @@
-const bcrypt = require('bcryptjs');
+import CryptoJS from 'crypto-js';
 
-export async function hashPassword(password:string): Promise<string> {
-    const saltRounds = 5; // Vous pouvez ajuster le nombre de rounds
-    try {
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
-        console.log(hashedPassword);
-        return hashedPassword;
-    } catch (error) {
-        throw error;
-    }
-};
+export function hashPassword(password : string):string {
+    const salt = "a1z2e3r4t5y6u7i8o9p0";
+    const hashed = CryptoJS.SHA256(password + salt).toString();
+    console.log(hashed);
+    return hashed;
+}
