@@ -8,7 +8,6 @@ import { sendRequest } from '../utils/sendRequest'
 import { Navigate } from 'react-router-dom';
 
 import './loginfield.css'
-import { Navigate } from 'react-router-dom';
 
 function Loginfield  (props: any)  {
   const [pseudo , setPseudo] = React.useState('')
