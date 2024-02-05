@@ -22,10 +22,10 @@ const InscriptionGnrale = (props:any) => {
   return (
     <div className="inscription-gnrale-container">
       <Helmet>
-        <title>InscriptionGnrale - Funny Key Herring</title>
+        <title>Inscription Générale</title>
         <meta
           property="og:title"
-          content="InscriptionGnrale - Funny Key Herring"
+          content="Inscription Générale"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name3"></Navbar>
