@@ -60,6 +60,8 @@
 
 .time-table-container {
   overflow-x: auto; /* Permettre le défilement horizontal si nécessaire */
+  height: 100%;
+  width: 100%;
 }
 
 .time-table {

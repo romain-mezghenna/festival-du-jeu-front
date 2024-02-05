@@ -29,8 +29,7 @@ const Home = (props:any) => {
         <span className="home-text05">
           <span>
             <span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-              volutpat turpis.
+
               <span
                 dangerouslySetInnerHTML={{
                   __html: ' ',
@@ -48,7 +47,6 @@ const Home = (props:any) => {
           <br></br>
           <span>
             <span>
-              Mauris luctus rutrum mi ut rhoncus. Integer in dignissim tortor.
               <span
                 dangerouslySetInnerHTML={{
                   __html: ' ',

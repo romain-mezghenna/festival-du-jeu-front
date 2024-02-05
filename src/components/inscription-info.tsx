@@ -47,28 +47,40 @@ function InscriptionInfo (props : any) {
   };
   return (
     <div className={`inscription-info-container`}>
-      <div className="inscription-info-container2">
-        <h3 className="inscription-info-text">Sélectionnez un poste :</h3>
-      </div>
-      {postes && Array.isArray(postes) && postes.map((poste, index) => (
-          <div key={index} className="inscription-info-container2">
-            <button
-              type="button"
-              className="inscription-info-button"
-              onClick={() => handleDetailClick(poste, poste.details, poste.pseudoReferent)}
-            >
-              {poste.nom}
-            </button>
+      <div className="inscription-info-containerflex">
+        <div className="inscription-info-containerPostes">
+          <div className="inscription-info-container2">
+            <h3 className="inscription-info-text">Sélectionnez un poste :</h3>
           </div>
-      ))}
-      {posteSelectionne && (
-        <div className="inscription-info-container1">
-          <h3 className='inscription-info-text'>Détails du poste :</h3>
-          <p className='inscription-info-text2'>{detail}</p>
-          <h3 className='inscription-info-text'>Nom du référent :</h3>
-          <p className='inscription-info-text2'>{referent}</p>
+          {postes &&
+            Array.isArray(postes) &&
+            postes.map((poste: any, index: any) => (
+              <div key={index} className="inscription-info-container2">
+                <button
+                  type="button"
+                  className="inscription-info-button"
+                  onClick={() =>
+                    handleDetailClick(
+                      poste,
+                      poste.details,
+                      poste.pseudoReferent
+                    )
+                  }
+                >
+                  {poste.nom}
+                </button>
+              </div>
+            ))}
         </div>
-      )}
+        {posteSelectionne && (
+          <div className="inscription-info-container1">
+            <h3 className="inscription-info-text">Détails du poste :</h3>
+            <p className="inscription-info-text2">{detail}</p>
+            <h3 className="inscription-info-text">Nom du référent :</h3>
+            <p className="inscription-info-text2">{referent}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

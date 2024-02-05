@@ -95,7 +95,7 @@ function PlanningIndividuelComponent (props : any) {
             })}
           </select>
           {/*Affiche le planning du festival sélectionné*/}
-          {!reloadTable && festivalsInscrits.length > 0 &&<TimeTable
+          {festivalsInscrits.length > 0 &&<TimeTable
           idFestival={festivalCourrant}
           cellComponentType='INSCRIPTION_POSTE'
           />}

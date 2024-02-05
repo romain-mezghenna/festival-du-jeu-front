@@ -57,7 +57,7 @@
 }
 @media(max-width: 1600px) {
   .inscription-info-container {
-    gap: var(--dl-space-space-sixunits);
+    gap: var(--dl-space-space-threeunits);
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -136,4 +136,16 @@
   .inscription-info-container {
     flex-direction: column;
   }
+}
+
+.inscription-info-containerflex{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.inscription-info-containerPostes {
+  display: flex;
+  flex-direction: column;
 }

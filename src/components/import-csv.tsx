@@ -98,7 +98,10 @@ function ImportCsv(props: any) {
         // Make the POST request
         axios.post('https://festivaldujeuapi.onrender.com/festivaldujeu/api/jeux/import', formData, { headers })
         .then(response => {
-            console.log('Import successful:', response.data);
+          console.log('File uploaded successfully:', response.data.message);
+          alert('Import réussi');
+          // relaod the page
+          window.location.reload();
         })
         .catch(error => {
             console.error('Error during import:', error);

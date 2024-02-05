@@ -399,9 +399,9 @@ function TimeTable(props :TimeTableProps){
           <table className="time-table">
             <thead>
               <tr>
-                <th>Nom</th>
+                <th style={{ padding: 10 }}>Nom</th>
                 {filteredColumns.map((column) => (
-                  <th key={column.idPlage}>
+                  <th style={{ padding: 10 }} key={column.idPlage}>
                     {formatTimeRange(column.heureDebut, column.heureFin)}
                   </th>
                 ))}
@@ -412,9 +412,12 @@ function TimeTable(props :TimeTableProps){
                 // Uniquement les 5 premiers postes pour l'exemple
                 rows.map((row, rowIndex) => (
                   <tr key={rowIndex}>
-                    <td>{row.nom}</td>
+                    <td style={{ padding: 10 }}>{row.nom}</td>
                     {filteredColumns.map((column) => (
-                      <td key={`${rowIndex}-${column.idPlage}`}>
+                      <td
+                        style={{ padding: 10 }}
+                         key={`${rowIndex}-${column.idPlage}`}
+                      >
                         {props.cellComponentType === "SAISIE" && (
                           <>
                             <input
@@ -501,14 +504,16 @@ function TimeTable(props :TimeTableProps){
                                     ? true
                                     : false
                                 }
-                                onChange={(e) => {handleChangeInscription(
-                                  e,
-                                  creneauxPoste.find(
-                                    (item) =>
-                                      item.idPoste === row.idPoste &&
-                                      item.plageHoraire === column.idPlage
-                                  )?.idCreneauPoste ?? 0
-                                )}}
+                                onChange={(e) => {
+                                  handleChangeInscription(
+                                    e,
+                                    creneauxPoste.find(
+                                      (item) =>
+                                        item.idPoste === row.idPoste &&
+                                        item.plageHoraire === column.idPlage
+                                    )?.idCreneauPoste ?? 0
+                                  );
+                                }}
                               />
                             </div>
                           </>

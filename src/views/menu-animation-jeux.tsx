@@ -19,7 +19,6 @@ const MenuAnimationJeux = (props:any) => {
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name7"></Navbar>
-      <NavBarAnimationJeux rootClassName="nav-bar-animation-jeux-root-class-name"></NavBarAnimationJeux>
       <InfosAnimJeux rootClassName="infos-anim-jeux-root-class-name"></InfosAnimJeux>
       <Footer rootClassName="footer-root-class-name7"></Footer>
     </div>
