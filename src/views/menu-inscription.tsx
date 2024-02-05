@@ -29,7 +29,6 @@ const MenuInscription = (props:any) => {
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name4"></Navbar>
-      <NavbarInscription rootClassName="navbar-inscription-root-class-name1"></NavbarInscription>
       <InscriptionInfo rootClassName="inscription-info-root-class-name"></InscriptionInfo>
       <Footer rootClassName="footer-root-class-name1"></Footer>
     </div>

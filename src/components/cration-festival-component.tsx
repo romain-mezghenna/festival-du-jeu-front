@@ -6,6 +6,7 @@ import { sendRequest } from '../utils/sendRequest'
 import './cration-festival-component.css'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store/store'
+import { Navigate } from 'react-router-dom'
 
 
 
@@ -34,6 +35,8 @@ function CrationFestivalComponent (props : any){
   const [pseudoReferent, setPseudoReferent] = React.useState("");
   const [postesExistants, setPostesExistants] = React.useState([] as PostesExistants[]);
   const [postesChoisis, setPostesChoisis] = React.useState([] as any[]);
+  const [redirect , setRedirect] = React.useState(false)
+  const [festivalCreer , setFestivalCreer] = React.useState(0)
 
   const [posteExistant , setPosteExistant] = React.useState(1)
 
@@ -177,6 +180,9 @@ function CrationFestivalComponent (props : any){
         } else {
           alert("Festival créé");
           console.log(res);
+          setFestivalCreer(res.idFestival)
+          setRedirect(true)
+
         }
       }
       );
@@ -357,6 +363,10 @@ function CrationFestivalComponent (props : any){
                         pseudoReferent: pseudoReferent,
                       },
                     ]);
+                    // Reset les champs
+                    setNewPosteNom("");
+                    setNewPosteDetails("");
+                    setPseudoReferent("");
                   }
                 }}
               >
@@ -453,6 +463,7 @@ function CrationFestivalComponent (props : any){
       >
         {props.button3}
       </button>
+      {redirect && festivalCreer > 0 && <Navigate to={"/creation-creneaux?idFestival=" + festivalCreer}  replace={true} />}
     </div>
   );
 }

@@ -207,7 +207,7 @@ function TimeTable(props :TimeTableProps){
         console.log(err);
       } else {
         console.log(res);
-      }
+      } 
     });
     //TODO : Amener sur la page d'accueil
 
@@ -237,7 +237,7 @@ function TimeTable(props :TimeTableProps){
     // TODO: Remplacer par des appels API réels pour récupérer les créneaux
     const fetchData = async () => {
       sendRequest(
-        "postes/festival/" + 1,
+        "postes/festival/" + props.idFestival,
         "GET",
         {},
         user.token ?? "",
@@ -303,6 +303,8 @@ function TimeTable(props :TimeTableProps){
                   }
                   }
                 );
+             } else {
+                setLoading(false);
              }
                });
                return updatedRows;
@@ -311,7 +313,7 @@ function TimeTable(props :TimeTableProps){
         }
       );
       sendRequest(
-        "plageshoraires/festival/" + 1,
+        "plageshoraires/festival/" + props.idFestival,
         "GET",
         {},
         user.token ?? "",
@@ -322,7 +324,7 @@ function TimeTable(props :TimeTableProps){
           } else {
             setColumns((prevColumns) => {
               const updatedColumns = [...prevColumns];
-              res.forEach((plageHoraire : any) => {
+              res.forEach((plageHoraire: any) => {
                 if (
                   !updatedColumns.some(
                     (column) => column.idPlage === plageHoraire.idPlage
@@ -337,8 +339,7 @@ function TimeTable(props :TimeTableProps){
                 setJours(updatedJours);
               });
               return updatedColumns;
-            
-            })
+            });
           }
         }
       );
