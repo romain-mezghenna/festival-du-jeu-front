@@ -21,8 +21,8 @@ function Profil(props : any){
   return (
     <div className="profil-container">
       <Helmet>
-        <title>Profil - Funny Key Herring</title>
-        <meta property="og:title" content="Profil - Funny Key Herring" />
+        <title>Profil</title>
+        <meta property="og:title" content="Profil" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name5"></Navbar>
       <ProfilField rootClassName="profil-field-root-class-name"></ProfilField>

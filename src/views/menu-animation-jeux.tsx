@@ -12,10 +12,10 @@ const MenuAnimationJeux = (props:any) => {
   return (
     <div className="menu-animation-jeux-container">
       <Helmet>
-        <title>MenuAnimationJeux - Funny Key Herring</title>
+        <title>MenuAnimationJeux</title>
         <meta
           property="og:title"
-          content="MenuAnimationJeux - Funny Key Herring"
+          content="MenuAnimationJeux"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name7"></Navbar>

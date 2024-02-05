@@ -21,10 +21,10 @@ const EditionFestival = (props:any) => {
   return (
     <div className="edition-festival-container">
       <Helmet>
-        <title>EditionFestival - Funny Key Herring</title>
+        <title>EditionFestival</title>
         <meta
           property="og:title"
-          content="EditionFestival - Funny Key Herring"
+          content="EditionFestival"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name21"></Navbar>

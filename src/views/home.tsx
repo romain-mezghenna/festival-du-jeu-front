@@ -15,8 +15,8 @@ const Home = (props:any) => {
   return (
     <div className="home-container">
       <Helmet>
-        <title>Funny Key Herring</title>
-        <meta property="og:title" content="Funny Key Herring" />
+        <title>Accueil</title>
+        <meta property="og:title" content="Accueil" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name"></Navbar>
       <div className="home-hero">

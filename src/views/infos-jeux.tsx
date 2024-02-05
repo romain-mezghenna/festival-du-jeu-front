@@ -22,8 +22,8 @@ const InfosJeux = (props:any) => {
   return (
     <div className="infos-jeux-container">
       <Helmet>
-        <title>InfosJeux - Funny Key Herring</title>
-        <meta property="og:title" content="InfosJeux - Funny Key Herring" />
+        <title>InfosJeux</title>
+        <meta property="og:title" content="InfosJeux" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name14"></Navbar>
       <InfosJeuxComponent rootClassName="infos-jeux-component-root-class-name"></InfosJeuxComponent>

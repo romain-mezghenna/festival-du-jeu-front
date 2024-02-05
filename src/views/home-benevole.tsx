@@ -20,8 +20,8 @@ const HomeBenevole = (props:any) => {
   return (
     <div className="home-benevole-container">
       <Helmet>
-        <title>HomeBenevole - Funny Key Herring</title>
-        <meta property="og:title" content="HomeBenevole - Funny Key Herring" />
+        <title>HomeBenevole</title>
+        <meta property="og:title" content="HomeBenevole" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name17"></Navbar>
       <div className="home-benevole-features">

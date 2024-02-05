@@ -22,10 +22,10 @@ const AttributionPostes = (props:any) => {
   return (
     <div className="attribution-postes-container">
       <Helmet>
-        <title>AttributionPostes - Funny Key Herring</title>
+        <title>Attributions des postes</title>
         <meta
           property="og:title"
-          content="AttributionPostes - Funny Key Herring"
+          content="AttributionPostes"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name24"></Navbar>

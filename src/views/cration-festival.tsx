@@ -24,7 +24,7 @@ const CrationFestival = (props:any) => {
         <title>Création Festival</title>
         <meta
           property="og:title"
-          content="CrationFestival - Funny Key Herring"
+          content="CrationFestival"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name22"></Navbar>

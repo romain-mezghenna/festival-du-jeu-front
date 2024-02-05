@@ -21,8 +21,8 @@ const DetailJeu = (props:any) => {
   return (
     <div className="detail-jeu-container">
       <Helmet>
-        <title>DetailJeu - Funny Key Herring</title>
-        <meta property="og:title" content="DetailJeu - Funny Key Herring" />
+        <title>Détail du jeu</title>
+        <meta property="og:title" content="DetailJeu" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name20"></Navbar>
       <DetailJeuComponent rootClassName="detail-jeu-component-root-class-name"></DetailJeuComponent>

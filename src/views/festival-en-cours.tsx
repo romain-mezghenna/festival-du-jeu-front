@@ -20,10 +20,10 @@ const FestivalEnCours = (props:any) => {
   return (
     <div className="festival-en-cours-container">
       <Helmet>
-        <title>FestivalEnCours - Funny Key Herring</title>
+        <title>FestivalEnCours</title>
         <meta
           property="og:title"
-          content="FestivalEnCours - Funny Key Herring"
+          content="FestivalEnCours"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name19"></Navbar>

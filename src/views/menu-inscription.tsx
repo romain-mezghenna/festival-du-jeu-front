@@ -22,10 +22,10 @@ const MenuInscription = (props:any) => {
   return (
     <div className="menu-inscription-container">
       <Helmet>
-        <title>MenuInscription - Funny Key Herring</title>
+        <title>MenuInscription</title>
         <meta
           property="og:title"
-          content="MenuInscription - Funny Key Herring"
+          content="MenuInscription"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name4"></Navbar>
