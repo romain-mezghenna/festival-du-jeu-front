@@ -83,9 +83,7 @@ function PlanningIndividuelComponent (props : any) {
             id="festival"
             value={festivalCourrant}
             onChange={(e) => {
-              setReloadTable(true)
               setFestivalCourrant(e.target.value);
-              setReloadTable(false)
             }}
           >
             {festivals.map((festival: Festival) => {
