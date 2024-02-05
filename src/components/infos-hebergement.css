@@ -3,14 +3,15 @@
   width: 100%;
   display: flex;
   position: relative;
-  align-items: center;
-  justify-content: center;
+  align-items: row;
+  justify-content: row;
+  margin-bottom: 20px;
 }
 .infos-hebergement-container1 {
-  flex: 0 0 auto;
-  width: 200px;
-  height: 100px;
-  display: flex;
+  /* flex: 0 0 auto; */
+  width: 40%;
+  height: auto;
+  display: flex-start;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -20,9 +21,9 @@
 }
 .infos-hebergement-container2 {
   flex: 0 0 auto;
-  width: 200px;
-  height: 100px;
-  display: flex;
+  width: 30%;
+  height: auto;
+  display: center;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -32,9 +33,9 @@
 }
 .infos-hebergement-container3 {
   flex: 0 0 auto;
-  width: 200px;
-  height: 100px;
-  display: flex;
+  width: 30%;
+  height: auto;
+  display: flex-end;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +58,7 @@
   margin-top: 10px; /* Ajoute de l'espace entre text2 et hebergement.email */
 }
 .infos-hebergement-text2 {
-  font-family: "DryBrush";
+  font-family: "OlivessansPimiento";
 }
 .infos-hebergement-root-class-name {
   align-self: center;

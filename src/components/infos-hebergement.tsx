@@ -33,39 +33,41 @@ function InfosHebergement (props : any) {
     )
   }, []);
   return (
-    <div className={`infos-hebergement-container ${props.rootClassName} `}>
+    <>
+    <div className={`infos-hebergement-container`}>
       <div className="infos-hebergement-container1">
-        <span className="infos-hebergement-text">{props.text}</span>
+        <span className="infos-hebergement-text1">{props.text}</span>
       </div>
       <div className="infos-hebergement-container2">
         <span className="infos-hebergement-text1">{props.text1}</span>
       </div>
       <div className="infos-hebergement-container3">
-        <span className="infos-hebergement-text2">{props.text2}</span>
+        <span className="infos-hebergement-text1">{props.text2}</span>
       </div>
+    </div>
       
       {hebergements && hebergements.map((hebergement, index) => (
-        <div className='infos-hebergement-container2'>
-        <div className="infos-hebergement-container5" key={index}>
-          <span className="infos-hebergement-text">{hebergement.nom}</span>
+      <div className='infos-hebergement-container'>
+        <div className="infos-hebergement-container1" key={index}>
+          <span className="infos-hebergement-text2">{hebergement.nom}</span>
         </div>
-        <div className="infos-hebergement-container6">
-        <span className="infos-hebergement-text1">{hebergement.prenom}</span>
-      </div>
-      <div className="infos-hebergement-container7">
-        <span className="infos-hebergement-text2">{hebergement.email}</span>
-      </div>
+        <div className="infos-hebergement-container2">
+          <span className="infos-hebergement-text2">{hebergement.prenom}</span>
         </div>
+        <div className="infos-hebergement-container2">
+          <span className="infos-hebergement-text2">{hebergement.email}</span>
+        </div>
+      </div>
       ))}
-    </div>
+    </>
   )
 }
 
 InfosHebergement.defaultProps = {
-  text: 'Nom',
-  text1: 'Prénom',
+  text: 'Nom :',
+  text1: 'Prénom :',
   rootClassName: '',
-  text2: 'e-mail',
+  text2: 'e-mail :',
 }
 
 InfosHebergement.propTypes = {
