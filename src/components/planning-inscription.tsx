@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import TimeTable from './TimeTable'
 import { sendRequest } from '../utils/sendRequest';
-import {CircularProgress} from '../utils/circle'
 import { RootState } from '../store/store';
 import { useSelector } from 'react-redux';
 

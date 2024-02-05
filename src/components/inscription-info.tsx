@@ -8,7 +8,7 @@ import { sendRequest } from '../utils/sendRequest'
 
 function InscriptionInfo (props : any) {
   const user = useSelector((state: RootState) => state.user);
-  const [postes, setPostes] = useState(null);
+  const [postes, setPostes] = useState([]);
   const [posteSelectionne, setPosteSelectionne] = useState<any>(null);
   const [detail, setDetail] = useState<any>(null);
   const [referent, setReferent] = useState<any>(null);

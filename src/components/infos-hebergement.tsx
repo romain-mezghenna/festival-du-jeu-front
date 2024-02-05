@@ -9,7 +9,7 @@ import { sendRequest } from '../utils/sendRequest'
 
 function InfosHebergement (props : any) {
   const user = useSelector((state: RootState) => state.user);
-  const [hebergements, setHebergements] = useState(null);
+  const [hebergements, setHebergements] = useState([] as any[]);
   React.useEffect(() => {
     if (user.token === null) {
       alert('Vous devez être connecté pour consulter les hébergements');
