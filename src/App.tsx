@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { RootState, store } from "./store/store";
 import { Provider, useDispatch, useSelector } from "react-redux";
@@ -43,24 +43,33 @@ export default function App () {
   const user = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (user.token) {
+      // Send a request to the server to check if the token is still valid
+      sendRequest("me", "GET", null, user.token, (err, res) => {
+        if (err) {
+          // If the token is invalid, log the user out
+          dispatch(logout());
+          // Reloads the page to update the UI
+          window.location.reload();
+        } else {
+          // If the token is valid, update the user's information
 
-  if (user.token) {
-    // Send a request to the server to check if the token is still valid
-    sendRequest("me", "GET", null, user.token, (err, res) => {
-      if (err) {
-        // If the token is invalid, log the user out
-        dispatch(logout());
-        // Reloads the page to update the UI
-        window.location.reload();
-      } else {
-        // If the token is valid, update the user's information
-        dispatch(
-          login({ token: user.token ?? "", pseudo: res.pseudo, role: res.role })
-        );
-        console.log(res);
-      }
-    });
-  }
+          dispatch(
+            login({
+              token: user.token ?? "",
+              pseudo: res.pseudo,
+              role: res.role,
+            })
+          );
+          console.log(res);
+        }
+      });
+    }
+  }, []);
+
+
+  
 
   return (
     <Router>
