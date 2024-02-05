@@ -13,8 +13,8 @@ function ImportCsv(props: any) {
 
     
     const [file, setFile] = React.useState();
-    const [idPoste, setIdPoste] = React.useState('');
-    const [idFestival, setIdFestival] = React.useState('');
+    const [idPoste, setIdPoste] = React.useState(1);
+    const [idFestival, setIdFestival] = React.useState(1);
     const [festivals, setFestivals] = React.useState([]as any[]);
     const [postes, setPostes] = React.useState([]as any[]);
     const user = useSelector((state: RootState) => state.user);
@@ -35,21 +35,13 @@ function ImportCsv(props: any) {
                 } else {
                     console.log(res);
                     setFestivals(res);
-                }
-            }
-        );
-        sendRequest(
-            "postes",
-            "GET",
-            {},
-            user.token,
-            (err, res) => {
-                if (err) {
-                    alert("Erreur lors de la récupération des postes");
-                    console.log(err);
-                } else {
-                    console.log(res);
-                    setPostes(res);
+                    setIdFestival(res[0].idFestival);
+                    setIdPoste(res[0].FestivalPostes[0].idPoste);
+                    let postes : any[] = [];
+                    res[0].FestivalPostes.forEach((poste:any) => {
+                        postes.push(poste.Poste);
+                    });
+                    setPostes(postes);
                 }
             }
         );
@@ -62,6 +54,13 @@ function ImportCsv(props: any) {
 
     const handleOnChangeFestival = (e:any) => {
         setIdFestival(e.target.value);
+        let postes : any[] = [];
+        let f = festivals.find((festival) => { return festival.idFestival == e.target.value});
+        f.FestivalPostes.forEach((poste:any) => {
+            postes.push(poste.Poste);
+        });
+        setPostes(postes);
+
       };
     
       const handleOnChangePoste = (e:any) => {
@@ -74,13 +73,21 @@ function ImportCsv(props: any) {
             return
         }
         console.log(file);
-        // Assume formData is a FormData object containing the CSV file and other required data
+        // Create a new FormData object
         const formData = new FormData();
-        formData.append('file', file); // Add your CSV file to FormData
-        formData.append('idPoste', idPoste); // Add other required data
-        formData.append('idFestival', idFestival); // Add other required data
-        // Replace 'yourToken' with the actual token or use your authentication mechanism
+        // Add the file to the formData object
+        formData.append('file', file);
+        // Add the festival id to the formData object
+        formData.append('idFestival', String(idFestival));
+        // Add the poste id to the formData object
+        formData.append('idPoste', String(idPoste));
+
         const token = user.token;
+        console.log({
+          formData: formData.get("idFestival"),
+          idFestival: idFestival,
+          idPoste: idPoste,
+        });
 
         // Set up the headers with authorization and content type
         const headers = {

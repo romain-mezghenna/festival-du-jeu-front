@@ -32,7 +32,7 @@ function InfosJeuxComponent (props : any) {
         }
       }
     )
-  }, [])
+  }, [jeux])
   return (
     <div className={`infos-jeux-component-container ${props.rootClassName} `}>
       <div className="infos-jeux-component-container01">
