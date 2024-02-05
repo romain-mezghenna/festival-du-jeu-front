@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 function PlanningIndividuelComponent (props : any) {
 
   const user = useSelector((state: RootState) => state.user);
-  const [festivalsInscrits, setFestivalsInscrits] = React.useState<any>({});
+  const [festivalsInscrits, setFestivalsInscrits] = React.useState<any[]>([]);
   const [festivalCourrant, setFestivalCourrant] = React.useState<any>(1);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [reloadTable, setReloadTable] = React.useState(false);
@@ -95,10 +95,13 @@ function PlanningIndividuelComponent (props : any) {
             })}
           </select>
           {/*Affiche le planning du festival sélectionné*/}
-          {!reloadTable && <TimeTable
+          {!reloadTable && festivalsInscrits.length > 0 &&<TimeTable
           idFestival={festivalCourrant}
           cellComponentType='INSCRIPTION_POSTE'
           />}
+          {
+            festivalsInscrits.length === 0 && <h1>Vous n'êtes inscrit à aucun festival</h1>
+          }
         </div>
       </> }
     </div>

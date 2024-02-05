@@ -101,7 +101,7 @@ function ImportCsv(props: any) {
             console.log('Import successful:', response.data);
         })
         .catch(error => {
-            console.error('Error during import:', error.response.data);
+            console.error('Error during import:', error);
         });
     }
     return (

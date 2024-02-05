@@ -28,7 +28,7 @@ function ListesFestivales(props:any){
     const user = useSelector((state: RootState) => state.user);
     const [festivals, setFestivals] = React.useState<Festival[]>([]);
     const [festivalsInscrits, setFestivalsInscrits] = React.useState<any[]>([]);
-    const [isLoaded, setIsLoaded] = React.useState(false);
+    const [isLoaded, setIsLoaded] = React.useState(true);
     let link = '/edition-festival';
     let button = 'modifier le festival';
 
@@ -85,14 +85,16 @@ function ListesFestivales(props:any){
                                 let updatedFestivalsInscrits = festivalsInscrits
                                 updatedFestivalsInscrits[element.idFestival] = res
                                 console.log("updatedFestivalsInscrits",updatedFestivalsInscrits)
+                                
                                 return updatedFestivalsInscrits;
                                 
-                            });
+                                });
+                                setIsLoaded(true);
                             }
                           }
                         );
                     });
-                    setIsLoaded(true);
+                    
                     }
                 }
             }
