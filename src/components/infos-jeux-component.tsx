@@ -6,16 +6,22 @@ import LigneInfosJeuComponent from './ligne-infos-jeu-component'
 import './infos-jeux-component.css'
 import { send } from 'process'
 import { sendRequest } from '../utils/sendRequest'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 
 function InfosJeuxComponent (props : any) {
   const [jeux, setJeux] = React.useState([] as any[])
-
+  const user = useSelector((state: RootState) => state.user)
   useEffect(() => {
+    if(user.token === null){
+      alert('Vous devez être connecté pour accéder à cette page')
+      return
+    }
     sendRequest(
       'jeux',
       'GET',
       {},
-      '',
+      user.token,
       (err, res) => {
         if (err) {
           alert('Erreur lors de la récupération des jeux')

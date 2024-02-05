@@ -6,6 +6,8 @@ import { sendRequest } from "../utils/sendRequest";
 import { Navigate } from "react-router-dom";
 import "./import-csv.css";
 import { text } from "stream/consumers";
+import { RootState } from "../store/store";
+import axios from 'axios';
 
 function ImportCsv(props: any) {
 
@@ -15,12 +17,17 @@ function ImportCsv(props: any) {
     const [idFestival, setIdFestival] = React.useState('');
     const [festivals, setFestivals] = React.useState([]as any[]);
     const [postes, setPostes] = React.useState([]as any[]);
+    const user = useSelector((state: RootState) => state.user);
     useEffect(() => {
+        if(user.token === null){
+            alert('Vous devez être connecté pour accéder à cette page')
+            return
+        }
         sendRequest(
             "festivals",
             "GET",
             {},
-            "",
+            user.token,
             (err, res) => {
                 if (err) {
                     alert("Erreur lors de la récupération des festivals");
@@ -35,7 +42,7 @@ function ImportCsv(props: any) {
             "postes",
             "GET",
             {},
-            "",
+            user.token,
             (err, res) => {
                 if (err) {
                     alert("Erreur lors de la récupération des postes");
@@ -47,7 +54,9 @@ function ImportCsv(props: any) {
             }
         );
     }, []);
+    
     const handleOnChange = (e: any) => {
+        console.log(e.target.files[0]);
         setFile(e.target.files[0]);
     }
 
@@ -60,25 +69,33 @@ function ImportCsv(props: any) {
       };
 
     const handleOnClick = (e: any, file: any) => {
-        sendRequest(
-            "jeux/import",
-            "POST",
-            {
-                file: file,
-                idPoste: idPoste,
-                idFestival: idFestival,
-            },
-            "",
-            (err, res) => {
-                if (err) {
-                    alert("Erreur lors de l'importation");
-                    console.log(err);
-                } else {
-                    alert("Importation réussie");
-                    console.log(res);
-            }
-            }
-        );
+        if(user.token === null){
+            alert('Vous devez être connecté pour accéder à cette page')
+            return
+        }
+        console.log(file);
+        // Assume formData is a FormData object containing the CSV file and other required data
+        const formData = new FormData();
+        formData.append('file', file); // Add your CSV file to FormData
+        formData.append('idPoste', idPoste); // Add other required data
+        formData.append('idFestival', idFestival); // Add other required data
+        // Replace 'yourToken' with the actual token or use your authentication mechanism
+        const token = user.token;
+
+        // Set up the headers with authorization and content type
+        const headers = {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
+        };
+
+        // Make the POST request
+        axios.post('https://festivaldujeuapi.onrender.com/festivaldujeu/api/jeux/import', formData, { headers })
+        .then(response => {
+            console.log('Import successful:', response.data);
+        })
+        .catch(error => {
+            console.error('Error during import:', error.response.data);
+        });
     }
     return (
         <div className='container'>
