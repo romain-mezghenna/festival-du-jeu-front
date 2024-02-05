@@ -15,7 +15,9 @@ function Register(props : any){
         <meta property="og:title" content="Register - Funny Key Herring" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name2"></Navbar>
+      <div className="register-features">
       <RegisterField rootClassName="register-field-root-class-name"></RegisterField>
+      </div>
       <Footer rootClassName="footer-root-class-name3"></Footer>
     </div>
   )
