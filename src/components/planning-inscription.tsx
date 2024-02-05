@@ -1,14 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import PropTypes from 'prop-types'
 
 import {CircularProgress} from '../utils/circle'
+import { sendRequest } from '../utils/sendRequest'
 
 function PlanningInscription (props : any) {
+  const [selectedFestival, setselectedFestival] = React.useState('')
+  const [festivals, setFestivals] = React.useState([] as any[])
+  useEffect(() => {
+    sendRequest(
+      'festivals',
+      'GET',
+      {},
+      '',
+      (err, res) => {
+        if (err) {
+          alert('Erreur lors de la récupération des festivals')
+          console.log(err)
+        } else {
+          console.log(res)
+          setFestivals(res)
+        }
+      }
+    )
+  }
+  , [])
   return (
     <div className={`planning-inscription-container ${props.rootClassName} `}>
       <div className="planning-inscription-container01">
         <div className="planning-inscription-container02">
+          <span className="planning-inscription-textfestival">{"Choisir le festival"}</span>
+          <select className="planning-inscription-selectfestival" onChange={
+            event => setselectedFestival(event.target.value) 
+          }>
+            {festivals.map((festival) => (
+              <option value={festival.idFestival} className="">
+                {festival.nom}
+              </option>
+            ))}
+          </select>
           <span className="planning-inscription-text">{props.text}</span>
           <select className="planning-inscription-select">
             <option value="Option 1" className="">
