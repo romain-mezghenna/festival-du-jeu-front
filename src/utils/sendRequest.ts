@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
 // URL de base de l'API
-const API_BASE_URL = 'https://festivaldujeuapi.onrender.com/festivaldujeu/api';
+const API_BASE_URL = 'http://localhost:3000/festivaldujeu/api';
 
 /**
  * Exécute une requête HTTP avec Axios en utilisant l'URL de base de l'API.
