@@ -26,6 +26,8 @@ interface Festival {
 function ListesFestivales(props:any){
     const user = useSelector((state: RootState) => state.user);
     const [festivals, setFestivals] = React.useState<Festival[]>([]);
+    let link = '/edition-festival';
+    let button = 'modifier le festival';
     React.useEffect(() => {
         if (user.token === null) {
             alert('Vous devez être connecté pour modifier votre profil');
@@ -44,10 +46,32 @@ function ListesFestivales(props:any){
                 } else {
                     console.log(res);
                     setFestivals(res);
+                    console.log(link);
+                    console.log(button);
                 }
             }
         )
     }, []);
+    const handleRoleLink= (role: any) => {
+        if (user.role === 4) {
+            link = '/edition-festival';
+        } else if (user.role === 2 || user.role === 3) { 
+            link = '/festivals/inscription';
+        }
+        return link;
+    }
+    const handleRoleButton= (role: any) => {
+        if (user.role === 4) {
+            button = 'modifier le festival';
+        } else if (user.role === 2 || user.role === 3) { 
+            button = 's\'inscrire au festival';
+        }
+        return button;
+    }
+    handleRoleLink(user.role);
+    handleRoleButton(user.role);
+    console.log(handleRoleLink(user.role));
+    console.log(handleRoleButton(user.role));    
   return (
      //fait une fonction pour récupérer tout les festivales depuis la bd et les afficher
     <div className={`listes-festivales-container ${props.rootClassName} `}>
@@ -65,19 +89,11 @@ function ListesFestivales(props:any){
                     <h2 className="listes-festivales-text4">{props.heading13}</h2>
                     <h3 className="">{formatDate(festival.dateFin)}</h3>
                 </div>
-                {user.role === 4  ?? (
                 <div className="listes-festivales-container5">
-                    <Link to="/edition-festival"type="button" className="listes-festivales-button button">
-                        {props.button1}
+                    <Link to={link} type="button" className="listes-festivales-button button">
+                        {button}
                     </Link>
                 </div>
-                )} : {
-                    <div className="listes-festivales-container5">
-                    <Link to="/festivals/inscription"type="button" className="listes-festivales-button button">
-                        {props.button2}
-                    </Link>
-                </div>
-                }
             </div>
         ))}
     </div>  

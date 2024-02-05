@@ -1,32 +1,31 @@
 .inscription-info-container {
   width: 100%;
   height: auto;
-
-  padding: var(--dl-space-space-fourunits);
   position: relative;
   border-color: var(--dl-color-gray-black);
   border-style: solid;
   border-width: 1px;
   border-radius: var(--dl-radius-radius-radius4);
-  justify-content: center;
+  justify-content: column;
   display: flex;
-  flex-direction: row; /* Aligne les postes horizontalement */
-  justify-content: flex-start; /* Aligne les postes à gauche */
-  align-items: center; /* Centre verticalement les éléments */
+  flex-direction: column; /* Aligne les postes horizontalement */
+  align-items: flex-start; /* Centre verticalement les éléments */
 }
 .inscription-info-container1 {
   gap: var(--dl-space-space-twounits);
   flex: 0 0 auto;
-  width: 200px;
-  display: flex;
-  align-items: stretch;
+  width: 10%;
+  display: flex-start;
+  align-items: column;
   flex-direction: column;
+  justify-content: column;
 }
 .inscription-info-text {
   font-family: "KGLifeisMessy";
 }
 .inscription-info-button {
   font-family: "OlivessansPimiento";
+  margin-bottom : 5px;
 }
 .inscription-info-button1 {
   font-family: "OlivessansPimiento";
@@ -44,14 +43,7 @@
   font-family: "OlivessansPimiento";
 }
 .inscription-info-container2 {
-  gap: var(--dl-space-space-unit);
-  flex: 0 0 auto;
-  width: 200px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  margin-bottom : 10px;
 }
 .inscription-info-button6 {
   font-family: "OlivessansPimiento";
@@ -70,18 +62,7 @@
     flex-direction: row;
     justify-content: center;
   }
-  .inscription-info-container1 {
-    display: flex;
-    flex-direction: column; /* Aligne les boutons verticalement */
-    justify-content: space-around; /* Espace les boutons verticalement */
-    align-items: flex-start; /* Aligne les boutons à gauche */
-    margin-right: auto; /* Pousse les boutons vers la gauche */
-  }
-  .inscription-info-container2 {
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-  }
+ 
   .inscription-info-button6 {
     margin-left: var(--dl-space-space-unit);
     margin-right: var(--dl-space-space-unit);
@@ -103,12 +84,10 @@
   .inscription-info-text {
     align-self: center;
     margin-bottom: var(--dl-space-space-halfunit);
+    font-family: "KGLifeisMessy";
   }
-  .inscription-info-button {
-    width: 100%;
-    align-self: center;
-    margin-top: var(--dl-space-space-halfunit);
-    margin-bottom: var(--dl-space-space-halfunit);
+  .inscription-info-text2 {
+    font-family: "drybrush";
   }
   .inscription-info-button1 {
     width: 100%;
