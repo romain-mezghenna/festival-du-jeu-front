@@ -3,9 +3,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './ligne-infos-jeu-component.css'
-import { Link } from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
 
 function LigneInfosJeuComponent  (props : any) {
+  const [redirected, setRedirect] = React.useState(false)
+  const [idJeu, setIdJeu] = React.useState('')
+  setIdJeu(props.text14)
+  const handleDetail = () => {
+    setRedirect(true)
+    console.log('handleDetail')
+  }
+
+  if(redirected){
+    redirect(`/detail-jeu/${idJeu}`)
+  }
   return (
     <div className="ligne-infos-jeu-component-container">
       <div className="ligne-infos-jeu-component-container01">
@@ -38,6 +49,7 @@ function LigneInfosJeuComponent  (props : any) {
         <button
           type="button"
           className="ligne-infos-jeu-component-button button"
+          onClick={handleDetail}
         >
           {props.button}
         </button>
