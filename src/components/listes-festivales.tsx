@@ -71,13 +71,12 @@ function ListesFestivales(props:any){
                         {props.button1}
                     </Link>
                 </div>
-                )}: {
+                )} : {
                     <div className="listes-festivales-container5">
                     <Link to="/festivals/inscription"type="button" className="listes-festivales-button button">
                         {props.button2}
                     </Link>
                 </div>
-
                 }
             </div>
         ))}

@@ -39,6 +39,23 @@
   flex-direction: column;
   justify-content: center;
 }
+.infos-hebergement-container4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.infos-hebergement-container5 {
+  margin-top: 10px; /* Ajoute de l'espace entre text et hebergement.nom */
+}
+
+.infos-hebergement-container6 {
+  margin-top: 10px; /* Ajoute de l'espace entre text1 et hebergement.prenom */
+}
+
+.infos-hebergement-container7 {
+  margin-top: 10px; /* Ajoute de l'espace entre text2 et hebergement.email */
+}
 .infos-hebergement-text2 {
   font-family: "DryBrush";
 }

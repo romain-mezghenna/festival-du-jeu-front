@@ -1,66 +1,73 @@
 import React from 'react'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 import './inscription-info.css'
+import { sendRequest } from '../utils/sendRequest'
 
 function InscriptionInfo (props : any) {
-  const [posteSelectionne, setPosteSelectionne] = useState(null);
+  const user = useSelector((state: RootState) => state.user);
+  const [postes, setPostes] = useState(null);
+  const [posteSelectionne, setPosteSelectionne] = useState<any>(null);
+  const [detail, setDetail] = useState<any>(null);
+  const [referent, setReferent] = useState<any>(null);
 
-  const handleDetailClick = (poste : any) => {
+  React.useEffect(() => {
+    if (user.token === null) {
+      alert('Vous devez être connecté pour consulter les postes');
+      return;
+    }
+    sendRequest(
+      'postes',
+      'GET',
+      {},
+      user.token,
+      (err, res) => {
+        if (err) {
+          alert('Erreur lors de la récupération des postes');
+          console.log(err);
+        } else {
+          console.log(res);
+          setPostes(res);
+        }
+      }
+    )
+  }, []);
+  const handleDetailClick = (poste : any, detail : any, referent : any) => {
+    // Mettez en œuvre la logique pour afficher les détails du poste
+    console.log('Détails du poste:', poste);
     setPosteSelectionne(poste);
-  };
-
-  const handleContactClick = (poste : any) => {
-    // Mettez en œuvre la logique pour contacter le référent du poste
-    console.log('Contact référent pour le poste:', poste);
+    setDetail(detail);
+    setReferent(referent);
+    console.log(posteSelectionne);
+    console.log('detail : ' + detail); 
+    
   };
   return (
-    <div className={`inscription-info-container ${props.rootClassName} `}>
-      <div className="inscription-info-container1">
-        <h3 className="inscription-info-text">{props.posteselecInfo}</h3>
-        <button type="button" className="inscription-info-button button" onClick={() => handleDetailClick('Animation jeux')}>
-          {props.animationjeux}
-        </button>
-        <button type="button" className="inscription-info-button1 button" onClick={() => handleDetailClick('Accueil')}>
-          {props.accueil}
-        </button>
-        <button type="button" className="inscription-info-button2 button" onClick={() => handleDetailClick('Vente Restauration')}>
-          {props.venterestauration}
-        </button>
-        <button type="button" className="inscription-info-button3 button" onClick={() => handleDetailClick('Cuisine')}>
-          {props.cuisine}
-        </button>
-        <button type="button" className="inscription-info-button4 button" onClick={() => handleDetailClick('Tombola')}>
-          {props.tombola}
-        </button>
-      <button type="button" className="inscription-info-button5 button" onClick={() => handleDetailClick('Forum Associations')}>
-          {props.forumasso}
-        </button>
-      </div>
-      <div className="inscription-info-container2">
-        <button type="button" className="inscription-info-button6 button">
-          {props.detailButton}
-        </button>
-        <button type="button" className="inscription-info-button7 button">
-          {props.contactButton}
-        </button>
-      </div>
+    <div className={`inscription-info-container ${props.rootClassName}`}>
+      <h3 className="inscription-info-text">Sélectionnez un poste :</h3>
+      {postes && Array.isArray(postes) && postes.map((poste, index) => (
+        <div key={index} className="inscription-info-container1">
+          <button
+            type="button"
+            className="inscription-info-button button"
+            onClick={() => handleDetailClick(poste, poste.details, poste.pseudoReferent)}
+          >
+            {poste.nom}
+          </button>
+        </div>
+      ))}
+      {posteSelectionne && (
+        <div className="inscription-info-container2">
+          <h3>Détails du poste :</h3>
+          <p>{detail}</p>
+          <h3>Nom du référent :</h3>
+          <p>{referent}</p>
+        </div>
+      )}
     </div>
-  )
-}
-
-InscriptionInfo.defaultProps = {
-  posteselecInfo: 'Sélectionnez un poste',
-  animationjeux: 'Animation jeux',
-  detailButton: 'Détail du poste',
-  tombola: 'Tombola',
-  accueil: 'Accueil',
-  forumasso: 'Forum associations',
-  contactButton: 'Contact référent',
-  rootClassName: '',
-  venterestauration: 'Vente restauration',
-  cuisine: 'Cuisine',
+  );
 }
 
 InscriptionInfo.propTypes = {
