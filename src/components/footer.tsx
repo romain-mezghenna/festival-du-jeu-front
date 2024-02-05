@@ -20,17 +20,20 @@ function Footer  (props : any) {
         <Link to="/faq" className="footer-navlink1">
           {props.text1}
         </Link>
+        <Link to="/infos-pratiques" className="footer-navlink1">
+          Infos Pratiques
+        </Link>
         <span className="footer-text">
           Copyright © 2024 Sortons jouer !. All rights reserved.
           <span
             dangerouslySetInnerHTML={{
-              __html: ' ',
+              __html: " ",
             }}
           />
         </span>
       </footer>
     </div>
-  )
+  );
 }
 
 Footer.defaultProps = {

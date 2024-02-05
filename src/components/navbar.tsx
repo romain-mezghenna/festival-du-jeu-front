@@ -56,7 +56,7 @@ function Navbar (props : any) {
             <Link to="/news" className="navbar-navlink">
               {props.news}
             </Link>
-            <Link to="/menu-inscription" className="navbar-navlink1">
+           {user.isLoggedIn && <> <Link to="/menu-inscription" className="navbar-navlink1">
               Inscription
             </Link>
             <Link to="/menu-animation-jeux" className="navbar-navlink2">
@@ -64,7 +64,7 @@ function Navbar (props : any) {
             </Link>
             <Link to="/profil" className="navbar-navlink3">
               Profil
-            </Link>
+            </Link></>}
           </nav>
         </div>
         <div data-thq="thq-navbar-nav" className="navbar-desktop-menu"></div>
