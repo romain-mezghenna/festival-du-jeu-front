@@ -2,7 +2,7 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-import './planning-inscription.css'
+import {CircularProgress} from '../utils/circle'
 
 function PlanningInscription (props : any) {
   return (
@@ -59,11 +59,12 @@ function PlanningInscription (props : any) {
             <span className="planning-inscription-text07">{props.text3}</span>
           </div>
           <div className="planning-inscription-container13">
-            <img
-              alt={props.imageAlt10}
-              src={props.imageSrc10}
-              className="planning-inscription-image"
-            />
+          <CircularProgress
+            percentage="50"
+            color="green"
+            size="50px"
+            lineWidth="5px"
+          />
           </div>
           <div className="planning-inscription-container14">
             <img
