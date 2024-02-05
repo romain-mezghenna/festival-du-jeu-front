@@ -16,6 +16,7 @@ function Loginfield  (props: any)  {
   const dispatch = useDispatch();
   // routeur
   const [navigate, setNavigate] = React.useState(false);
+  const user = useSelector((state: RootState) => state.user);
   
 
   const handleLogin =() => {
@@ -81,7 +82,7 @@ function Loginfield  (props: any)  {
       >
         {props.login}
       </button>
-      {navigate && <Navigate to="/" />}
+      {navigate ? user.role == 4 ? <Navigate to="/home-admin" /> : <Navigate to="/home-benevole" /> : null} 
     </div>
   );
 }

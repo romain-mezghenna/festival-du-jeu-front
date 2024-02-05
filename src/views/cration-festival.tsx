@@ -21,7 +21,7 @@ const CrationFestival = (props:any) => {
   return (
     <div className="cration-festival-container">
       <Helmet>
-        <title>CrationFestival - Funny Key Herring</title>
+        <title>Création Festival</title>
         <meta
           property="og:title"
           content="CrationFestival - Funny Key Herring"
