@@ -32,12 +32,11 @@
   justify-content: flex-start;
 }
 .infos-anim-jeux-container03 {
-  gap: var(--dl-space-space-twounits);
   flex: 0 0 auto;
   width: auto;
+  height : auto;
   display: flex;
-  padding: var(--dl-space-space-threeunits);
-  align-items: center;
+  align-items: column;
   flex-direction: column;
   justify-content: flex-start;
 }

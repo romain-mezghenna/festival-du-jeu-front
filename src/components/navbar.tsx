@@ -57,7 +57,7 @@ function Navbar (props : any) {
               {props.news}
             </Link>
            {user.isLoggedIn && <> <Link to="/menu-inscription" className="navbar-navlink1">
-              Inscription
+              Postes
             </Link>
             <Link to="/menu-animation-jeux" className="navbar-navlink2">
               Animation

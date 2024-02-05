@@ -25,7 +25,6 @@ const InscriptionGnrale = (props:any) => {
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name3"></Navbar>
-      <NavbarInscription rootClassName="navbar-inscription-root-class-name"></NavbarInscription>
       <PlanningInscription rootClassName="planning-inscription-root-class-name"></PlanningInscription>
       <Footer rootClassName="footer-root-class-name6"></Footer>
     </div>

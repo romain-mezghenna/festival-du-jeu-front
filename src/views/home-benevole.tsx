@@ -30,10 +30,12 @@ const HomeBenevole = (props:any) => {
           <br></br>
         </h1>
         <div className="home-benevole-container1">
-          <Link to="/inscription-gnrale">
+          <Link to="/liste-festivales">
             <div className="home-benevole-feature-card">
               <h2 className="home-benevole-text03">
-                <span className="home-benevole-text04">Inscription</span>
+                <span className="home-benevole-text04">
+                  Listes des festivals
+                </span>
                 <br></br>
                 <br></br>
               </h2>
@@ -42,7 +44,7 @@ const HomeBenevole = (props:any) => {
               </svg>
             </div>
           </Link>
-          <div className="home-benevole-feature-card1">
+          {/* <div className="home-benevole-feature-card1">
             <h2 className="home-benevole-text07">
               <span className="home-benevole-text08">
                 Validation du planning
@@ -53,12 +55,29 @@ const HomeBenevole = (props:any) => {
             <svg viewBox="0 0 1024 1024" className="home-benevole-icon02">
               <path d="M397.434 917.696l-397.868-391.6 197.378-194.27 200.49 197.332 429.62-422.852 197.378 194.27-626.998 617.12zM107.912 526.096l289.524 284.962 518.656-510.482-89.036-87.632-429.62 422.852-200.49-197.334-89.034 87.634z"></path>
             </svg>
-          </div>
+          </div> */}
           <Link to="/planning-individuel">
             <div className="home-benevole-feature-card2">
               <h2 className="home-benevole-text11">
                 <span className="home-benevole-text12">
                   Planning individuel
+                </span>
+                <br className="home-benevole-text13"></br>
+                <br></br>
+              </h2>
+              <svg
+                viewBox="0 0 731.4285714285713 1024"
+                className="home-benevole-icon04"
+              >
+                <path d="M731.429 799.429c0 83.429-54.857 151.429-121.714 151.429h-488c-66.857 0-121.714-68-121.714-151.429 0-150.286 37.143-324 186.857-324 46.286 45.143 109.143 73.143 178.857 73.143s132.571-28 178.857-73.143c149.714 0 186.857 173.714 186.857 324zM585.143 292.571c0 121.143-98.286 219.429-219.429 219.429s-219.429-98.286-219.429-219.429 98.286-219.429 219.429-219.429 219.429 98.286 219.429 219.429z"></path>
+              </svg>
+            </div>
+          </Link>
+          <Link to="/menu-inscription">
+            <div className="home-benevole-feature-card2">
+              <h2 className="home-benevole-text11">
+                <span className="home-benevole-text12">
+                  Liste des postes
                 </span>
                 <br className="home-benevole-text13"></br>
                 <br></br>
@@ -101,7 +120,7 @@ const HomeBenevole = (props:any) => {
       </div>
       <Footer rootClassName="footer-root-class-name17"></Footer>
     </div>
-  )
+  );
 }
 
 export default HomeBenevole

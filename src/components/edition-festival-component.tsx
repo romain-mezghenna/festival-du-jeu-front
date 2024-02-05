@@ -1,158 +1,20 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
+import TimeTable from './TimeTable'
 
 import './edition-festival-component.css'
+import { useLocation } from 'react-router-dom'
 
 function EditionFestivalComponent (props : any) {
+  const location = useLocation()
+  const idFestival = new URLSearchParams(location.search).get('idFestival')
+
   return (
     <div
       className={`edition-festival-component-container ${props.rootClassName} `}
     >
-      <div className="edition-festival-component-container1">
-        <h1 className="edition-festival-component-text">{props.heading}</h1>
-      </div>
-      <div className="edition-festival-component-container2">
-        <div className="edition-festival-component-container3">
-          <span className="edition-festival-component-text1">{props.text}</span>
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder}
-            className="input"
-          />
-          <span className="edition-festival-component-text2">
-            {props.text1}
-          </span>
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder1}
-            className="input"
-          />
-          <span className="edition-festival-component-text3">
-            {props.text2}
-          </span>
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder2}
-            className="input"
-          />
-          <span className="edition-festival-component-text4">
-            {props.text3}
-          </span>
-          <span className="edition-festival-component-text5">
-            {props.text4}
-          </span>
-          <select className="edition-festival-component-select">
-            <option value="Lundi" className="">
-              Lundi
-            </option>
-            <option value="Mardi" className="">
-              Mardi
-            </option>
-            <option value="Mercredi" className="">
-              Mercredi
-            </option>
-            <option value="Jeudi" className="">
-              Jeudi
-            </option>
-            <option value="Vendredi" className="">
-              Vendredi
-            </option>
-            <option value="Samedi" className="">
-              Samedi
-            </option>
-            <option value="Dimanche" className="">
-              Dimanche
-            </option>
-          </select>
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder4}
-            className="input"
-          />
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder44}
-            className="input"
-          />
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder43}
-            className="input"
-          />
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder42}
-            className="input"
-          />
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder41}
-            className="input"
-          />
-          <button
-            type="button"
-            className="edition-festival-component-button button"
-          >
-            {props.button}
-          </button>
-        </div>
-        <div className="edition-festival-component-container4">
-          <span className="edition-festival-component-text6">
-            {props.text6}
-          </span>
-          <span className="edition-festival-component-text7">
-            {props.text61}
-          </span>
-          <select className="edition-festival-component-select1">
-            <option value="Option 1" className="">
-              Option 1
-            </option>
-            <option value="Option 2" className="">
-              Option 2
-            </option>
-            <option value="Option 3" className="">
-              Option 3
-            </option>
-          </select>
-          <button
-            type="button"
-            className="edition-festival-component-button1 button"
-          >
-            {props.button1}
-          </button>
-          <span className="edition-festival-component-text8">
-            {props.text611}
-          </span>
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder5}
-            className="input"
-          />
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder52}
-            className="input"
-          />
-          <input
-            type="text"
-            placeholder={props.textinputPlaceholder51}
-            className="input"
-          />
-          <button
-            type="button"
-            className="edition-festival-component-button2 button"
-          >
-            {props.button2}
-          </button>
-        </div>
-      </div>
-      <button
-        type="button"
-        className="edition-festival-component-button3 button"
-      >
-        {props.button3}
-      </button>
+    <TimeTable idFestival={Number(idFestival)} cellComponentType='MODIF'></TimeTable>
     </div>
   )
 }
