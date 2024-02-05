@@ -3,9 +3,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './ligne-infos-jeu-component.css'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, redirect } from 'react-router-dom'
 
 function LigneInfosJeuComponent  (props : any) {
+  const [idJeu, setIdJeu] = React.useState(props.text14)
   return (
     <div className="ligne-infos-jeu-component-container">
       <div className="ligne-infos-jeu-component-container01">
@@ -35,12 +36,14 @@ function LigneInfosJeuComponent  (props : any) {
       </div>
       </Link>
       <div className="ligne-infos-jeu-component-container09">
+      <Link to={`/detail-jeu?idJeu=${idJeu}`}>
         <button
           type="button"
           className="ligne-infos-jeu-component-button button"
         >
           {props.button}
         </button>
+        </Link>
       </div>
     </div>
   )

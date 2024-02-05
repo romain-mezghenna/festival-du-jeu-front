@@ -90,7 +90,18 @@ const HomeAdmin = (props:any) => {
               <path d="M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"></path>
             </svg>
           </div>
-
+          </Link>
+          <Link to="/gestion-zones">
+          <div className="festival-en-cours-feature-card3">
+            <h2 className="festival-en-cours-text4">
+              <span>Gestion des zones</span>
+              <br></br>
+              <br></br>
+            </h2>
+            <svg viewBox="0 0 1024 1024" className="festival-en-cours-icon6">
+              <path d="M768 554q70 0 120 51t50 121-50 120-120 50-120-50-50-120 50-121 120-51zM768 640q-34 0-60 26t-26 60 26 59 60 25 60-25 26-59-26-60-60-26zM512 128q70 0 120 50t50 120-50 121-120 51-120-51-50-121 50-120 120-50zM512 214q-34 0-60 25t-26 59 26 60 60 26 60-26 26-60-26-59-60-25zM256 554q70 0 120 51t50 121-50 120-120 50-120-50-50-120 50-121 120-51zM256 640q-34 0-60 26t-26 60 26 59 60 25 60-25 26-59-26-60-60-26z"></path>
+            </svg>
+          </div>
           </Link>
         </div>
       </div>

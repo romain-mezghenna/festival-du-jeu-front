@@ -32,7 +32,7 @@ function InfosJeuxComponent (props : any) {
         }
       }
     )
-  }, [jeux])
+  }, [])
   return (
     <div className={`infos-jeux-component-container ${props.rootClassName} `}>
       <div className="infos-jeux-component-container01">
@@ -67,12 +67,12 @@ function InfosJeuxComponent (props : any) {
       {jeux.map((jeu) => {
         return (
           <LigneInfosJeuComponent
-            text14={jeu.idJeu}
+            text14={jeu.idJeu as string}
             text141={jeu.nom}
             text142={jeu.auteur}
             text143={jeu.editeur}
             text144={jeu.nbJoueurs}
-            text145={jeu.ageMin}
+            text145={jeu.ageMin as string}
             text146={jeu.type}
             link={jeu.notice}
             text147={"Lien Notice"}
