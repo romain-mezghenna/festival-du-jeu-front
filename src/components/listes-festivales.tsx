@@ -101,7 +101,7 @@ function ListesFestivales(props:any){
         )
         // recupère tous les festivals inscrits par l'utilisateur
     }, []);  
-  return isLoaded && (
+  return festivals.length > 0 ? (
      //fait une fonction pour récupérer tout les festivales depuis la bd et les afficher
     <div className={`listes-festivales-container ${props.rootClassName} `}>
         {festivals.map((festival, index) => (
@@ -131,7 +131,9 @@ function ListesFestivales(props:any){
             </div>
         ))}
     </div>  
-  );
+  ) : (
+    <h2>Aucun festival prévus</h2>
+  )
 };
 
 ListesFestivales.defaultProps = {

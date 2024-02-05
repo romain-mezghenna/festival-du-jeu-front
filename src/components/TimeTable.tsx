@@ -208,7 +208,6 @@ function TimeTable(props :TimeTableProps){
       } else {
         console.log(res);
         alert("Créneaux enregistrés")
-        
       } 
     });
     //TODO : Amener sur la page d'accueil
