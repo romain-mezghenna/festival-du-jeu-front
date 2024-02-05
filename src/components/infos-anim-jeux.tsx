@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store/store'
 import { sendRequest } from '../utils/sendRequest'
+import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 
@@ -11,6 +12,7 @@ function InfosAnimJeux  (props :any)  {
   const user = useSelector((state: RootState) => state.user);
   const [jeux, setJeux] = React.useState<any>([]);
   const [zones, setZones] = React.useState<any>([]);
+  const nombreJeux = jeux.length;
   React.useEffect(() => {
     if (user.token === null) {
       alert('Vous devez être connecté pour consulter les jeux');
@@ -33,6 +35,29 @@ function InfosAnimJeux  (props :any)  {
     )
   }
   , []);
+ const handleZoneChange = (event: React.ChangeEvent<HTMLSelectElement>)  => {
+  if (user.token === null) {
+    alert('Vous devez être connecté pour consulter les jeux');
+    return;
+  }
+    const idZone = event.target.value;
+    sendRequest(
+      `jeux/zone/${idZone}`,
+      'GET',
+      {},
+      user.token,
+      (err, res) => {
+        if (err) {
+          alert('Erreur lors de la récupération des jeux');
+          console.log(err);
+        } else {
+          console.log(res);
+          setJeux(res);
+        }
+      }
+    )
+  }
+
  
   return (
     <div className={`infos-anim-jeux-container`}>
@@ -41,87 +66,49 @@ function InfosAnimJeux  (props :any)  {
       </div>
       <div className="infos-anim-jeux-container02">
         <div className="infos-anim-jeux-container03">
-          <select className="infos-anim-jeux-button button" >
+          <select className="infos-anim-jeux-button button" onChange={handleZoneChange} >
             {zones.map((zone: any) => (
-              <option key={zone.idZone} value={zone.nom} >{zone.nom}</option>
+              <option key={zone.idZone} value={zone.idZone} >{zone.nom}</option>
             ))}
           </select> 
         </div>
+      
         <div className="infos-anim-jeux-container04">
           <div className="infos-anim-jeux-container05">
             <div className="infos-anim-jeux-container06">
               <span className="infos-anim-jeux-text01">{props.text1}</span>
             </div>
-            <div className="infos-anim-jeux-container07">
-              <span className="infos-anim-jeux-text02">{props.text4}</span>
+            {jeux.map((jeu: any) => (
+            <div className="infos-anim-jeux-container16">
+              <span className="infos-anim-jeux-text02">{jeu.Jeu.nom}</span>
+
             </div>
-            <div className="infos-anim-jeux-container08">
-              <div className="infos-anim-jeux-container09">
-                <span className="infos-anim-jeux-text03">{props.text411}</span>
-              </div>
-            </div>
-          
-            <div className="infos-anim-jeux-container10">
-              <div className="infos-anim-jeux-container11">
-                <span className="infos-anim-jeux-text04">{props.text48}</span>
-              </div>
-            </div>
-            <div className="infos-anim-jeux-container12">
-              <div className="infos-anim-jeux-container13">
-                <span className="infos-anim-jeux-text05">{props.text47}</span>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="infos-anim-jeux-container14">
             <span className="infos-anim-jeux-text06">{props.text2}</span>
+            {jeux.map((jeu: any) => (
             <div className="infos-anim-jeux-container15">
               <div className="infos-anim-jeux-container16">
-                <span className="infos-anim-jeux-text07">{props.text41}</span>
+                <span className="infos-anim-jeux-text07">{jeu.Jeu.recu === true ? props.text410 : props.text41}</span>
               </div>
             </div>
-            <div className="infos-anim-jeux-container17">
-              <div className="infos-anim-jeux-container18">
-                <span className="infos-anim-jeux-text08">{props.text410}</span>
-              </div>
-            </div>
-            <div className="infos-anim-jeux-container19">
-              <div className="infos-anim-jeux-container20">
-                <span className="infos-anim-jeux-text09">{props.text49}</span>
-              </div>
-            </div>
-            <div className="infos-anim-jeux-container21">
-              <div className="infos-anim-jeux-container22">
-                <span className="infos-anim-jeux-text10">{props.text46}</span>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="infos-anim-jeux-container23">
             <span className="infos-anim-jeux-text11">{props.text3}</span>
+            {jeux.map((jeu: any) => (
             <div className="infos-anim-jeux-container24">
               <div className="infos-anim-jeux-container25">
-                <span className="infos-anim-jeux-text12">{props.text42}</span>
+                <span className="infos-anim-jeux-text12">{jeu.Jeu.video}</span>
               </div>
             </div>
-            <div className="infos-anim-jeux-container26">
-              <div className="infos-anim-jeux-container27">
-                <span className="infos-anim-jeux-text13">{props.text43}</span>
-              </div>
-            </div>
-            <div className="infos-anim-jeux-container28">
-              <div className="infos-anim-jeux-container29">
-                <span className="infos-anim-jeux-text14">{props.text44}</span>
-              </div>
-            </div>
-            <div className="infos-anim-jeux-container30">
-              <div className="infos-anim-jeux-container31">
-                <span className="infos-anim-jeux-text15">{props.text45}</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
       <div className="infos-anim-jeux-container32">
-        <span className="">{props.text5}</span>
+        <Link to='/infos-jeux' className="">{props.text5}</Link>
       </div>
     </div>
   )

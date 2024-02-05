@@ -15,7 +15,7 @@ const InfosJeux = (props:any) => {
   const user = useSelector((state: RootState) => state.user);
   
   // Avant de charger la page, on vérifie que l'utilisateur est bien connecté et qu'il a le rôle d'admin
-  if (!user.isLoggedIn || user.role !== 4) {
+  if (!user.isLoggedIn) {
     alert('Vous n\'êtes pas autorisé à accéder à cette page');
     return <Navigate to="/" />;
   }
@@ -27,7 +27,7 @@ const InfosJeux = (props:any) => {
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name14"></Navbar>
       <InfosJeuxComponent rootClassName="infos-jeux-component-root-class-name"></InfosJeuxComponent>
-      <ImportCsv rootClassName="import-csv-root-class-name"></ImportCsv>
+      {user.role === 4 && (<ImportCsv rootClassName="import-csv-root-class-name"></ImportCsv>)}
       <Footer rootClassName="footer-root-class-name14"></Footer>
     </div>
   )
