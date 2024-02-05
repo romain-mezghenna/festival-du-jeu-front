@@ -11,8 +11,8 @@ const Hbergement = (props:any) => {
   return (
     <div className="hbergement-container">
       <Helmet>
-        <title>Hbergement - Funny Key Herring</title>
-        <meta property="og:title" content="Hbergement - Funny Key Herring" />
+        <title>Hébergement</title>
+        <meta property="og:title" content="Hébergement" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name11"></Navbar>
       <HebergementComponent rootClassName="hebergement-component-root-class-name"></HebergementComponent>

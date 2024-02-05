@@ -22,10 +22,10 @@ function PlanningIndividuel(props : any){
   return (
     <div className="planning-individuel-container">
       <Helmet>
-        <title>PlanningIndividuel - Funny Key Herring</title>
+        <title>PlanningIndividuel</title>
         <meta
           property="og:title"
-          content="PlanningIndividuel - Funny Key Herring"
+          content="PlanningIndividuel"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name15"></Navbar>

@@ -21,8 +21,8 @@ const GestionZones = (props:any) => {
   return (
     <div className="gestion-zones-container">
       <Helmet>
-        <title>GestionZones - Funny Key Herring</title>
-        <meta property="og:title" content="GestionZones - Funny Key Herring" />
+        <title>GestionZones</title>
+        <meta property="og:title" content="GestionZones" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name23"></Navbar>
       <GestionZonesComponent rootClassName="gestion-zones-component-root-class-name"></GestionZonesComponent>

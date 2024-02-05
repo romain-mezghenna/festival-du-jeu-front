@@ -21,7 +21,7 @@ const FAQAdmin = (props:any) => {
   return (
     <div className="faq-admin-container">
       <Helmet>
-        <title>FAQAdmin - Funny Key Herring</title>
+        <title>FAQAdmin</title>
         <meta property="og:title" content="FAQAdmin - Funny Key Herring" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name13"></Navbar>

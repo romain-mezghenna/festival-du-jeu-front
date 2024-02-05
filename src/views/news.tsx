@@ -11,8 +11,8 @@ const News = (props:any) => {
   return (
     <div className="news-container">
       <Helmet>
-        <title>News - Funny Key Herring</title>
-        <meta property="og:title" content="News - Funny Key Herring" />
+        <title>News</title>
+        <meta property="og:title" content="News" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name6"></Navbar>
       <NewsSection rootClassName="news-section-root-class-name"></NewsSection>

@@ -11,8 +11,8 @@ const Login = (props:any) => {
   return (
     <div className="login-container">
       <Helmet>
-        <title>Login - Funny Key Herring</title>
-        <meta property="og:title" content="Login - Funny Key Herring" />
+        <title>Login</title>
+        <meta property="og:title" content="Login" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name1"></Navbar>
       <Loginfield rootClassName="loginfield-root-class-name"></Loginfield>

@@ -11,8 +11,8 @@ function Register(props : any){
   return (
     <div className="register-container">
       <Helmet>
-        <title>Register - Funny Key Herring</title>
-        <meta property="og:title" content="Register - Funny Key Herring" />
+        <title>Register</title>
+        <meta property="og:title" content="Register" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name2"></Navbar>
       <div className="register-features">

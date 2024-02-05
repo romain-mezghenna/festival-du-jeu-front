@@ -22,10 +22,10 @@ const PlanningAnimationJeux = (props:any) => {
   return (
     <div className="planning-animation-jeux-container">
       <Helmet>
-        <title>PlanningAnimationJeux - Funny Key Herring</title>
+        <title>PlanningAnimationJeux</title>
         <meta
           property="og:title"
-          content="PlanningAnimationJeux - Funny Key Herring"
+          content="PlanningAnimationJeux"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name8"></Navbar>

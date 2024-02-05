@@ -11,8 +11,8 @@ const FAQ = (props:any) => {
   return (
     <div className="faq-container">
       <Helmet>
-        <title>FAQ - Funny Key Herring</title>
-        <meta property="og:title" content="FAQ - Funny Key Herring" />
+        <title>FAQ</title>
+        <meta property="og:title" content="FAQ" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name12"></Navbar>
       <div className="faq-container1">

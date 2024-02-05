@@ -10,10 +10,10 @@ const InfosPratiques = (props:any) => {
   return (
     <div className="infos-pratiques-container">
       <Helmet>
-        <title>InfosPratiques - Funny Key Herring</title>
+        <title>InfosPratiques</title>
         <meta
           property="og:title"
-          content="InfosPratiques - Funny Key Herring"
+          content="InfosPratiques"
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name9"></Navbar>
