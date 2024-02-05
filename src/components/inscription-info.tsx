@@ -30,6 +30,7 @@ function InscriptionInfo (props : any) {
         } else {
           console.log(res);
           setPostes(res);
+          console.log(user.isLoggedIn);
         }
       }
     )
@@ -45,21 +46,23 @@ function InscriptionInfo (props : any) {
     
   };
   return (
-    <div className={`inscription-info-container ${props.rootClassName}`}>
-      <h3 className="inscription-info-text">Sélectionnez un poste :</h3>
+    <div className={`inscription-info-container`}>
+      <div className="inscription-info-container2">
+        <h3 className="inscription-info-text">Sélectionnez un poste :</h3>
+      </div>
       {postes && Array.isArray(postes) && postes.map((poste, index) => (
-        <div key={index} className="inscription-info-container1">
-          <button
-            type="button"
-            className="inscription-info-button button"
-            onClick={() => handleDetailClick(poste, poste.details, poste.pseudoReferent)}
-          >
-            {poste.nom}
-          </button>
-        </div>
+          <div key={index} className="inscription-info-container2">
+            <button
+              type="button"
+              className="inscription-info-button"
+              onClick={() => handleDetailClick(poste, poste.details, poste.pseudoReferent)}
+            >
+              {poste.nom}
+            </button>
+          </div>
       ))}
       {posteSelectionne && (
-        <div className="inscription-info-container2">
+        <div className="inscription-info-container1">
           <h3>Détails du poste :</h3>
           <p>{detail}</p>
           <h3>Nom du référent :</h3>

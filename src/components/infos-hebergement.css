@@ -23,10 +23,10 @@
   flex: 0 0 auto;
   width: 30%;
   height: auto;
-  display: center;
-  align-items: center;
+  display: flex-start;
+  align-items: column;
   flex-direction: column;
-  justify-content: center;
+  justify-content: column;
 }
 .infos-hebergement-text1 {
   font-family: "DryBrush";
