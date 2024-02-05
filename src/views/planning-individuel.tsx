@@ -29,7 +29,6 @@ function PlanningIndividuel(props : any){
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name15"></Navbar>
-      <NavbarInscription rootClassName="navbar-inscription-root-class-name2"></NavbarInscription>
       <PlanningIndividuelComponent rootClassName="planning-individuel-component-root-class-name"></PlanningIndividuelComponent>
       <Footer rootClassName="footer-root-class-name15"></Footer>
     </div>

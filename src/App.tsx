@@ -37,6 +37,7 @@ import NotFound from "./views/not-found";
 import ListeFestivales from "./views/liste-festivales";
 import { sendRequest } from "./utils/sendRequest";
 import { login, logout } from "./features/userSlice/userSlice";
+import CreationCreneau from "./components/creation-creneau";
 
 export default function App () {
 
@@ -103,6 +104,7 @@ export default function App () {
         <Route Component={Profil} path="/profil" />
         <Route Component={DetailJeu} path="/detail-jeu" />
         <Route Component={NotFound} path="**" />
+        <Route Component={PlanningAnimationJeux} path="/creation-creneaux" />
       </Routes>
     </Router>
   );

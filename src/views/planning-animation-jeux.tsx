@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/navbar'
 import NavBarAnimationJeux from '../components/nav-bar-animation-jeux'
-import AnimationJeux from '../components/animation-jeux'
+import CreationCreneau from '../components/creation-creneau'
 import Footer from '../components/footer'
 import './planning-animation-jeux.css'
 import { useSelector } from 'react-redux'
@@ -29,8 +29,7 @@ const PlanningAnimationJeux = (props:any) => {
         />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name8"></Navbar>
-      <NavBarAnimationJeux rootClassName="nav-bar-animation-jeux-root-class-name1"></NavBarAnimationJeux>
-      <AnimationJeux rootClassName="animation-jeux-root-class-name"></AnimationJeux>
+      <CreationCreneau rootClassName="animation-jeux-root-class-name"></CreationCreneau>
       <Footer rootClassName="footer-root-class-name8"></Footer>
     </div>
   )
