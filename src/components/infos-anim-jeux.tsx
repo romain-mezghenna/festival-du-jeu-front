@@ -61,9 +61,6 @@ function InfosAnimJeux  (props :any)  {
  
   return (
     <div className={`infos-anim-jeux-container`}>
-      <div className="infos-anim-jeux-container01">
-        <span className="infos-anim-jeux-text">{props.text}</span>
-      </div>
       <div className="infos-anim-jeux-container02">
         <div className="infos-anim-jeux-container03">
           <select className="infos-anim-jeux-button button" onChange={handleZoneChange} >
