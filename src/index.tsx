@@ -34,6 +34,7 @@ import FAQAdmin from './views/faq-admin'
 import Home from './views/home'
 import Profil from './views/profil'
 import DetailJeu from './views/detail-jeu'
+import ListeFestivales from './views/liste-festivales';
 import NotFound from './views/not-found'
 import reportWebVitals from './reportWebVitals';
 
@@ -84,6 +85,7 @@ const App = () => {
         <Route Component={Home}  path="/" />
         <Route Component={Profil}  path="/profil" />
         <Route Component={DetailJeu}  path="/detail-jeu" />
+        <Route Component={ListeFestivales}  path="/liste-festivales" />
         <Route Component={NotFound} path="**" />
       </Routes>
     </Router>

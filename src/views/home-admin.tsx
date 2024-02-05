@@ -48,6 +48,14 @@ const HomeAdmin = (props:any) => {
               </svg>
             </div>
           </Link>
+          <Link to="/liste-festivales">
+            <div className="home-admin-feature-card1">
+              <h2 className="home-admin-text2">Liste des festivales</h2>
+              <svg viewBox="0 0 1024 1024" className="home-admin-icon2">
+                <path d="M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"></path>
+              </svg>
+            </div>
+          </Link>
         </div>
       </div>
       <Footer rootClassName="footer-root-class-name18"></Footer>

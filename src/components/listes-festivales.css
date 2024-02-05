@@ -1,0 +1,78 @@
+.listes-festivales-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .listes-festivales-container1 {
+    flex: 0 0 auto;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    align-items: flex-start;
+    margin-left: var(--dl-space-space-unit);
+  }
+  .listes-festivales-container2 {
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    align-items: flex-start;
+    margin-right: var(--dl-space-space-unit);
+    flex-direction: column;
+  }
+  .listes-festivales-text {
+    font-family: "DryBrush";
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .listes-festivales-container3 {
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+    flex-direction: column;
+  }
+  .listes-festivales-text2 {
+    font-family: "DryBrush";
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .listes-festivales-container4 {
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    align-items: flex-start;
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+    flex-direction: column;
+  }
+  .listes-festivales-text4 {
+    font-family: "DryBrush";
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .listes-festivales-container5 {
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    align-self: center;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .listes-festivales-button {
+    align-self: center;
+    font-family: "OlivessansPimiento";
+  }
+  .listes-festivales-root-class-name {
+    top: 129px;
+    flex: 1;
+    left: 0px;
+    height: 100%;
+    position: static;
+    align-self: center;
+  }
+  
