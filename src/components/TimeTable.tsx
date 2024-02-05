@@ -58,6 +58,10 @@ const formatTimeRange = (heureDebut: string, heureFin: string) => {
 function TimeTable(props :TimeTableProps){
   const user = useSelector((state: RootState) => state.user);
   const [creneauxPoste, setCreneauxPoste] = useState<Creneau[]>([]);
+  const [creneauPopulation , setCreneauPopulation] = useState<number[]>([])
+  const [inscriptionPoste, setInscriptionPoste] = useState<{
+    idCreneauPoste : number, pseudo : string
+}[]>([]);
   const [creneauxZone, setCreneauxZone] = useState<Creneau[]>([]);
   const [rows, setRows] = useState<(Poste | Zone)[]>([]);
   const [columns, setColumns] = useState<PlageHoraire[]>([]);
@@ -126,6 +130,63 @@ function TimeTable(props :TimeTableProps){
     });
   }; 
 
+  const handleChangeInscription = (e:any,idCreneauPoste : number) => {
+    //Si la case est cochée alors on inscrit l'utilisateur
+    if(e.target.checked){
+      sendRequest(
+        "inscriptions/poste",
+        "POST",
+        [{ idCreneauPoste: idCreneauPoste, pseudo: user.pseudo }],
+        user.token ?? "",
+        (err, res) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(res);
+            creneauPopulation[idCreneauPoste] =
+              creneauPopulation[idCreneauPoste] + 1;
+            // On supprime l'inscription de l'utilisateur
+            setInscriptionPoste((prevInscription) => {
+              const updatedInscription = [...prevInscription];
+              updatedInscription.push({
+                idCreneauPoste: idCreneauPoste,
+                pseudo: user.pseudo ? user.pseudo : "",
+              });
+              return updatedInscription;
+            });
+          }
+        }
+      );
+    } else {
+      //Si la case est décochée alors on désinscrit l'utilisateur
+      sendRequest(
+        "inscriptions/poste/" + idCreneauPoste,
+        "DELETE",
+        {},
+        user.token ?? "",
+        (err, res) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(res);
+             creneauPopulation[idCreneauPoste] =
+               creneauPopulation[idCreneauPoste] - 1;
+             // On supprime l'inscription de l'utilisateur
+             setInscriptionPoste((prevInscription) => {
+               const updatedInscription = [...prevInscription];
+                updatedInscription.forEach((item, index) => {
+                  if (item.idCreneauPoste === idCreneauPoste) {
+                    updatedInscription.splice(index, 1);
+                  }
+                });
+               return updatedInscription;
+             });
+          }
+        }
+      );
+    }
+  }
+
   // Ajoutez un état pour gérer le jour sélectionné
   const [selectedDay, setSelectedDay] = useState<string>("");
 
@@ -193,7 +254,7 @@ function TimeTable(props :TimeTableProps){
                  ) {
                    updatedRows.push(poste.Poste);
                  }
-                 if (props.cellComponentType === "MODIF") {
+                 if (props.cellComponentType === "MODIF" || props.cellComponentType === "INSCRIPTION_POSTE") {
                     // Charger les créneaux de poste
                     sendRequest(
                     "creneaux/poste/" + poste.Poste.idPoste,
@@ -213,6 +274,26 @@ function TimeTable(props :TimeTableProps){
                       res.forEach((creneau: any) => {
                         if (!updatedCreneaux.some((item) => item.idCreneauPoste === creneau.idCreneauPoste)) {
                           updatedCreneaux.push(creneau);
+                        }
+                        // Récupérer le nombre d'inscrit pour chaque créneau
+                        if(props.cellComponentType === "INSCRIPTION_POSTE"){
+                          sendRequest(
+                            "creneauxPoste/" + creneau.idCreneauPoste + "/nombrePersonne",
+                            "GET",
+                            {},
+                            user.token ?? "",
+                            (err, res) => {
+                              if (err) {
+                                console.log(err);
+                              } else {
+                                setCreneauPopulation((prevPopulation) => {
+                                  let updatedPopulation = [...prevPopulation];
+                                  updatedPopulation[creneau.idCreneauPoste] = res.nombrePersonne;
+                                  return updatedPopulation;
+                                });
+                              }
+                            }
+                          );
                         }
                       });
                       setLoading(false);
@@ -269,11 +350,28 @@ function TimeTable(props :TimeTableProps){
     }
 
     
-  }, [jours, loading, rows, columns, user.token]);
+  }, []);
 
   useEffect(() => {
-    console.log("creneaux", creneauxPoste);
-  }, [creneauxPoste]);
+    if (props.cellComponentType === "INSCRIPTION_POSTE") {
+      // Récupérer les inscriptions de l'utilisateur connecté
+      console.log("user.pseudo", user.pseudo);
+      sendRequest(
+        "inscriptions/postes/festival/" + props.idFestival + "/" + user.pseudo,
+        "GET",
+        {},
+        user.token ?? "",
+        (err, res) => {
+          if (err) {
+            console.log("errInscriptionPoste", err);
+          } else {
+            console.log("resInscriptionPoste", res);
+            setInscriptionPoste(res);
+          }
+        }
+      );
+    }
+  }, [user.isLoggedIn]);
   return (
     <>
       {loading ? (
@@ -316,73 +414,101 @@ function TimeTable(props :TimeTableProps){
                     {filteredColumns.map((column) => (
                       <td key={`${rowIndex}-${column.idPlage}`}>
                         {props.cellComponentType === "SAISIE" && (
-                            <>
-                              <input
-                                type="number"
-                                className="input-number"
-                                placeholder="Max"
-                                value={
-                                  inputValues.find(
-                                    (item) =>
-                                      item.idPoste === row.idPoste &&
-                                      item.plageHoraire === column.idPlage
-                                  )?.nombreMax ?? ""
-                                }
-                                onChange={(e) =>
-                                  handleInputChange(
-                                    row.idPoste,
-                                    column.idPlage,
-                                    e.target.value
-                                  )
-                                }
-                              />
-                            </>
-                          )}
-                          {props.cellComponentType === "MODIF" && (
-                            <>
-                              
-                              <input
-                                type="number"
-                                className="input-number"
-                                placeholder="Max"
-                                min={0}
-                                max={100}
-                                value={
+                          <>
+                            <input
+                              type="number"
+                              className="input-number"
+                              placeholder="Max"
+                              value={
+                                inputValues.find(
+                                  (item) =>
+                                    item.idPoste === row.idPoste &&
+                                    item.plageHoraire === column.idPlage
+                                )?.nombreMax ?? ""
+                              }
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.idPoste,
+                                  column.idPlage,
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </>
+                        )}
+                        {props.cellComponentType === "MODIF" && (
+                          <>
+                            <input
+                              type="number"
+                              className="input-number"
+                              placeholder="Max"
+                              min={0}
+                              max={100}
+                              value={
+                                creneauxPoste.find(
+                                  (item) =>
+                                    item.idPoste === row.idPoste &&
+                                    item.plageHoraire === column.idPlage
+                                )?.nombreMax ?? ""
+                              }
+                              onChange={(e) =>
+                                handleInputModifChange(
+                                  row.idPoste,
+                                  column.idPlage,
+                                  e.target.value,
                                   creneauxPoste.find(
                                     (item) =>
                                       item.idPoste === row.idPoste &&
                                       item.plageHoraire === column.idPlage
-                                  )?.nombreMax ?? "" 
-                                }
-                                onChange={(e) =>
-                                  handleInputModifChange(
-                                    row.idPoste,
-                                    column.idPlage,
-                                    e.target.value,
-                                    creneauxPoste.find(
-                                      (item) =>
-                                        item.idPoste === row.idPoste &&
-                                        item.plageHoraire === column.idPlage
-                                    )?.idCreneauPoste ?? 0
-                                  )
-                                }
-                              />
-                            </>
-                            )}
-                        {props.cellComponentType === "INSCRIPTION" && (
+                                  )?.idCreneauPoste ?? 0
+                                )
+                              }
+                            />
+                          </>
+                        )}
+                        {props.cellComponentType === "INSCRIPTION_POSTE" && (
                           <>
-                            {creneauxPoste.find(
-                              (c) =>
-                                c.idPoste === row.idPoste &&
-                                c.plageHoraire === column.idPlage
-                            ) ? (
-                              <div className="circle">
-                                {" "}
-                                {/* Contenu du cercle */}{" "}
-                              </div>
-                            ) : (
-                              <div className="circle hidden"></div>
-                            )}
+                            <div>
+                              {creneauPopulation[
+                                creneauxPoste.find(
+                                  (item) =>
+                                    item.idPoste === row.idPoste &&
+                                    item.plageHoraire === column.idPlage
+                                )?.idCreneauPoste ?? 0
+                              ] +
+                                "/" +
+                                creneauxPoste.find(
+                                  (item) =>
+                                    item.idPoste === row.idPoste &&
+                                    item.plageHoraire === column.idPlage
+                                )?.nombreMax ?? 0}
+                              <input
+                                type="checkbox"
+                                name=""
+                                id=""
+                                checked={
+                                  inscriptionPoste.some(
+                                    (item) =>
+                                      item.idCreneauPoste ===
+                                      creneauxPoste.find(
+                                        (item) =>
+                                          item.idPoste === row.idPoste &&
+                                          item.plageHoraire === column.idPlage
+                                      )?.idCreneauPoste
+                                  )
+                                    ? true
+                                    : false
+                                }
+                                onChange={(e) => {handleChangeInscription(
+                                  e,
+                                  creneauxPoste.find(
+                                    (item) =>
+                                      item.idPoste === row.idPoste &&
+                                      item.plageHoraire === column.idPlage
+                                  )?.idCreneauPoste ?? 0
+                                )}}
+                              />
+                            </div>
                           </>
                         )}
                         {props.cellComponentType === "default" && (
