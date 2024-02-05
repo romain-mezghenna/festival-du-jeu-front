@@ -74,7 +74,8 @@ function InfosJeuxComponent (props : any) {
             text144={jeu.nbJoueurs}
             text145={jeu.ageMin}
             text146={jeu.type}
-            text147={jeu.notice}
+            link={jeu.notice}
+            text147={"Lien Notice"}
           ></LigneInfosJeuComponent>
         )
       },
