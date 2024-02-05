@@ -14,11 +14,7 @@ import { RootState } from '../store/store'
 const InscriptionGnrale = (props:any) => {
   const user = useSelector((state: RootState) => state.user);
   
-  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté
-  if (!user.isLoggedIn) {
-    alert('Vous n\'êtes pas autorisé à accéder à cette page');
-    return <Navigate to="/" />;
-  }
+
   return (
     <div className="inscription-gnrale-container">
       <Helmet>

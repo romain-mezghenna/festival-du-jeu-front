@@ -29,7 +29,7 @@ type Zone = {
 
 // Définition du type pour les créneaux de poste et de zone
 type Creneau = {
-  idCreneau: number;
+  idCreneauPoste: number;
   plageHoraire: number; // idPlage
   nombreMax: number;
   idPoste?: number;     // Optionnel, présent uniquement pour les créneaux de poste
@@ -64,6 +64,68 @@ function TimeTable(props :TimeTableProps){
   const [jours, setJours] = useState<string[]>([]);
   const [loading , setLoading] = useState(true);
 
+  const [inputValues, setInputValues] = useState<
+    { idPoste: number; nombreMax: number; plageHoraire: number }[]
+  >([]);
+
+  // Gestionnaire pour les changements d'input
+  const handleInputChange = (
+    idPoste: number,
+    plageHoraire: number,
+    value: string
+  ) => {
+    const newValue = parseInt(value, 10);
+    if (isNaN(newValue)) {
+      console.log("Veuillez entrer un nombre valide");
+    }
+    setInputValues((currentValues) => {
+      // Trouvez l'index de l'élément à mettre à jour
+      const index = currentValues.findIndex(
+        (item) => item.idPoste === idPoste && item.plageHoraire === plageHoraire
+      );
+      // Copiez le tableau actuel
+      const newValues = [...currentValues];
+      if (index >= 0) {
+        // Mettez à jour l'élément existant
+        newValues[index] = { ...newValues[index], nombreMax: newValue };
+      } else {
+        // Ou ajoutez un nouvel élément
+        newValues.push({ idPoste : idPoste, nombreMax: newValue, plageHoraire : plageHoraire });
+      }
+      console.log(newValues);
+      return newValues;
+    });
+  };
+
+  const handleInputModifChange = (
+    idPoste: number,
+    plageHoraire: number,
+    value: string,
+    idCreneauPoste: number
+  ) => {
+    const newValue = parseInt(value, 10);
+    if (isNaN(newValue)) {
+      console.log("Veuillez entrer un nombre valide");
+    }
+    setCreneauxPoste((currentValues) => {
+      // Trouvez l'index de l'élément à mettre à jour
+      const index = currentValues.findIndex(
+        (item) => item.idPoste === idPoste && item.plageHoraire === plageHoraire
+      );
+      // Copiez le tableau actuel
+      const newValues = [...currentValues];
+      if (index >= 0) {
+        // Mettez à jour l'élément existant
+        newValues[index] = { ...newValues[index], nombreMax: newValue };
+      } else {
+        // Ou ajoutez un nouvel élément
+        newValues.push({ idPoste : idPoste,plageHoraire : plageHoraire, nombreMax: newValue, idCreneauPoste : idCreneauPoste});
+      }
+      console.log(newValues);
+      return newValues;
+    });
+  }; 
+
   // Ajoutez un état pour gérer le jour sélectionné
   const [selectedDay, setSelectedDay] = useState<string>("");
 
@@ -77,21 +139,42 @@ function TimeTable(props :TimeTableProps){
     selectedDay ? column.jour.split("T")[0] === selectedDay : false
   );
 
+  const handleSaveCreneau = () => {
+    console.log('inputValues', inputValues);
+    sendRequest("creneaux/poste","POST",inputValues,user.token ?? "",(err,res) => {
+      if(err){
+        console.log(err);
+      } else {
+        console.log(res);
+      }
+    });
+    //TODO : Amener sur la page d'accueil
+
+  }
+
+  const handleModifCreneau = () => {
+    creneauxPoste.forEach((creneau) => {
+      sendRequest(
+        "creneaux/poste/" + creneau.idCreneauPoste,
+        "PUT",
+        { nombreMax: creneau.nombreMax },
+        user.token ?? "",
+        (err, res) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("resModifCreneau", res);
+          }
+        }
+      );
+    });
+    // Recharger la page
+  
+  }
+
   useEffect(() => {
     // TODO: Remplacer par des appels API réels pour récupérer les créneaux
     const fetchData = async () => {
-      // Simuler une réponse de l'API
-      const simulatedResponsePoste = [
-        { idCreneau: 1, plageHoraire: 1, nombreMax: 10, idPoste: 1 },
-        // ... autres créneaux de poste ...
-      ];
-      const simulatedResponseZone = [
-        { idCreneau: 1, plageHoraire: 1, nombreMax: 5, idZone: 101 },
-        // ... autres créneaux de zone ...
-      ];
-      setCreneauxPoste(simulatedResponsePoste);
-      setCreneauxZone(simulatedResponseZone);
-
       sendRequest(
         "postes/festival/" + 1,
         "GET",
@@ -110,9 +193,39 @@ function TimeTable(props :TimeTableProps){
                  ) {
                    updatedRows.push(poste.Poste);
                  }
+                 if (props.cellComponentType === "MODIF") {
+                    // Charger les créneaux de poste
+                    sendRequest(
+                    "creneaux/poste/" + poste.Poste.idPoste,
+                    "GET",
+                    {},
+                    user.token ?? "",
+                    (err, res) => {
+                    if (err) {
+                      alert(
+                        "Erreur lors de la récupération des créneaux de poste"
+                      );
+                      console.log(err);
+                    } else {
+                      console.log('res', res);
+                    setCreneauxPoste((prevCreneaux) => {
+                      const updatedCreneaux = [...prevCreneaux];
+                      res.forEach((creneau: any) => {
+                        if (!updatedCreneaux.some((item) => item.idCreneauPoste === creneau.idCreneauPoste)) {
+                          updatedCreneaux.push(creneau);
+                        }
+                      });
+                      setLoading(false);
+                      return updatedCreneaux;
+                    });
+                    
+                  }
+                  }
+                );
+             }
                });
                return updatedRows;
-             });
+             })
           }
         }
       );
@@ -136,7 +249,6 @@ function TimeTable(props :TimeTableProps){
                 ) {
                   updatedColumns.push(plageHoraire);
                 }
-                console.log("plageHoraire",plageHoraire);
                 const updatedJours = [...jours];
                 if (!updatedJours.includes(plageHoraire.jour.split("T")[0])) {
                   updatedJours.push(plageHoraire.jour.split("T")[0]);
@@ -149,15 +261,19 @@ function TimeTable(props :TimeTableProps){
           }
         }
       );
-        setLoading(false);
     };
-    if(loading){
-        fetchData();
+    if (loading && inputValues.length === 0) {
+      fetchData();
     } else {
+      
     }
 
     
   }, [jours, loading, rows, columns, user.token]);
+
+  useEffect(() => {
+    console.log("creneaux", creneauxPoste);
+  }, [creneauxPoste]);
   return (
     <>
       {loading ? (
@@ -200,12 +316,59 @@ function TimeTable(props :TimeTableProps){
                     {filteredColumns.map((column) => (
                       <td key={`${rowIndex}-${column.idPlage}`}>
                         {props.cellComponentType === "SAISIE" && (
-                          <input
-                            type="number"
-                            className="input-number"
-                            placeholder="Max"
-                          />
-                        )}
+                            <>
+                              <input
+                                type="number"
+                                className="input-number"
+                                placeholder="Max"
+                                value={
+                                  inputValues.find(
+                                    (item) =>
+                                      item.idPoste === row.idPoste &&
+                                      item.plageHoraire === column.idPlage
+                                  )?.nombreMax ?? ""
+                                }
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.idPoste,
+                                    column.idPlage,
+                                    e.target.value
+                                  )
+                                }
+                              />
+                            </>
+                          )}
+                          {props.cellComponentType === "MODIF" && (
+                            <>
+                              
+                              <input
+                                type="number"
+                                className="input-number"
+                                placeholder="Max"
+                                min={0}
+                                max={100}
+                                value={
+                                  creneauxPoste.find(
+                                    (item) =>
+                                      item.idPoste === row.idPoste &&
+                                      item.plageHoraire === column.idPlage
+                                  )?.nombreMax ?? "" 
+                                }
+                                onChange={(e) =>
+                                  handleInputModifChange(
+                                    row.idPoste,
+                                    column.idPlage,
+                                    e.target.value,
+                                    creneauxPoste.find(
+                                      (item) =>
+                                        item.idPoste === row.idPoste &&
+                                        item.plageHoraire === column.idPlage
+                                    )?.idCreneauPoste ?? 0
+                                  )
+                                }
+                              />
+                            </>
+                            )}
                         {props.cellComponentType === "INSCRIPTION" && (
                           <>
                             {creneauxPoste.find(
@@ -233,6 +396,15 @@ function TimeTable(props :TimeTableProps){
               }
             </tbody>
           </table>
+
+          <div className="tableButtons">
+            {props.cellComponentType === "SAISIE" && (
+              <button onClick={handleSaveCreneau}>Enregistrer</button>
+            )}
+            {props.cellComponentType === "MODIF" && (
+              <button onClick={handleModifCreneau}>Enregistrer</button>
+            )}
+          </div>
         </div>
       )}
     </>

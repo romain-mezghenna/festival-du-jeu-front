@@ -39,7 +39,7 @@ function PlanningInscription (props : any) {
   }, [])
   return (
     <>
-    <TimeTable {...{idFestival : 1,cellComponentType:"SAISIE"}}/>
+    <TimeTable {...{idFestival : 1,cellComponentType:"MODIF"}}/>
     </>
   )
 }
