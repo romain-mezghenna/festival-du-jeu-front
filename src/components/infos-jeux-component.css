@@ -144,6 +144,7 @@
   .infos-jeux-component-container10 {
     width: var(--dl-size-size-small);
   }
+  
 }
 @media(max-width: 991px) {
   .infos-jeux-component-container02 {

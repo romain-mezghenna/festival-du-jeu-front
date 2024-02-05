@@ -1,16 +1,18 @@
 .inscription-info-container {
   width: 100%;
   height: auto;
-  display: flex;
+
   padding: var(--dl-space-space-fourunits);
   position: relative;
-  align-items: center;
   border-color: var(--dl-color-gray-black);
   border-style: solid;
   border-width: 1px;
   border-radius: var(--dl-radius-radius-radius4);
-  flex-direction: row;
   justify-content: center;
+  display: flex;
+  flex-direction: row; /* Aligne les postes horizontalement */
+  justify-content: flex-start; /* Aligne les postes à gauche */
+  align-items: center; /* Centre verticalement les éléments */
 }
 .inscription-info-container1 {
   gap: var(--dl-space-space-twounits);
@@ -69,10 +71,11 @@
     justify-content: center;
   }
   .inscription-info-container1 {
-    gap: var(--dl-space-space-halfunit);
-    align-self: flex-start;
-    align-items: stretch;
-    margin-left: var(--dl-space-space-threeunits);
+    display: flex;
+    flex-direction: column; /* Aligne les boutons verticalement */
+    justify-content: space-around; /* Espace les boutons verticalement */
+    align-items: flex-start; /* Aligne les boutons à gauche */
+    margin-right: auto; /* Pousse les boutons vers la gauche */
   }
   .inscription-info-container2 {
     align-items: center;

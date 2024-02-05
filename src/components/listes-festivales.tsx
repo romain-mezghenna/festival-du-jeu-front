@@ -49,7 +49,7 @@ function ListesFestivales(props:any){
         )
     }, []);
   return (
-     //fais une fonction pour récupérer tout les festivales depuis la bd et les afficher
+     //fait une fonction pour récupérer tout les festivales depuis la bd et les afficher
     <div className={`listes-festivales-container ${props.rootClassName} `}>
         {festivals.map((festival, index) => (
             <div className="listes-festivales-container1">
@@ -65,11 +65,19 @@ function ListesFestivales(props:any){
                     <h2 className="listes-festivales-text4">{props.heading13}</h2>
                     <h3 className="">{formatDate(festival.dateFin)}</h3>
                 </div>
+                {user.role === 4  ?? (
                 <div className="listes-festivales-container5">
                     <Link to="/edition-festival"type="button" className="listes-festivales-button button">
                         {props.button1}
                     </Link>
                 </div>
+                )} : {
+                    <div className="listes-festivales-container5">
+                    <Link to="/festivals/inscription"type="button" className="listes-festivales-button button">
+                        {props.button2}
+                    </Link>
+                </div>
+                }
             </div>
         ))}
     </div>  
@@ -94,6 +102,7 @@ ListesFestivales.defaultProps = {
   heading13: 'date de fin :',
   heading14: '22/01/2000',
   button1: 'modifier le festival',
+  button2: 's\'inscrire au festival',
 };
 
 ListesFestivales.propTypes = {
