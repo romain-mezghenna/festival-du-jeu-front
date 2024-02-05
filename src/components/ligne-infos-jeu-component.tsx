@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './ligne-infos-jeu-component.css'
+import { Link } from 'react-router-dom'
 
 function LigneInfosJeuComponent  (props : any) {
   return (
@@ -28,9 +29,11 @@ function LigneInfosJeuComponent  (props : any) {
       <div className="ligne-infos-jeu-component-container07">
         <span>{props.text146}</span>
       </div>
+      <Link to={props.link}>
       <div className="ligne-infos-jeu-component-container08">
         <span>{props.text147}</span>
       </div>
+      </Link>
       <div className="ligne-infos-jeu-component-container09">
         <button
           type="button"
@@ -53,6 +56,7 @@ LigneInfosJeuComponent.defaultProps = {
   text146: 'x',
   button: 'Détails',
   text14: 'x',
+  link: '',
 }
 
 LigneInfosJeuComponent.propTypes = {
@@ -65,6 +69,7 @@ LigneInfosJeuComponent.propTypes = {
   text146: PropTypes.string,
   button: PropTypes.string,
   text14: PropTypes.string,
+  link: PropTypes.string,
 }
 
 export default LigneInfosJeuComponent
