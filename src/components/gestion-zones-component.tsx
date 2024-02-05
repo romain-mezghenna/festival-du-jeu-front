@@ -7,17 +7,19 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../store/store'
 import { send } from 'process'
 import { sendRequest } from '../utils/sendRequest'
+import { Navigate } from 'react-router-dom'
 
 function GestionZonesComponent (props : any) {
-  const [selectedFestival, setSelectedFestival] = React.useState('')
-  const [selectedPoste, setSelectedPoste] = React.useState('')
+
   const [festivals, setFestivals] = React.useState([] as any[])
   const [postes, setPostes] = React.useState([] as any[])
   const [zones, setZones] = React.useState([] as any[])
   const [nomZoneAdd, setNomZoneAdd] = React.useState('')
   const [nomZoneEdit, setNomZoneEdit] = React.useState('')
-  const [selectedZoneEdit, setSelectedZoneEdit] = React.useState('')
-  const [selectedZoneDelete, setSelectedZoneDelete] = React.useState('')
+  const [idZoneEdit, setSelectedZoneEdit] = React.useState(1)
+  const [idZoneDelete, setSelectedZoneDelete] = React.useState(1)
+  const [idFestival, setIdFestival] = React.useState(1)
+  const [idPoste, setIdPoste] = React.useState(1)
   const user = useSelector((state: RootState) => state.user)
 
   useEffect(() => {
@@ -37,21 +39,13 @@ function GestionZonesComponent (props : any) {
         } else {
           console.log(res)
           setFestivals(res)
-        }
-      }
-    )
-    sendRequest(
-      `postes/${selectedFestival}`,
-      'GET',
-      {},
-      user.token,
-      (err, res) => {
-        if (err) {
-          alert('Erreur lors de la récupération des postes')
-          console.log(err)
-        } else {
-          console.log(res)
-          setPostes(res)
+          setIdFestival(res[0].idFestival)
+          setIdPoste(res[0].FestivalPostes[0].idPoste)
+          let festivalPostes : any[] = [];
+          res[0].FestivalPostes.forEach((poste:any) => {
+            festivalPostes.push(poste.Poste);
+          });
+          setPostes(festivalPostes)
         }
       }
     )
@@ -61,31 +55,25 @@ function GestionZonesComponent (props : any) {
       alert('Vous devez être connecté pour accéder à cette page')
       return
     }
-    setSelectedFestival(event.target.value)
-    sendRequest(
-      `postes/${event.target.value}`,
-      'GET',
-      {},
-      user.token,
-      (err, res) => {
-        if (err) {
-          alert('Erreur lors de la récupération des postes')
-          console.log(err)
-        } else {
-          console.log(res)
-          setPostes(res)
-        }
-      }
-    )
+    console.log("idFestival :" + Number(event.target.value))
+    setIdFestival(Number(event.target.value))
+    let postesArray : any[] = [];
+    let f = festivals.find((festival) => { return festival.idFestival == event.target.value});
+    f.FestivalPostes.forEach((poste:any) => {
+      postesArray.push(poste.Poste);
+    });
+    setPostes(postesArray)
   }
   const handleChangePoste = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedPoste(event.target.value)
+    console.log("idPoste :" + Number(event.target.value))
+    setIdPoste(Number(event.target.value))
     if(user.token === null){
       alert('Vous devez être connecté pour accéder à cette page')
       return
     }
+    console.log(idPoste)
     sendRequest( 
-      `zones/${event.target.value}`,
+      `zones/poste/${idPoste}`,
       'GET',
       {},
       user.token,
@@ -95,7 +83,11 @@ function GestionZonesComponent (props : any) {
           console.log(err)
         } else {
           console.log(res)
-          setZones(res)
+          let zonesArray : any[] = [];
+          res.forEach((zone:any) => {
+            zonesArray.push(zone);
+          });
+          setZones(zonesArray)
         }
       }
     )
@@ -150,7 +142,8 @@ function GestionZonesComponent (props : any) {
               sendRequest(
                 'zones',
                 'POST',
-                { nom: nomZoneAdd, idPoste: selectedPoste, idFestival: selectedFestival},
+                { idZone:Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000,
+                  nom: nomZoneAdd, idPoste: idPoste, idFestival: idFestival},
                 user.token,
                 (err, res) => {
                   if (err) {
@@ -172,7 +165,7 @@ function GestionZonesComponent (props : any) {
           <span className="gestion-zones-component-text3">{props.text1}</span>
           <select className="gestion-zones-component-select1" onChange={
             (e) => {
-              setSelectedZoneEdit(e.target.value)
+              setSelectedZoneEdit(Number(e.target.value))
             }
           }>
             {zones.map((zone) => (
@@ -198,8 +191,9 @@ function GestionZonesComponent (props : any) {
                 alert('Vous devez être connecté pour accéder à cette page')
                 return
               }
+              console.log(idZoneEdit)
               sendRequest(
-                `zones/${selectedZoneEdit}`,
+                `zones/${idZoneEdit}`,
                 'PUT',
                 { nom: nomZoneEdit},
                 user.token,
@@ -209,7 +203,15 @@ function GestionZonesComponent (props : any) {
                     console.log(err)
                   } else {
                     console.log(res)
-                    setZones([...zones, res])
+                    //Remplacer le bon élément dans le tableau
+                    let newZones = zones.map((zone) => {
+                      if(zone.idZone === idZoneEdit){
+                        zone.nom = nomZoneEdit
+                      }
+                      return zone
+                    })
+                    //remplacer le tableau de zones
+                    setZones(newZones)
                   }
                 }
               ) 
@@ -223,7 +225,7 @@ function GestionZonesComponent (props : any) {
           <span className="gestion-zones-component-text4">{props.text2}</span>
           <select className="gestion-zones-component-select2" onChange={
             (e) => {
-              setSelectedZoneDelete(e.target.value)
+              setSelectedZoneDelete(Number(e.target.value))
             }
           }>
             {zones.map((zone) => (
@@ -241,7 +243,7 @@ function GestionZonesComponent (props : any) {
                 return
               }
               sendRequest(
-                `zones/${selectedZoneDelete}`,
+                `zones/${idZoneDelete}`,
                 'DELETE',
                 {},
                 user.token,
@@ -251,7 +253,11 @@ function GestionZonesComponent (props : any) {
                     console.log(err)
                   } else {
                     console.log(res)
-                    setZones(zones.filter((zone) => zone.idZone !== selectedZoneEdit))
+                    //supprimer la zone dans le tableau de zones
+                    let newZones = zones.filter((zone) => {
+                      return zone.idZone !== idZoneDelete
+                    })
+                    setZones(newZones)
                   }
                 }
               )
@@ -267,11 +273,11 @@ function GestionZonesComponent (props : any) {
 }
 
 GestionZonesComponent.defaultProps = {
-  button2: 'Ajouter',
+  button2: 'Supprimer',
   textinputPlaceholder: 'placeholder',
   textinputPlaceholder1: 'placeholder',
   textinputPlaceholder2: 'placeholder',
-  button1: 'Ajouter',
+  button1: 'Modifier',
   text: 'Ajouter une zone',
   text1: 'Editer une zone',
   button: 'Ajouter',
