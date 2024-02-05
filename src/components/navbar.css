@@ -12,7 +12,6 @@
   border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
-  padding-bottom: 20px;
 }
 .navbar-navbar-interactive {
   width: 100%;
@@ -219,7 +218,7 @@
     position: relative;
     border-color: var(--dl-color-gray-black);
     border-width: 1px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     border-top-width: 0px;
     border-left-width: 0px;
     border-right-width: 0px;

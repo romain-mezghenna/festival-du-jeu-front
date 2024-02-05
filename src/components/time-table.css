@@ -1,0 +1,89 @@
+/* time-table.css */
+.time-table {
+  width: 100%;
+  max-width: 100%; /* Assurez-vous que le tableau ne dépasse pas la largeur de son conteneur */
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed; /* Fixe la largeur de toutes les cellules uniformément */
+}
+
+.time-table th,
+.time-table td {
+  border: 1px solid #ddd;
+  padding: 12px; /* Augmente l'espace de remplissage pour plus de place */
+  text-align: center;
+  overflow: hidden; /* Empêche le contenu de déborder */
+  white-space: nowrap; /* Garde le contenu sur une seule ligne */
+  text-overflow: ellipsis; /* Ajoute des points de suspension si le contenu est trop long */
+}
+
+.time-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  position: sticky; /* Rend les en-têtes de colonnes collants */
+  top: 0; /* Colle l'en-tête en haut du viewport lors du défilement */
+  z-index: 10; /* S'assure que l'en-tête est au-dessus des autres éléments lors du défilement */
+}
+
+.time-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.time-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  margin: auto;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* Ajout de styles pour les entrées numériques si nécessaire */
+.input-number {
+  width: 80%; /* Adapté à la cellule */
+  padding: 6px; /* Espacement interne */
+  text-align: center; /* Alignement du texte à l'intérieur de l'entrée */
+}
+
+/* time-table.css */
+
+.time-table-container {
+  overflow-x: auto; /* Permettre le défilement horizontal si nécessaire */
+}
+
+.time-table {
+  /* les styles existants */
+  border-spacing: 0; /* Éliminer l'espace entre les cellules */
+}
+
+.time-table th,
+.time-table td {
+  /* les styles existants */
+  border: 1px solid #ddd; /* Cadriller chaque cellule */
+}
+
+.day-selector {
+  margin-bottom: 20px;
+}
+
+.day-selector label {
+  margin-right: 10px;
+}
+
+/* Ajouter des styles pour le sélecteur de jour */
+select#day-select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
