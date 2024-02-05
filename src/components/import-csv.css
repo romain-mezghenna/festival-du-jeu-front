@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container1 {
+    gap: var(--dl-space-space-twounits);
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .text {
+    font-size: 24px;
+    font-family: "OlivessansPimiento";
+  }
+  .input {
+    font-family: "OlivessansPimiento";
+  }
+  .button {
+    font-family: "OlivessansPimiento";
+  }
+  

@@ -136,3 +136,31 @@
     flex-direction: column;
   }
 }
+
+.poste{
+  display: flex;
+  flex-direction: column;
+  margin :10px;
+}
+
+.presentationFestival {
+  display: flex;
+  flex-direction: column;
+  margin-top : 50px;
+}
+
+.datesFestival {
+  display: flex;
+  flex-direction: column;
+  margin-left : 10px;
+  margin-right: 10px;
+}
+
+.presentationFestivalCreneaux {
+  display: flex;
+  flex-direction: column;
+}
+
+.spanCreneau {
+  margin-right:10px;
+}

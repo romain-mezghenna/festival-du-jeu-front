@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import PropTypes from 'prop-types'
 
 import LigneInfosJeuComponent from './ligne-infos-jeu-component'
 import './infos-jeux-component.css'
+import { send } from 'process'
+import { sendRequest } from '../utils/sendRequest'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 
 function InfosJeuxComponent (props : any) {
+  const [jeux, setJeux] = React.useState([] as any[])
+  const user = useSelector((state: RootState) => state.user)
+  useEffect(() => {
+    if(user.token === null){
+      alert('Vous devez être connecté pour accéder à cette page')
+      return
+    }
+    sendRequest(
+      'jeux',
+      'GET',
+      {},
+      user.token,
+      (err, res) => {
+        if (err) {
+          alert('Erreur lors de la récupération des jeux')
+          console.log(err)
+        } else {
+          console.log(res)
+          setJeux(res)
+        }
+      }
+    )
+  }, [jeux])
   return (
     <div className={`infos-jeux-component-container ${props.rootClassName} `}>
       <div className="infos-jeux-component-container01">
@@ -37,7 +64,22 @@ function InfosJeuxComponent (props : any) {
           <span className="infos-jeux-component-text8">{props.text8}</span>
         </div>
       </div>
-      <LigneInfosJeuComponent></LigneInfosJeuComponent>
+      {jeux.map((jeu) => {
+        return (
+          <LigneInfosJeuComponent
+            text14={jeu.idJeu}
+            text141={jeu.nom}
+            text142={jeu.auteur}
+            text143={jeu.editeur}
+            text144={jeu.nbJoueurs}
+            text145={jeu.ageMin}
+            text146={jeu.type}
+            link={jeu.notice}
+            text147={"Lien Notice"}
+          ></LigneInfosJeuComponent>
+        )
+      },
+      )}
     </div>
   )
 }

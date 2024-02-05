@@ -6,8 +6,18 @@ import Navbar from '../components/navbar'
 import ProfilField from '../components/profil-field'
 import Footer from '../components/footer'
 import './profil.css'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import { RootState } from '../store/store'
 
 function Profil(props : any){
+  const user = useSelector((state: RootState) => state.user);
+  
+  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté
+  if (!user.isLoggedIn) {
+    alert('Vous n\'êtes pas autorisé à accéder à cette page');
+    return <Navigate to="/" />;
+  }
   return (
     <div className="profil-container">
       <Helmet>

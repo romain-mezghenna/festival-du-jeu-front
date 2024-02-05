@@ -7,8 +7,18 @@ import NavBarAnimationJeux from '../components/nav-bar-animation-jeux'
 import AnimationJeux from '../components/animation-jeux'
 import Footer from '../components/footer'
 import './planning-animation-jeux.css'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import { RootState } from '../store/store'
 
 const PlanningAnimationJeux = (props:any) => {
+  const user = useSelector((state: RootState) => state.user);
+  
+  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté
+  if (!user.isLoggedIn) {
+    alert('Vous n\'êtes pas autorisé à accéder à cette page');
+    return <Navigate to="/" />;
+  }
   return (
     <div className="planning-animation-jeux-container">
       <Helmet>

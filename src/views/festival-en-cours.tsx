@@ -1,13 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import './festival-en-cours.css'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 
 const FestivalEnCours = (props:any) => {
+  const user = useSelector((state: RootState) => state.user);
+  
+  // Avant de charger la page, on vérifie que l'utilisateur est bien connecté et qu'il a le rôle d'admin
+  if (!user.isLoggedIn || user.role !== 4) {
+    alert('Vous n\'êtes pas autorisé à accéder à cette page');
+    return <Navigate to="/" />;
+  }
   return (
     <div className="festival-en-cours-container">
       <Helmet>
@@ -31,14 +40,6 @@ const FestivalEnCours = (props:any) => {
               </svg>
             </div>
           </Link>
-          <div className="festival-en-cours-feature-card1">
-            <h2 className="festival-en-cours-text2">
-              Importer des jeux dans des zones
-            </h2>
-            <svg viewBox="0 0 1024 1024" className="festival-en-cours-icon2">
-              <path d="M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"></path>
-            </svg>
-          </div>
           <div className="festival-en-cours-feature-card2">
             <h2 className="festival-en-cours-text3">
               Attribution de postes aux bénévoles
