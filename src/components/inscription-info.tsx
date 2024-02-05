@@ -63,10 +63,10 @@ function InscriptionInfo (props : any) {
       ))}
       {posteSelectionne && (
         <div className="inscription-info-container1">
-          <h3>Détails du poste :</h3>
-          <p>{detail}</p>
-          <h3>Nom du référent :</h3>
-          <p>{referent}</p>
+          <h3 className='inscription-info-text'>Détails du poste :</h3>
+          <p className='inscription-info-text2'>{detail}</p>
+          <h3 className='inscription-info-text'>Nom du référent :</h3>
+          <p className='inscription-info-text2'>{referent}</p>
         </div>
       )}
     </div>

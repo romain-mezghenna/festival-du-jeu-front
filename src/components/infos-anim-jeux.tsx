@@ -1,36 +1,74 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
+import { sendRequest } from '../utils/sendRequest'
 
 import PropTypes from 'prop-types'
 
 import './infos-anim-jeux.css'
 
 function InfosAnimJeux  (props :any)  {
+  const user = useSelector((state: RootState) => state.user);
+  const [jeux, setJeux] = React.useState<any>([]);
+  const [zones, setZones] = React.useState<any>([]);
+  React.useEffect(() => {
+    if (user.token === null) {
+      alert('Vous devez être connecté pour consulter les jeux');
+      return;
+    }
+    sendRequest(
+      'zones',
+      'GET',
+      {},
+      user.token,
+      (err, res) => {
+        if (err) {
+          alert('Erreur lors de la récupération des jeux');
+          console.log(err);
+        } else {
+          //console.log(res);
+          setZones(res);
+        }
+      }
+    )
+  }
+  , []);
+  React.useEffect(() => {
+    if (user.token === null) {
+      alert('Vous devez être connecté pour consulter les jeux');
+      return;
+    }
+    sendRequest(
+      'jeux/zone/'+zones.idZone,
+      'GET',
+      {},
+      user.token,
+      (err, res) => {
+        if (err) {
+          alert('Erreur lors de la récupération des jeux');
+          console.log(err);
+        } else {
+          console.log(res);
+          setJeux(res);
+        }
+      }
+    )
+  }
+  , [zones]);
+
   return (
     <div className={`infos-anim-jeux-container ${props.rootClassName} `}>
       <div className="infos-anim-jeux-container01">
         <span className="infos-anim-jeux-text">{props.text}</span>
       </div>
       <div className="infos-anim-jeux-container02">
+      {zones.map((zone, index) => (
         <div className="infos-anim-jeux-container03">
           <button type="button" className="infos-anim-jeux-button button">
-            {props.button}
-          </button>
-          <button type="button" className="infos-anim-jeux-button1 button">
-            {props.button5}
-          </button>
-          <button type="button" className="infos-anim-jeux-button2 button">
-            {props.button4}
-          </button>
-          <button type="button" className="infos-anim-jeux-button3 button">
-            {props.button3}
-          </button>
-          <button type="button" className="infos-anim-jeux-button4 button">
-            {props.button2}
-          </button>
-          <button type="button" className="infos-anim-jeux-button5 button">
-            {props.button1}
+            {zone.nom}
           </button>
         </div>
+        ))}
         <div className="infos-anim-jeux-container04">
           <div className="infos-anim-jeux-container05">
             <div className="infos-anim-jeux-container06">

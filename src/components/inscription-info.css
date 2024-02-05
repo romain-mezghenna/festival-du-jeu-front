@@ -84,6 +84,10 @@
   .inscription-info-text {
     align-self: center;
     margin-bottom: var(--dl-space-space-halfunit);
+    font-family: "KGLifeisMessy";
+  }
+  .inscription-info-text2 {
+    font-family: "drybrush";
   }
   .inscription-info-button1 {
     width: 100%;
