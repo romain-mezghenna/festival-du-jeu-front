@@ -13,6 +13,18 @@ function GestionZonesComponent (props : any) {
         <h1 className="gestion-zones-component-text">{props.heading}</h1>
       </div>
       <div className="gestion-zones-component-container2">
+      <span className="gestion-zones-component-text1">{props.text4}</span>
+        <select className="gestion-zones-component-select">
+          <option value="Option 1" className="">
+            Option 1
+          </option>
+          <option value="Option 2" className="">
+            Option 2
+          </option>
+          <option value="Option 3" className="">
+            Option 3
+          </option>
+        </select>
         <span className="gestion-zones-component-text1">{props.text3}</span>
         <select className="gestion-zones-component-select">
           <option value="Option 1" className="">
