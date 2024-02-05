@@ -33,42 +33,20 @@ function InfosAnimJeux  (props :any)  {
     )
   }
   , []);
-  React.useEffect(() => {
-    if (user.token === null) {
-      alert('Vous devez être connecté pour consulter les jeux');
-      return;
-    }
-    sendRequest(
-      'jeux/zone/'+zones.idZone,
-      'GET',
-      {},
-      user.token,
-      (err, res) => {
-        if (err) {
-          alert('Erreur lors de la récupération des jeux');
-          console.log(err);
-        } else {
-          console.log(res);
-          setJeux(res);
-        }
-      }
-    )
-  }
-  , [zones]);
-
+ 
   return (
-    <div className={`infos-anim-jeux-container ${props.rootClassName} `}>
+    <div className={`infos-anim-jeux-container`}>
       <div className="infos-anim-jeux-container01">
         <span className="infos-anim-jeux-text">{props.text}</span>
       </div>
       <div className="infos-anim-jeux-container02">
-      {zones.map((zone, index) => (
         <div className="infos-anim-jeux-container03">
-          <button type="button" className="infos-anim-jeux-button button">
-            {zone.nom}
-          </button>
+          <select className="infos-anim-jeux-button button" >
+            {zones.map((zone: any) => (
+              <option key={zone.idZone} value={zone.nom} >{zone.nom}</option>
+            ))}
+          </select> 
         </div>
-        ))}
         <div className="infos-anim-jeux-container04">
           <div className="infos-anim-jeux-container05">
             <div className="infos-anim-jeux-container06">
@@ -82,6 +60,7 @@ function InfosAnimJeux  (props :any)  {
                 <span className="infos-anim-jeux-text03">{props.text411}</span>
               </div>
             </div>
+          
             <div className="infos-anim-jeux-container10">
               <div className="infos-anim-jeux-container11">
                 <span className="infos-anim-jeux-text04">{props.text48}</span>
